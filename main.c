@@ -111,6 +111,16 @@ const gecko_configuration_t config =
 
 /***************************************************************************//**
  * Main function.
+ * Instructions to proceed for the mesh assignment.
+ * 1. Add the gpio enable display function in gpio.c & gpio.h from last assignment.
+ * 2. Complete displayUpdate() function in display.c similar to instructions in Assignment 6.
+ * 3. Add your logic for loggerGetTimestamp() function in log.c from earlier assignments.
+ * 4. You can leverage your previous assignment files for timers, cmu etc. for this assignment.
+ *
+ * After completing above steps check for its functionality and proceed to mesh implementation.
+ * 1. Use compile time switch in ble_mesh_device_type.h file to switch between publisher and subscriber.
+ * 2. Add appropriate initializations in main before while loop.
+ * 3. Then proceed to app.c for further instructions.
  ******************************************************************************/
 int main(void)
 {
@@ -143,7 +153,7 @@ int main(void)
     struct gecko_cmd_packet *evt = gecko_wait_event();
     bool pass = mesh_bgapi_listener(evt);
     if (pass) {
-      handle_gecko_event(BGLIB_MSG_ID(evt->header), evt);
+      handle_ecen5823_gecko_event(BGLIB_MSG_ID(evt->header), evt);
     }
   }
 }

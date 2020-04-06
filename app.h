@@ -53,7 +53,7 @@ void gecko_bgapi_classes_init_client_lpn(void);
  * @param[in] evt_id  Incoming event ID.
  * @param[in] evt     Pointer to incoming event.
  ******************************************************************************/
-void handle_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt);
+void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt);
 
 /** @} (end addtogroup app) */
 /** @} (end addtogroup Application) */

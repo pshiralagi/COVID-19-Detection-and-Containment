@@ -77,11 +77,6 @@ main.o: ../main.c ../init_mcu.h ../board_features.h \
  ../hal-config.h ../app.h \
  C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\hardware\kit\common\halconfig/bsphalconfig.h \
  C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\hardware\kit\common\bsp/bsp_bcp.h \
- ../src/log.h ../src/display.h \
- C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib\glib/glib.h \
- C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib\glib/glib_color.h \
- C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib/dmd/dmd.h \
- C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib/em_types.h \
  ../src/ble_mesh_device_type.h
 
 ../init_mcu.h:
@@ -249,17 +244,5 @@ C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\protocol\bluetoo
 C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\hardware\kit\common\halconfig/bsphalconfig.h:
 
 C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\hardware\kit\common\bsp/bsp_bcp.h:
-
-../src/log.h:
-
-../src/display.h:
-
-C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib\glib/glib.h:
-
-C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib\glib/glib_color.h:
-
-C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib/dmd/dmd.h:
-
-C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib/em_types.h:
 
 ../src/ble_mesh_device_type.h:

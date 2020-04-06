@@ -116,7 +116,14 @@ void gecko_bgapi_classes_init_client_lpn(void)
  * @param[in] evt_id  Incoming event ID.
  * @param[in] evt     Pointer to incoming event.
  ******************************************************************************/
-void handle_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
+/**************************** INSTRUCTIONS ************************************
+ * 1. Add the necessary events for the mesh in switch (evt_id) similar to the BLE assignments.
+ * 2. Use the following pdf for reference
+ * https://www.silabs.com/documents/public/reference-manuals/bluetooth-le-and-mesh-software-api-reference-manual.pdf
+ * 3. Remember to check and log the return status for every Mesh API used.
+ * 4. You can take the hints from light and switch example for mesh to know what commands and events are needed.
+ ******************************************************************************/
+void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 {
   if (NULL == evt) {
     return;

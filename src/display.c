@@ -212,18 +212,7 @@ void displayInit()
  */
 bool displayUpdate()
 {
-	/* // Delete this  <<<<<<<<<<<<<<<<<
-	struct display_data *display = displayGetData();
-	display->last_extcomin_state_high = !display->last_extcomin_state_high;
-#if GPIO_SET_DISPLAY_EXT_COMIN_IMPLEMENTED
-	gpioSetDisplayExtcomin(display->last_extcomin_state_high);
-#else
-#warning "gpioSetDisplayExtcomin is not implemented.  Please implement for display support"
-#endif
-	LOG_DEBUG("Display extcomin state is now %s",display->last_extcomin_state_high ? "high" : "low");
-	return true;
-	// <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
-	*/
+	return false;
 }
 
 #endif // ECEN5823_INCLUDE_DISPLAY_SUPPORT
