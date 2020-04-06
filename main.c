@@ -109,7 +109,7 @@ const gecko_configuration_t config =
 };
 
 
-/***************************************************************************//**
+/*******************************************************************************************************
  * Main function.
  * Instructions to proceed for the mesh assignment.
  * 1. Add the gpio enable display function in gpio.c & gpio.h from last assignment.
@@ -121,7 +121,7 @@ const gecko_configuration_t config =
  * 1. Use compile time switch in ble_mesh_device_type.h file to switch between publisher and subscriber.
  * 2. Add appropriate initializations in main before while loop.
  * 3. Then proceed to app.c for further instructions.
- ******************************************************************************/
+ *******************************************************************************************************/
 int main(void)
 {
   // Initialize device

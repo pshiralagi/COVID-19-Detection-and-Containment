@@ -117,11 +117,17 @@ void gecko_bgapi_classes_init_client_lpn(void)
  * @param[in] evt     Pointer to incoming event.
  ******************************************************************************/
 /**************************** INSTRUCTIONS ************************************
- * 1. Add the necessary events for the mesh in switch (evt_id) similar to the BLE assignments.
- * 2. Use the following pdf for reference
+ * 1. Before proceeding with assignment profile the project with attached blue
+ * gecko and verify if it is being scanned by mobile mesh App.
+ * 2. Use Bluetooth Mesh app from Silicon labs for the same and if you are not
+ * able to get the app working checkout nRF Mesh App on play store.
+ * 3. Add the necessary events for the mesh in switch (evt_id) similar to the
+ * BLE assignments.
+ * 4. Use the following pdf for reference
  * https://www.silabs.com/documents/public/reference-manuals/bluetooth-le-and-mesh-software-api-reference-manual.pdf
- * 3. Remember to check and log the return status for every Mesh API used.
- * 4. You can take the hints from light and switch example for mesh to know what commands and events are needed.
+ * 5. Remember to check and log the return status for every Mesh API used.
+ * 6. You can take the hints from light and switch example for mesh to know which
+ * commands and events are needed and to understand the flow.
  ******************************************************************************/
 void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 {
