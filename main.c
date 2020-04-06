@@ -112,10 +112,10 @@ const gecko_configuration_t config =
 /*******************************************************************************************************
  * Main function.
  * Instructions to proceed for the mesh assignment.
- * 1. Add the gpio enable display function in gpio.c & gpio.h from last assignment.
+ * 1. Add the gpio enable display function in gpio.c & gpio.h from Assignment 6.
  * 2. Complete displayUpdate() function in display.c similar to instructions in Assignment 6.
- * 3. Add your logic for loggerGetTimestamp() function in log.c from earlier assignments.
- * 4. You can leverage your previous assignment files for timers, cmu etc. for this assignment.
+ * 3. Add your logic for loggerGetTimestamp() function in log.c from assignment 4.
+ * 4. You can leverage your assignment files for timers, cmu etc. for this assignment.
  *
  * After completing above steps check for its functionality and proceed to mesh implementation.
  * 1. Use compile time switch in ble_mesh_device_type.h file to switch between publisher and subscriber.
