@@ -74,8 +74,7 @@ main.o: ../main.c ../init_mcu.h ../board_features.h \
  C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\protocol\bluetooth\bt_mesh\inc\common/mesh_sizes.h \
  C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2/mesh_app_memory_config.h \
  C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\protocol\bluetooth\ble_stack\inc\soc/coexistence-ble.h \
- ../hal-config.h ../display_interface.h ../lcd_driver.h ../led_driver.h \
- ../app.h \
+ ../hal-config.h ../app.h \
  C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\hardware\kit\common\halconfig/bsphalconfig.h \
  C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\hardware\kit\common\bsp/bsp_bcp.h \
  ../src/log.h ../src/display.h \
@@ -244,12 +243,6 @@ C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2/mesh_app_memory_
 C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\protocol\bluetooth\ble_stack\inc\soc/coexistence-ble.h:
 
 ../hal-config.h:
-
-../display_interface.h:
-
-../lcd_driver.h:
-
-../led_driver.h:
 
 ../app.h:
 

@@ -38,12 +38,6 @@
 /* Device initialization header */
 #include "hal-config.h"
 
-/* Display Interface header */
-#include "display_interface.h"
-
-/* LED driver with support for PWM dimming */
-#include "led_driver.h"
-
 /* Application code */
 #include "app.h"
 
@@ -53,12 +47,7 @@
 #include "bspconfig.h"
 #endif
 
-
-// My includes <<<<<<<<<< I have added this here.
-#include "src/log.h"
-#include "src/display.h"
 #include "src/ble_mesh_device_type.h"
-// Till here
 
 /***********************************************************************************************//**
  * @addtogroup Application
@@ -119,15 +108,6 @@ const gecko_configuration_t config =
   .rf.antenna = GECKO_RF_ANTENNA,   // Select antenna path!
 };
 
-/***************************************************************************//**
- * Button initialization. Configure pushbuttons PB0, PB1 as inputs.
- ******************************************************************************/
-static void button_init(void)
-{
-  // configure pushbutton PB0 and PB1 as inputs, with pull-up enabled
-  GPIO_PinModeSet(BSP_BUTTON0_PORT, BSP_BUTTON0_PIN, gpioModeInputPull, 1);
-  GPIO_PinModeSet(BSP_BUTTON1_PORT, BSP_BUTTON1_PIN, gpioModeInputPull, 1);
-}
 
 /***************************************************************************//**
  * Main function.
@@ -148,34 +128,16 @@ int main(void)
 
   gecko_stack_init(&config);
 
-  // I have changes this <<<<<<<<< Let it be sa it is Delete my comment
-
-  if( DeviceUsesClientModel() )
-  {
+  // Initialize the bgapi classes
+  if( DeviceUsesClientModel() ){
 	  gecko_bgapi_classes_init_client_lpn();
   }
-  else
-  {
+  else {
 	  gecko_bgapi_classes_init_server_friend();
   }
-  // <<<<<<<<<<<<<<<< Till here
 
   // Initialize coexistence interface. Parameters are taken from HAL config.
   gecko_initCoexHAL();
-
-//  RETARGET_SerialInit();
-  logInit();
-
-  /* initialize LEDs and buttons. Note: some radio boards share the same GPIO for button & LED.
-   * Initialization is done in this order so that default configuration will be "button" for those
-   * radio boards with shared pins. LEDS_init() is called later as needed to (re)initialize the LEDs
-   * */
-  LEDS_init();
-  button_init();
-
-  // Display Interface initialization
-//  DI_Init();
-  displayInit();
 
   while (1) {
     struct gecko_cmd_packet *evt = gecko_wait_event();

@@ -71,13 +71,7 @@ app.o: ../app.c \
  C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\protocol\bluetooth\bt_mesh\inc\common/bg_gattdb_def.h \
  C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\protocol\bluetooth\bt_mesh\inc/mesh_generic_model_capi_types.h \
  C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\protocol\bluetooth\bt_mesh\inc/mesh_lib.h \
- ../lightbulb.h ../light_controller.h ../scenes.h ../display_interface.h \
- ../board_features.h ../lcd_driver.h ../hal-config.h ../led_driver.h \
- ../app.h ../src/display.h \
- C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib\glib/glib.h \
- C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib\glib/glib_color.h \
- C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib/dmd/dmd.h \
- C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib/em_types.h
+ ../app.h ../src/log.h
 
 C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\protocol\bluetooth\bt_mesh\inc\common/bg_types.h:
 
@@ -223,30 +217,6 @@ C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\protocol\bluetoo
 
 C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\protocol\bluetooth\bt_mesh\inc/mesh_lib.h:
 
-../lightbulb.h:
-
-../light_controller.h:
-
-../scenes.h:
-
-../display_interface.h:
-
-../board_features.h:
-
-../lcd_driver.h:
-
-../hal-config.h:
-
-../led_driver.h:
-
 ../app.h:
 
-../src/display.h:
-
-C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib\glib/glib.h:
-
-C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib\glib/glib_color.h:
-
-C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib/dmd/dmd.h:
-
-C:\Users\nachi\SimplicityStudio\v4_workspace\soc-btmesh-light_2\platform\middleware\glib/em_types.h:
+../src/log.h:
