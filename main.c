@@ -127,6 +127,13 @@ int main(void)
   // Initialize application
   initApp();
   initVcomEnable();
+  logInit();
+  /*	Initialize required gpios	*/
+  gpioInit();
+  displayInit();
+  /*	Initialize clocks	*/
+  cmuInit();
+  letimerInit();
 
   // Minimize advertisement latency by allowing the advertiser to always
   // interrupt the scanner.
@@ -144,7 +151,7 @@ int main(void)
 
   // Initialize coexistence interface. Parameters are taken from HAL config.
   gecko_initCoexHAL();
-
+  LOG_ERROR("PLS SAARU");
   while (1) {
     struct gecko_cmd_packet *evt = gecko_wait_event();
     bool pass = mesh_bgapi_listener(evt);

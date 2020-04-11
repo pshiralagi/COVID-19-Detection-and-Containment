@@ -49,10 +49,12 @@ void toggleLed(void)
 	  if (irq_flg == 0)
 	  {
 		  gpioLed0SetOn();
+		  irq_flg = 1;
 	  }
-	  if (irq_flg == 1)
+	  else if (irq_flg == 1)
 	  {
 		  gpioLed0SetOff();
+		  irq_flg = 0;
 	  }
 }
 

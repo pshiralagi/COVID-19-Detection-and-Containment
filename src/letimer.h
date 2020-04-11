@@ -13,6 +13,8 @@
 #include "main.h"
 #include <em_core.h>
 
+#define TIMER_SUPPORTS_1HZ_TIMER_EVENT	1
+
 
 /*	Defines		*/
 #define primary_period (3000)		//Primary interrupt interval in milliseconds
@@ -38,5 +40,5 @@ void ms_sleep(uint32_t ms_wait);	//Function to generate timer interrupt at param
 /*	Variables	*/
 uint16_t calc_primary_period, calc_secondary_period;
 extern uint16_t overflow_count;
-volatile uint8_t irq_flg;
+static uint8_t irq_flg = 0;
 #endif
