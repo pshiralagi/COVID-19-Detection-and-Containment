@@ -8,16 +8,21 @@
 #include "retargetserial.h"
 #include "log.h"
 #include <stdbool.h>
-//#include "timer.h"
 
 #if INCLUDE_LOGGING
+uint16_t overflow_count;
 /**
  * @return a timestamp value for the logger, typically based on a free running timer.
  * This will be printed at the beginning of each log message.
  */
 uint32_t loggerGetTimestamp(void)
 {
-	return 0;
+	uint32_t current_ticks, max_ticks, time_ms=0;
+	max_ticks=LETIMER_CompareGet(LETIMER0,0);
+	current_ticks=LETIMER_CounterGet(LETIMER0);
+	time_ms=((max_ticks-current_ticks)*1000)/CMU_ClockFreqGet(cmuClock_LETIMER0);
+	time_ms+=(overflow_count*max_ticks);
+	return time_ms;
 }
 
 /**

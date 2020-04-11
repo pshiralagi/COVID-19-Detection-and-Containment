@@ -16,6 +16,7 @@
  *
  ******************************************************************************/
 
+#include "src/main.h"
 /* Board headers */
 #include "init_mcu.h"
 #include "init_board.h"
@@ -23,10 +24,6 @@
 #include "board_features.h"
 #include "retargetserial.h"
 
-/* Bluetooth stack headers */
-#include "native_gecko.h"
-#include "gatt_db.h"
-#include <gecko_configuration.h>
 #include <mesh_sizes.h>
 
 /* Libraries containing default Gecko configuration values */
@@ -39,7 +36,7 @@
 #include "hal-config.h"
 
 /* Application code */
-#include "app.h"
+
 
 #if defined(HAL_CONFIG)
 #include "bsphalconfig.h"
@@ -47,7 +44,6 @@
 #include "bspconfig.h"
 #endif
 
-#include "src/ble_mesh_device_type.h"
 
 /***********************************************************************************************//**
  * @addtogroup Application
