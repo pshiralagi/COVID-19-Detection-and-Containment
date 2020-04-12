@@ -26,10 +26,12 @@ enum states {
 #include <em_core.h>
 #include<gatt_db.h>
 //#include<infrastructure.h>
-//#include "gecko_ble_errors.h"
+#include "gecko_ble_errors.h"
 #include "display.h"
 #include "ble_mesh_device_type.h"
 #include "app.h"
+
+
 
 #endif
 

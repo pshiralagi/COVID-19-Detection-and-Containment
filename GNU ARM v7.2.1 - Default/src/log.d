@@ -70,6 +70,7 @@ src/log.o: ../src/log.c \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_gattdb_def.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_types.h \
  ../src/gpio.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emdrv\gpiointerrupt\inc/gpiointerrupt.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\soc/native_gecko.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_types.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_errorcodes.h \
@@ -83,7 +84,7 @@ src/log.o: ../src/log.c \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emlib\inc/em_core.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/gatt_db.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_gattdb_def.h \
- ../src/display.h \
+ ../src/gecko_ble_errors.h ../src/display.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\middleware\glib\glib/glib.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\middleware\glib\glib/glib_color.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\middleware\glib/dmd/dmd.h \
@@ -235,6 +236,8 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\blueto
 
 ../src/gpio.h:
 
+C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emdrv\gpiointerrupt\inc/gpiointerrupt.h:
+
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\soc/native_gecko.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_types.h:
@@ -260,6 +263,8 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emlib\
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/gatt_db.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_gattdb_def.h:
+
+../src/gecko_ble_errors.h:
 
 ../src/display.h:
 

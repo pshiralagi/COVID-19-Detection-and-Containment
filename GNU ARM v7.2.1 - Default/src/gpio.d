@@ -80,13 +80,14 @@ src/gpio.o: ../src/gpio.c ../src/gpio.h ../src/letimer.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emlib\inc/em_core.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/gatt_db.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_gattdb_def.h \
- ../src/display.h \
+ ../src/gecko_ble_errors.h ../src/display.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\middleware\glib\glib/glib.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\middleware\glib\glib/glib_color.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\middleware\glib/dmd/dmd.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\middleware\glib/em_types.h \
  ../src/ble_mesh_device_type.h \
- C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/app.h
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/app.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emdrv\gpiointerrupt\inc/gpiointerrupt.h
 
 ../src/gpio.h:
 
@@ -254,6 +255,8 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/gatt_db.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_gattdb_def.h:
 
+../src/gecko_ble_errors.h:
+
 ../src/display.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\middleware\glib\glib/glib.h:
@@ -267,3 +270,5 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\middle
 ../src/ble_mesh_device_type.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/app.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emdrv\gpiointerrupt\inc/gpiointerrupt.h:
