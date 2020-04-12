@@ -88,6 +88,7 @@ src/display.o: ../src/display.c \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_gattdb_def.h \
  ../src/display.h ../src/ble_mesh_device_type.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/app.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emdrv\gpiointerrupt\inc/gpiointerrupt.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/hardware/kit/common/drivers/display.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/hardware/kit/common/drivers/emstatus.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/hardware/kit/common/drivers/displayconfigall.h \
@@ -277,6 +278,8 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\blueto
 ../src/ble_mesh_device_type.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/app.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emdrv\gpiointerrupt\inc/gpiointerrupt.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/hardware/kit/common/drivers/display.h:
 

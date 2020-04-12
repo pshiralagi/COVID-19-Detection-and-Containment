@@ -61,6 +61,12 @@ static uint16_t _my_address = 0;
 static uint8_t num_connections = 0;
 /// Handle of the last opened LE connection
 static uint8_t conn_handle = 0xFF;
+#if DEVICE_USES_BLE_MESH_CLIENT_MODEL
+/// on/off transaction identifier
+static uint8_t onoff_trid = 0;
+/// For indexing elements of the node (this example has only one element)
+static uint16_t _elem_index = 0xffff;
+#endif
 /// Flag for indicating that initialization was performed
 static uint8_t init_done = 0;
 struct gecko_msg_mesh_generic_server_client_request_evt_t *req = NULL;
@@ -160,14 +166,6 @@ void gecko_bgapi_classes_init_client_lpn(void)
 	gecko_bgapi_class_mesh_proxy_server_init();
 	//gecko_bgapi_class_mesh_proxy_client_init();
 	gecko_bgapi_class_mesh_generic_client_init();
-	//gecko_bgapi_class_mesh_generic_server_init();
-	//gecko_bgapi_class_mesh_vendor_model_init();
-	//gecko_bgapi_class_mesh_health_client_init();
-	//gecko_bgapi_class_mesh_health_server_init();
-	//gecko_bgapi_class_mesh_test_init();
-	gecko_bgapi_class_mesh_lpn_init();
-	//gecko_bgapi_class_mesh_friend_init();
-	gecko_bgapi_class_mesh_scene_client_init();
 }
 
 /*******************************************************************************
@@ -189,6 +187,7 @@ void gecko_bgapi_classes_init_client_lpn(void)
  * 6. You can take the hints from light and switch example for mesh to know which
  * commands and events are needed and to understand the flow.
  ******************************************************************************/
+#if DEVICE_USES_BLE_MESH_SERVER_MODEL
 void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 {
 	  uint16_t result;
@@ -201,7 +200,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	  switch (evt_id) {
 	    case gecko_evt_system_boot_id:
 	      // check pushbutton state at startup. If either PB0 or PB1 is held down then do factory reset
-	      if ((GPIO_PinInGet(PB0_Port,PB0_Pin) == 0 ) || (GPIO_PinInGet(PB0_Port,PB0_Pin) == 0 ))
+	      if ((GPIO_PinInGet(PB0_Port,PB0_Pin) == 0 ) || (GPIO_PinInGet(PB1_Port,PB1_Pin) == 0 ))
 	     {
 	        initiate_factory_reset();
 	      } else {
@@ -378,6 +377,214 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      break;
 	  }
 }
+
+#endif
+
+#if DEVICE_USES_BLE_MESH_CLIENT_MODEL
+void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
+{
+	  uint16_t result;
+
+	  if (NULL == evt)
+	  {
+		  return;
+	  }
+
+	  switch (evt_id)
+	  {
+	  	  case gecko_evt_system_boot_id:
+	  		  // check pushbutton state at startup. If either PB0 or PB1 is held down then do factory reset
+	  		if((GPIO_PinInGet(PB0_Port, PB0_Pin) == 0) || (GPIO_PinInGet(PB1_Port, PB1_Pin) == 0))
+	  		  {
+	  			  initiate_factory_reset();
+	  		  }
+	  		  else
+	  		  {
+	  			  LOG_INFO("System Boot!");
+	  			  struct gecko_msg_system_get_bt_address_rsp_t *pAddr = gecko_cmd_system_get_bt_address();
+
+	  			  set_device_name(&pAddr->address);
+
+				  // Initialize Mesh stack in Node operation mode, it will generate initialized event
+				  result = gecko_cmd_mesh_node_init()->result;
+				  if (result)
+				  {
+					  displayPrintf(DISPLAY_ROW_CONNECTION,"Init Failed");
+					  LOG_INFO("Init Failed");
+				  }
+    }
+    break;
+
+	      case gecko_evt_mesh_node_initialized_id:
+	        printf("node initialized\r\n");
+	        LOG_INFO("Node Initialized");
+
+	        // Initialize generic client models
+	        result = gecko_cmd_mesh_generic_client_init()->result;
+	        if (result)
+	        {
+	          printf("mesh_generic_client_init failed, code 0x%x\r\n", result);
+	          LOG_INFO("Mesh generic client init failed");
+	        }
+
+	        // Initialize scene client model
+	        result = gecko_cmd_mesh_scene_client_init(0)->result;
+	        if (result)
+	        {
+	          printf("mesh_scene_client_init failed, code 0x%x\r\n", result);
+	        }
+
+	        struct gecko_msg_mesh_node_initialized_evt_t *pData = (struct gecko_msg_mesh_node_initialized_evt_t *)&(evt->data);
+
+	        if (pData->provisioned)
+	        {
+	          printf("node is provisioned. address:%x, ivi:%ld\r\n", pData->address, pData->ivi);
+	          LOG_INFO("Node is provisioned");
+
+	          _my_address = pData->address;
+	          _elem_index = 0;   // index of primary element is zero
+
+	          enable_button_interrupts();
+
+	          mesh_lib_init(malloc, free, 8);
+
+	          displayPrintf(DISPLAY_ROW_ACTION,"Provisioned");
+	        }
+	        else
+	        {
+	          LOG_INFO("Node is un-provisioned");
+	          displayPrintf(DISPLAY_ROW_ACTION,"Un-provisioned");
+
+	          printf("starting unprovisioned beaconing...\r\n");
+	          gecko_cmd_mesh_node_start_unprov_beaconing(0x3);   // enable ADV and GATT provisioning bearer
+	        }
+	        break;
+
+	      case gecko_evt_system_external_signal_id:
+	          {
+	        	  struct mesh_generic_request req;
+	        	  if (evt->data.evt_system_external_signal.extsignals & 0x40)
+	            {
+	        		  req.kind = mesh_generic_request_on_off;
+	        		  if(GPIO_PinInGet(PB0_Port, PB0_Pin) == 0)
+	        		  {
+	        			  req.on_off = MESH_GENERIC_ON_OFF_STATE_ON;
+	        			  displayPrintf(DISPLAY_ROW_TEMPVALUE,"Button Pressed");
+	        		  }
+	        		  else
+	        		  {
+	        			  req.on_off = MESH_GENERIC_ON_OFF_STATE_OFF;
+	        			  displayPrintf(DISPLAY_ROW_TEMPVALUE,"Button Released");
+	        		  }
+
+	        		  onoff_trid++;
+	        		  uint16_t resp = mesh_lib_generic_client_publish(MESH_GENERIC_ON_OFF_CLIENT_MODEL_ID,
+	            	                                                  _elem_index,
+	            	                                                  onoff_trid,
+	            	                                                  &req,
+	            	                                                  0, // transition time in ms
+	            	                                                  0, // delay in ms
+	            	                                                  0   // flags
+	            	                                                  );
+	        		  printf("\n\r**************parameter data = %d**********************\n\r", req.on_off);
+
+	            	  if (resp)
+	            	  {
+	            	    printf("gecko_cmd_mesh_generic_client_publish failed, code 0x%x\r\n", resp);
+	            	  }
+	            	  else
+	            	  {
+	            	    printf("on/off request sent, trid = %u", onoff_trid);
+	            	  }
+	            }
+	          }
+	        break;
+
+	      case gecko_evt_mesh_node_provisioning_started_id:
+	        printf("Started provisioning\r\n");
+	        displayPrintf(DISPLAY_ROW_ACTION,"Provisioning");
+	        break;
+
+	      case gecko_evt_mesh_node_provisioned_id:
+	        _elem_index = 0;   // index of primary element is zero. This example has only one element.
+	        displayPrintf(DISPLAY_ROW_ACTION,"Provisioned");
+	        enable_button_interrupts();
+	        break;
+
+	      case gecko_evt_mesh_node_provisioning_failed_id:
+	        printf("provisioning failed, code 0x%x\r\n", evt->data.evt_mesh_node_provisioning_failed.result);
+	        displayPrintf(DISPLAY_ROW_ACTION,"Provisioning Failed");
+	        /* start a one-shot timer that will trigger soft reset after small delay */
+	        gecko_cmd_hardware_set_soft_timer(2 * 32768, TIMER_ID_RESTART, 1);
+	        break;
+
+	      case gecko_evt_le_connection_opened_id:
+	        printf("evt:gecko_evt_le_connection_opened_id\r\n");
+	        num_connections++;
+	        conn_handle = evt->data.evt_le_connection_opened.connection;
+	        displayPrintf(DISPLAY_ROW_ACTION,"Connected");
+	        break;
+
+	      case gecko_evt_hardware_soft_timer_id:
+	      {
+		      switch (evt->data.evt_hardware_soft_timer.handle) {
+		        case TIMER_ID_FACTORY_RESET:
+		          // reset the device to finish factory reset
+		          gecko_cmd_system_reset(0);
+		          break;
+
+		        case TIMER_ID_RESTART:
+		          // restart timer expires, reset the device
+		          gecko_cmd_system_reset(0);
+		          break;
+
+		        case TIMER_ID_PROVISIONING:
+		          // toggle LED to indicate the provisioning state
+		          if (!init_done) {
+		            toggleLed();
+		          }
+		          break;
+
+		        default:
+
+		          break;
+		      }
+		      break;
+	      }
+
+		case gecko_evt_le_connection_closed_id:
+		  /* Check if need to boot to dfu mode */
+		  if (boot_to_dfu) {
+			/* Enter to DFU OTA mode */
+			gecko_cmd_system_reset(2);
+		  }
+		  break;
+
+		case gecko_evt_gatt_server_user_write_request_id:
+		  if (evt->data.evt_gatt_server_user_write_request.characteristic == gattdb_ota_control)
+		  {
+			/* Set flag to enter to OTA mode */
+			boot_to_dfu = 1;
+			/* Send response to Write Request */
+			gecko_cmd_gatt_server_send_user_write_response(
+			  evt->data.evt_gatt_server_user_write_request.connection,
+			  gattdb_ota_control,
+			  bg_err_success);
+
+			/* Close connection to enter to DFU OTA mode */
+			gecko_cmd_le_connection_close(evt->data.evt_gatt_server_user_write_request.connection);
+		  }
+		  break;
+
+	    case gecko_evt_mesh_node_reset_id:
+	      printf("evt gecko_evt_mesh_node_reset_id\r\n");
+	      initiate_factory_reset();
+	      break;
+
+  }
+}
+#endif
+
 
 /** @} (end addtogroup app) */
 /** @} (end addtogroup Application) */

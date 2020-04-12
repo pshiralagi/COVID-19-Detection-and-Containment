@@ -61,6 +61,7 @@ app.o: ../app.c ../src/main.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emlib\inc/em_core.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emlib\inc/em_common.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emlib\inc/em_assert.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emdrv\gpiointerrupt\inc/gpiointerrupt.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\soc/native_gecko.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/hal-config.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/board_features.h \
@@ -220,6 +221,8 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emlib\
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emlib\inc/em_common.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emlib\inc/em_assert.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emdrv\gpiointerrupt\inc/gpiointerrupt.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\soc/native_gecko.h:
 

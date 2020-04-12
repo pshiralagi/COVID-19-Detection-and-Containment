@@ -60,6 +60,7 @@ src/energy.o: ../src/energy.c ../src/energy.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_gattdb_def.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_types.h \
  ../src/gpio.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emdrv\gpiointerrupt\inc/gpiointerrupt.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\soc/native_gecko.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/hal-config.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node/board_features.h \
@@ -213,6 +214,8 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\blueto
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\common/bg_types.h:
 
 ../src/gpio.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\platform\emdrv\gpiointerrupt\inc/gpiointerrupt.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\ecen-5823-mesh-node\protocol\bluetooth\bt_mesh\inc\soc/native_gecko.h:
 

@@ -40,5 +40,5 @@ void ms_sleep(uint32_t ms_wait);	//Function to generate timer interrupt at param
 /*	Variables	*/
 uint16_t calc_primary_period, calc_secondary_period;
 extern uint16_t overflow_count;
-static uint8_t irq_flg = 0;
+
 #endif

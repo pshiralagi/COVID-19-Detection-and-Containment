@@ -9,6 +9,7 @@
 #ifndef SRC_GPIO_H_
 #define SRC_GPIO_H_
 #include "letimer.h"
+#include "gpiointerrupt.h"
 
 /*
  * @brief : Function to initialize required GPIO pins in required mode
@@ -45,6 +46,28 @@ void gpioEnableDisplay(void);
 /*	@brief : Refreshes the screen	*/
 void gpioSetDisplayExtcomin(bool state);
 
+
+
+/***************************************************************************//**
+ * This is a callback function that is invoked each time a GPIO interrupt
+ * in one of the pushbutton inputs occurs. Pin number is passed as parameter.
+ *
+ * @param[in] pin  Pin number where interrupt occurs
+ *
+ * @note This function is called from ISR context and therefore it is
+ *       not possible to call any BGAPI functions directly. The button state
+ *       change is signaled to the application using gecko_external_signal()
+ *       that will generate an event gecko_evt_system_external_signal_id
+ *       which is then handled in the main loop.
+ ******************************************************************************/
+void gpioint(uint8_t pin);
+
+/***************************************************************************//**
+ * Enable button interrupts for PB0. Both GPIOs are configured to trigger
+ * an interrupt on the rising edge (button released).
+ ******************************************************************************/
+void enable_button_interrupts(void);
+
 #define	LED0_port gpioPortF
 #define LED0_pin 4
 #define LED1_port gpioPortF
@@ -60,6 +83,8 @@ void gpioSetDisplayExtcomin(bool state);
 #define LCD_ENABLE 15
 #define PB0_Port gpioPortF
 #define PB0_Pin 6
+#define PB1_Port gpioPortF
+#define PB1_Pin 7
 
 #define GPIO_SET_DISPLAY_EXT_COMIN_IMPLEMENTED 	1
 #define GPIO_DISPLAY_SUPPORT_IMPLEMENTED		1

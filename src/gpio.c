@@ -21,8 +21,8 @@ void gpioInit()
 {
 	/*	PB0 Button initialization */
 	GPIO_PinModeSet(PB0_Port, PB0_Pin, gpioModeInputPull, true);
-	GPIO_IntConfig(PB0_Port, PB0_Pin, true, true, true);
-	NVIC_EnableIRQ(GPIO_EVEN_IRQn);
+	/*	PB0 Button initialization */
+	GPIO_PinModeSet(PB1_Port, PB1_Pin, gpioModeInputPull, true);
 }
 
 
@@ -46,6 +46,7 @@ void gpioLed1SetOff()
 /*	@brief : Function to toggle LED based on flag set in interrupt (Assignment 2)	*/
 void toggleLed(void)
 {
+	static uint8_t irq_flg = 0;
 	  if (irq_flg == 0)
 	  {
 		  gpioLed0SetOn();
@@ -71,10 +72,37 @@ void gpioSetDisplayExtcomin(bool state)
 		GPIO_PinOutClear(LCD_Port,LCD_EXTCOMIN);
 }
 
-void GPIO_EVEN_IRQHandler()
+/***************************************************************************//**
+ * This is a callback function that is invoked each time a GPIO interrupt
+ * in one of the pushbutton inputs occurs. Pin number is passed as parameter.
+ *
+ * @param[in] pin  Pin number where interrupt occurs
+ *
+ * @note This function is called from ISR context and therefore it is
+ *       not possible to call any BGAPI functions directly. The button state
+ *       change is signaled to the application using gecko_external_signal()
+ *       that will generate an event gecko_evt_system_external_signal_id
+ *       which is then handled in the main loop.
+ ******************************************************************************/
+void gpioint(uint8_t pin)
 {
-	uint32_t flag = GPIO_IntGet();
-	GPIO_IntClear(flag);
-	if(flag & 0x40)
-		gecko_external_signal(button_press);
+  if (pin == PB0_Pin)
+  {
+    gecko_external_signal(0x40);
+  }
+}
+
+/***************************************************************************//**
+ * Enable button interrupts for PB0. Both GPIOs are configured to trigger
+ * an interrupt on the rising edge (button released).
+ ******************************************************************************/
+void enable_button_interrupts(void)
+{
+  GPIOINT_Init();
+
+  /* configure interrupt for PB0 and PB1, both falling and rising edges */
+  GPIO_ExtIntConfig(PB0_Port, PB0_Pin, PB0_Pin, true, true, true);
+
+  /* register the callback function that is invoked when interrupt occurs */
+  GPIOINT_CallbackRegister(PB0_Pin, gpioint);
 }
