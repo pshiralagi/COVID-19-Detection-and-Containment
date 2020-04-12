@@ -13,6 +13,9 @@
  * software is distributed to you in Source Code format and is governed by the
  * sections of the MSLA applicable to Source Code.
  *
+ * Modified by Pavan Shiralagi
+ *
+ *
  ******************************************************************************/
 
 /* C Standard Library headers */
@@ -60,7 +63,7 @@ static uint8_t num_connections = 0;
 static uint8_t conn_handle = 0xFF;
 /// Flag for indicating that initialization was performed
 static uint8_t init_done = 0;
-
+struct gecko_msg_mesh_generic_server_client_request_evt_t *req = NULL;
 /***************************************************************************//**
  * This function is called to initiate factory reset. Factory reset may be
  * initiated by keeping one of the WSTK pushbuttons pressed during reboot.
@@ -129,18 +132,9 @@ void gecko_bgapi_classes_init_server_friend(void)
   gecko_bgapi_class_test_init();
   //gecko_bgapi_class_sm_init();
   gecko_bgapi_class_mesh_node_init();
-  //gecko_bgapi_class_mesh_prov_init();
   gecko_bgapi_class_mesh_proxy_init();
   gecko_bgapi_class_mesh_proxy_server_init();
-  //gecko_bgapi_class_mesh_proxy_client_init();
-  //gecko_bgapi_class_mesh_generic_client_init();
   gecko_bgapi_class_mesh_generic_server_init();
-  //gecko_bgapi_class_mesh_vendor_model_init();
-  //gecko_bgapi_class_mesh_health_client_init();
-  //gecko_bgapi_class_mesh_health_server_init();
-  //gecko_bgapi_class_mesh_test_init();
-  //gecko_bgapi_class_mesh_lpn_init();
-  gecko_bgapi_class_mesh_friend_init();
 }
 
 
@@ -211,7 +205,6 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	     {
 	        initiate_factory_reset();
 	      } else {
-	    	  LOG_INFO("Hiii");
 	        struct gecko_msg_system_get_bt_address_rsp_t *pAddr = gecko_cmd_system_get_bt_address();
 
 	        set_device_name(&pAddr->address);
@@ -265,6 +258,8 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	        LOG_INFO("node is provisioned. address:%x, ivi:%ld", pData->address, pData->ivi);
 
 	        _my_address = pData->address;
+	        /* Initialize mesh lib */
+	        mesh_lib_init(malloc, free, 11);
 	        displayPrintf(DISPLAY_ROW_ACTION, "Provisioned");
 	      } else {
 	        LOG_INFO("node is unprovisioned");
@@ -307,25 +302,23 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 
 	    case gecko_evt_mesh_generic_server_client_request_id:
 	      LOG_INFO("evt gecko_evt_mesh_generic_server_client_request_id");
+	        req = &(evt->data.evt_mesh_generic_server_client_request);
+	        printf("******************* Button Press - %d", req->parameters.data[0]);
+	        if (req->parameters.data[0] == 0)
+	      	  displayPrintf(DISPLAY_ROW_TEMPVALUE, "Button Released");
+	        else
+	  		  displayPrintf(DISPLAY_ROW_TEMPVALUE, "Button Pressed");
 	      // pass the server client request event to mesh lib handler that will invoke
 	      // the callback functions registered by application
 	      mesh_lib_generic_server_event_handler(evt);
 	      break;
 
 	    case gecko_evt_mesh_generic_server_state_changed_id:
-
-	      // uncomment following line to get debug prints for each server state changed event
-	      //server_state_changed(&(evt->data.evt_mesh_generic_server_state_changed));
-
-	      // pass the server state changed event to mesh lib handler that will invoke
-	      // the callback functions registered by application
 	      mesh_lib_generic_server_event_handler(evt);
 	      break;
 
 	    case gecko_evt_mesh_generic_server_state_recall_id:
 	      LOG_INFO("evt gecko_evt_mesh_generic_server_state_recall_id");
-	      // pass the server state recall event to mesh lib handler that will invoke
-	      // the callback functions registered by application
 	      mesh_lib_generic_server_event_handler(evt);
 	      break;
 

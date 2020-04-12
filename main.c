@@ -14,6 +14,9 @@
  * software is distributed to you in Source Code format and is governed by the
  * sections of the MSLA applicable to Source Code.
  *
+ *
+ *Modified by Pavan Shiralagi
+ *
  ******************************************************************************/
 
 #include "src/main.h"
@@ -151,7 +154,6 @@ int main(void)
 
   // Initialize coexistence interface. Parameters are taken from HAL config.
   gecko_initCoexHAL();
-  LOG_ERROR("PLS SAARU");
   while (1) {
     struct gecko_cmd_packet *evt = gecko_wait_event();
     bool pass = mesh_bgapi_listener(evt);

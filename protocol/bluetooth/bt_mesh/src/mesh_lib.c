@@ -201,7 +201,6 @@ void mesh_lib_generic_server_event_handler(struct gecko_cmd_packet *evt)
                                           req->transition,
                                           req->delay,
                                           req->flags);
-          printf("\n\r----------------------Elemnt index - %d, transition -  %d-------------",req->elem_index,req->parameters.data[0]);
         }
       }
       break;
