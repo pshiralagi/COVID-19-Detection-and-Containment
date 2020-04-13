@@ -95,8 +95,7 @@ static void initiate_factory_reset(void)
 
 /***************************************************************************//**
  * Set device name in the GATT database. A unique name is generated using
- * the two last bytes from the Bluetooth address of this device. Name is also
- * displayed on the LCD.
+ * the two last bytes from the Bluetooth address of this device.
  *
  * @param[in] pAddr  Pointer to Bluetooth address.
  ******************************************************************************/
