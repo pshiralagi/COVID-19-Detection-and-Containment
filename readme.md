@@ -7,6 +7,7 @@
 
 This repository contains the Friend Node implementation for our final project.
 Repository with LPN code - [LPN](https://github.com/CU-ECEN-5823/final-project-assignment-Gitanjali-Suresh "LPN")
+
 Repository with Proxy code - [Proxy](https://github.com/CU-ECEN-5823/final-project-assignment-sarayumanagoli "LPN")
 
 Our teams Google Drive repository can be found here - [COVID19Detection](https://drive.google.com/drive/folders/1ZPNZiMcrfCPBDFvCzMxLzUf7_b3DdGpf?usp=sharing "COVID19Detection")
