@@ -11,7 +11,7 @@ Repository with LPN code - [LPN](https://github.com/CU-ECEN-5823/final-project-a
 
 Repository with Proxy code - [Proxy](https://github.com/CU-ECEN-5823/final-project-assignment-sarayumanagoli "LPN")
 
-Our teams Google Drive repository can be found here - [COVID19Detection](https://drive.google.com/drive/folders/1ZPNZiMcrfCPBDFvCzMxLzUf7_b3DdGpf?usp=sharing "COVID19Detection")
+Our teams Google Drive folder can be found here - [COVID19Detection](https://drive.google.com/drive/folders/1ZPNZiMcrfCPBDFvCzMxLzUf7_b3DdGpf?usp=sharing "COVID19Detection")
 
 Pavan Shiralagi's individual report can be found here - [Pavan Shiralagi](https://drive.google.com/drive/u/1/folders/1rVscWxk9fUWKUg6-Ww8QdJyeg4_S-5me "PavanShiralagi")
 
