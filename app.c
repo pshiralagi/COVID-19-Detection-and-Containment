@@ -146,7 +146,7 @@ static void set_device_name(bd_addr *pAddr)
 /*******************************************************************************
  * Initialise used bgapi classes.
  ******************************************************************************/
-void gecko_bgapi_classes_init_server_friend(void)
+void gecko_bgapi_classes_init(void)
 {
   gecko_bgapi_class_dfu_init();
   gecko_bgapi_class_system_init();
@@ -159,10 +159,24 @@ void gecko_bgapi_classes_init_server_friend(void)
   gecko_bgapi_class_test_init();
   //gecko_bgapi_class_sm_init();
   gecko_bgapi_class_mesh_node_init();
+  //gecko_bgapi_class_mesh_prov_init();
   gecko_bgapi_class_mesh_proxy_init();
   gecko_bgapi_class_mesh_proxy_server_init();
+  //gecko_bgapi_class_mesh_proxy_client_init();
+  //gecko_bgapi_class_mesh_generic_client_init();
   gecko_bgapi_class_mesh_generic_server_init();
+  //gecko_bgapi_class_mesh_vendor_model_init();
+  //gecko_bgapi_class_mesh_health_client_init();
+  //gecko_bgapi_class_mesh_health_server_init();
+  //gecko_bgapi_class_mesh_test_init();
+  //gecko_bgapi_class_mesh_lpn_init();
+  gecko_bgapi_class_mesh_friend_init();
+  gecko_bgapi_class_mesh_lc_server_init();
+  gecko_bgapi_class_mesh_lc_setup_server_init();
+  gecko_bgapi_class_mesh_scene_server_init();
+  gecko_bgapi_class_mesh_scene_setup_server_init();
 }
+
 
 
 
@@ -268,6 +282,10 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	        _my_address = pData->address;
 	        /* Initialize mesh lib */
 	        mesh_lib_init(malloc, free, 11);
+	        result = gecko_cmd_mesh_friend_init()->result;
+	        if (result) {
+	          printf("*********************Friend init failed 0x%x\r\n", result);
+	        }
 	        displayPrintf(DISPLAY_ROW_ACTION, "Provisioned");
 	      } else {
 	        LOG_INFO("node is unprovisioned");
@@ -287,6 +305,11 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 
 	    case gecko_evt_mesh_node_provisioned_id:
 	      LOG_INFO("node provisioned, got address=%x", evt->data.evt_mesh_node_provisioned.address);
+	      mesh_lib_init(malloc, free, 11);
+	      result = gecko_cmd_mesh_friend_init()->result;
+	      if (result) {
+	        printf("*******************Friend init failed 0x%x\r\n", result);
+	      }
 	      // stop LED blinking when provisioning complete
 	      BTSTACK_CHECK_RESPONSE(gecko_cmd_hardware_set_soft_timer(0, TIMER_ID_PROVISIONING, 0));
 	      displayPrintf(DISPLAY_ROW_ACTION, "Provisioned");
@@ -330,9 +353,38 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      mesh_lib_generic_server_event_handler(evt);
 	      break;
 
+	    case gecko_evt_mesh_lc_server_mode_updated_id:
+	    case gecko_evt_mesh_lc_server_om_updated_id:
+	    case gecko_evt_mesh_lc_server_light_onoff_updated_id:
+	    case gecko_evt_mesh_lc_server_occupancy_updated_id:
+	    case gecko_evt_mesh_lc_server_ambient_lux_level_updated_id:
+	    case gecko_evt_mesh_lc_server_linear_output_updated_id:
+	    case gecko_evt_mesh_lc_setup_server_set_property_id:
+	      break;
+
+	    case gecko_evt_mesh_scene_server_get_id:
+	    case gecko_evt_mesh_scene_server_register_get_id:
+	    case gecko_evt_mesh_scene_server_recall_id:
+	    case gecko_evt_mesh_scene_server_publish_id:
+	    case gecko_evt_mesh_scene_setup_server_store_id:
+	    case gecko_evt_mesh_scene_setup_server_delete_id:
+	    case gecko_evt_mesh_scene_setup_server_publish_id:
+	      break;
+
+
 	    case gecko_evt_mesh_node_reset_id:
 	      LOG_INFO("evt gecko_evt_mesh_node_reset_id");
 	      initiate_factory_reset();
+	      break;
+
+	    case gecko_evt_mesh_friend_friendship_established_id:
+	      printf("evt gecko_evt_mesh_friend_friendship_established, lpn_address=%x\r\n", evt->data.evt_mesh_friend_friendship_established.lpn_address);
+	      displayPrintf(DISPLAY_ROW_BTADDR2, "FRIEND");
+	      break;
+
+	    case gecko_evt_mesh_friend_friendship_terminated_id:
+	      printf("evt gecko_evt_mesh_friend_friendship_terminated, reason=%x\r\n", evt->data.evt_mesh_friend_friendship_terminated.reason);
+	      displayPrintf(DISPLAY_ROW_BTADDR2,"No LPN");
 	      break;
 
 	    case gecko_evt_le_gap_adv_timeout_id:

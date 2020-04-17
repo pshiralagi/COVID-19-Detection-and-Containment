@@ -149,7 +149,7 @@ int main(void)
 	  gecko_bgapi_classes_init_client_lpn();
   }
   else {
-	  gecko_bgapi_classes_init_server_friend();
+	  gecko_bgapi_classes_init();
   }
 
   // Initialize coexistence interface. Parameters are taken from HAL config.
