@@ -61,12 +61,12 @@ static uint16_t _my_address = 0;
 static uint8_t num_connections = 0;
 /// Handle of the last opened LE connection
 static uint8_t conn_handle = 0xFF;
-#if DEVICE_USES_BLE_MESH_CLIENT_MODEL
+
 /// on/off transaction identifier
 static uint8_t trid = 0;
 /// For indexing elements of the node (this example has only one element)
 static uint16_t _elem_index = 0xffff;
-#endif
+
 /// Flag for indicating that initialization was performed
 static uint8_t init_done = 0;
 struct gecko_msg_mesh_generic_server_client_request_evt_t *req = NULL;
@@ -185,22 +185,30 @@ void gecko_bgapi_classes_init(void)
  ******************************************************************************/
 void gecko_bgapi_classes_init_client_lpn(void)
 {
-	gecko_bgapi_class_dfu_init();
-	gecko_bgapi_class_system_init();
-	gecko_bgapi_class_le_gap_init();
-	gecko_bgapi_class_le_connection_init();
-	//gecko_bgapi_class_gatt_init();
-	gecko_bgapi_class_gatt_server_init();
-	gecko_bgapi_class_hardware_init();
-	gecko_bgapi_class_flash_init();
-	gecko_bgapi_class_test_init();
-	//gecko_bgapi_class_sm_init();
-	gecko_bgapi_class_mesh_node_init();
-	//gecko_bgapi_class_mesh_prov_init();
-	gecko_bgapi_class_mesh_proxy_init();
-	gecko_bgapi_class_mesh_proxy_server_init();
-	//gecko_bgapi_class_mesh_proxy_client_init();
-	gecko_bgapi_class_mesh_generic_client_init();
+	  gecko_bgapi_class_dfu_init();
+	  gecko_bgapi_class_system_init();
+	  gecko_bgapi_class_le_gap_init();
+	  gecko_bgapi_class_le_connection_init();
+	  //gecko_bgapi_class_gatt_init();
+	  gecko_bgapi_class_gatt_server_init();
+	  gecko_bgapi_class_hardware_init();
+	  gecko_bgapi_class_flash_init();
+	  gecko_bgapi_class_test_init();
+	  //gecko_bgapi_class_sm_init();
+	  gecko_bgapi_class_mesh_node_init();
+	  //gecko_bgapi_class_mesh_prov_init();
+	  gecko_bgapi_class_mesh_proxy_init();
+	  gecko_bgapi_class_mesh_proxy_server_init();
+	  //gecko_bgapi_class_mesh_proxy_client_init();
+	  gecko_bgapi_class_mesh_generic_client_init();
+	  //gecko_bgapi_class_mesh_generic_server_init();
+	  //gecko_bgapi_class_mesh_vendor_model_init();
+	  //gecko_bgapi_class_mesh_health_client_init();
+	  //gecko_bgapi_class_mesh_health_server_init();
+	  //gecko_bgapi_class_mesh_test_init();
+//	  gecko_bgapi_class_mesh_lpn_init();
+	  gecko_bgapi_class_mesh_friend_init();
+//	  gecko_bgapi_class_mesh_scene_client_init();
 }
 
 /*******************************************************************************
@@ -280,6 +288,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	        LOG_INFO("node is provisioned. address:%x, ivi:%ld", pData->address, pData->ivi);
 
 	        _my_address = pData->address;
+	        enable_button_interrupts();
 	        /* Initialize mesh lib */
 	        mesh_lib_init(malloc, free, 11);
 	        result = gecko_cmd_mesh_friend_init()->result;
@@ -305,6 +314,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 
 	    case gecko_evt_mesh_node_provisioned_id:
 	      LOG_INFO("node provisioned, got address=%x", evt->data.evt_mesh_node_provisioned.address);
+	      enable_button_interrupts();
 	      mesh_lib_init(malloc, free, 11);
 	      result = gecko_cmd_mesh_friend_init()->result;
 	      if (result) {
@@ -343,7 +353,41 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      // the callback functions registered by application
 	      mesh_lib_generic_server_event_handler(evt);
 	      break;
+	      case gecko_evt_system_external_signal_id:
+	          {
+	        	  struct mesh_generic_state req;
+	        	  if (evt->data.evt_system_external_signal.extsignals & 0x40)
+	            {
+	        		  req.kind = mesh_generic_state_on_off;
+	        		  if(GPIO_PinInGet(PB0_Port, PB0_Pin) == 0)
+	        		  {
+	        			  req.on_off.on = MESH_GENERIC_ON_OFF_STATE_ON;
+	        			  displayPrintf(DISPLAY_ROW_TEMPVALUE,"Button Pressed");
+	        		  }
+	        		  else
+	        		  {
+	        			  req.on_off.on = MESH_GENERIC_ON_OFF_STATE_OFF;
+	        			  displayPrintf(DISPLAY_ROW_TEMPVALUE,"Button Released");
+	        		  }
+	        		  mesh_lib_generic_server_update(MESH_GENERIC_ON_OFF_SERVER_MODEL_ID,
+	        		  								   	   	   0,
+	        		  										   NULL,
+	        		  										   &req,
+	        		  										   0);
+	        		  uint16_t resp = mesh_lib_generic_server_publish(MESH_GENERIC_ON_OFF_SERVER_MODEL_ID, 0, mesh_generic_state_on_off);
+	        		  LOG_INFO("\n\r**************parameter data = %d**********************\n\r", req.on_off.on);
 
+	            	  if (resp)
+	            	  {
+	            		  LOG_INFO("gecko_cmd_mesh_generic_client_publish failed, code 0x%x\r\n", resp);
+	            	  }
+	            	  else
+	            	  {
+	            		  LOG_INFO("on/off request sent, trid = %u", trid);
+	            	  }
+	            }
+	          }
+	        break;
 	    case gecko_evt_mesh_generic_server_state_changed_id:
 	      mesh_lib_generic_server_event_handler(evt);
 	      break;
@@ -351,24 +395,6 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	    case gecko_evt_mesh_generic_server_state_recall_id:
 	      LOG_INFO("evt gecko_evt_mesh_generic_server_state_recall_id");
 	      mesh_lib_generic_server_event_handler(evt);
-	      break;
-
-	    case gecko_evt_mesh_lc_server_mode_updated_id:
-	    case gecko_evt_mesh_lc_server_om_updated_id:
-	    case gecko_evt_mesh_lc_server_light_onoff_updated_id:
-	    case gecko_evt_mesh_lc_server_occupancy_updated_id:
-	    case gecko_evt_mesh_lc_server_ambient_lux_level_updated_id:
-	    case gecko_evt_mesh_lc_server_linear_output_updated_id:
-	    case gecko_evt_mesh_lc_setup_server_set_property_id:
-	      break;
-
-	    case gecko_evt_mesh_scene_server_get_id:
-	    case gecko_evt_mesh_scene_server_register_get_id:
-	    case gecko_evt_mesh_scene_server_recall_id:
-	    case gecko_evt_mesh_scene_server_publish_id:
-	    case gecko_evt_mesh_scene_setup_server_store_id:
-	    case gecko_evt_mesh_scene_setup_server_delete_id:
-	    case gecko_evt_mesh_scene_setup_server_publish_id:
 	      break;
 
 
@@ -493,12 +519,6 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	          LOG_INFO("mesh_generic_client_init failed, code 0x%x\r\n", result);
 	        }
 
-	        // Initialize scene client model
-	        result = gecko_cmd_mesh_scene_client_init(0)->result;
-	        if (result)
-	        {
-	        	LOG_INFO("mesh_scene_client_init failed, code 0x%x\r\n", result);
-	        }
 
 	        struct gecko_msg_mesh_node_initialized_evt_t *pData = (struct gecko_msg_mesh_node_initialized_evt_t *)&(evt->data);
 
@@ -511,6 +531,10 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 
 	          enable_button_interrupts();
 
+		        result = gecko_cmd_mesh_friend_init()->result;
+		        if (result) {
+		          printf("*********************Friend init failed 0x%x\r\n", result);
+		        }
 	          mesh_lib_init(malloc, free, 8);
 
 	          displayPrintf(DISPLAY_ROW_ACTION,"Provisioned");
@@ -540,7 +564,6 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	        			  req.on_off = MESH_GENERIC_ON_OFF_STATE_OFF;
 	        			  displayPrintf(DISPLAY_ROW_TEMPVALUE,"Button Released");
 	        		  }
-
 	        		  trid++;
 	        		  uint16_t resp = mesh_lib_generic_client_publish(MESH_GENERIC_ON_OFF_CLIENT_MODEL_ID,
 	            	                                                  _elem_index,
@@ -573,6 +596,10 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	        _elem_index = 0;   // index of primary element is zero. This example has only one element.
 	        displayPrintf(DISPLAY_ROW_ACTION,"Provisioned");
 	        enable_button_interrupts();
+	        result = gecko_cmd_mesh_friend_init()->result;
+	        if (result) {
+	          printf("*********************Friend init failed 0x%x\r\n", result);
+	        }
 	        break;
 
 	      case gecko_evt_mesh_node_provisioning_failed_id:
@@ -581,6 +608,17 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	        /* start a one-shot timer that will trigger soft reset after small delay */
 	        BTSTACK_CHECK_RESPONSE(gecko_cmd_hardware_set_soft_timer(2 * 32768, TIMER_ID_RESTART, 1));
 	        break;
+
+		    case gecko_evt_mesh_friend_friendship_established_id:
+		      printf("evt gecko_evt_mesh_friend_friendship_established, lpn_address=%x\r\n", evt->data.evt_mesh_friend_friendship_established.lpn_address);
+		      displayPrintf(DISPLAY_ROW_BTADDR2, "FRIEND");
+		      break;
+
+		    case gecko_evt_mesh_friend_friendship_terminated_id:
+		      printf("evt gecko_evt_mesh_friend_friendship_terminated, reason=%x\r\n", evt->data.evt_mesh_friend_friendship_terminated.reason);
+		      displayPrintf(DISPLAY_ROW_BTADDR2,"No LPN");
+		      break;
+
 
 	      case gecko_evt_le_connection_opened_id:
 	    	LOG_INFO("evt:gecko_evt_le_connection_opened_id\r\n");
