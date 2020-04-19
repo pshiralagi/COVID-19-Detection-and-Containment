@@ -18,11 +18,11 @@ void energyConfig(void)
 
 	SLEEP_InitEx(&init_values);
 	SLEEP_SleepBlockBegin(energy_mode_i2c+1);
-	if ((energy_mode < 3) && (energy_mode > 0))	//If energy mode to be entered is EM1 or EM2
-	{
-		SLEEP_SleepBlockBegin((energy_mode+1));	//Blocked from entering deeper sleep modes
-
-	}
+//	if ((energy_mode < 3) && (energy_mode > 0))	//If energy mode to be entered is EM1 or EM2
+//	{
+//		SLEEP_SleepBlockBegin((energy_mode+1));	//Blocked from entering deeper sleep modes
+//
+//	}
 
 
 }

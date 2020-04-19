@@ -19,6 +19,14 @@
 
 void gpioInit()
 {
+	/*	I2C enables	*/
+	GPIO_DriveStrengthSet(SCL_port, gpioDriveStrengthWeakAlternateWeak);
+	GPIO_PinModeSet(SCL_port, SCL_pin, gpioModePushPull, false);
+	GPIO_DriveStrengthSet(SDA_port, gpioDriveStrengthWeakAlternateWeak);
+	GPIO_PinModeSet(SDA_port, SDA_pin, gpioModePushPull, false);
+	GPIO_DriveStrengthSet(enable_port, gpioDriveStrengthWeakAlternateWeak);
+	GPIO_PinModeSet(enable_port, enable_pin, gpioModePushPull, false);
+	GPIO_PinOutSet(enable_port,enable_pin);
 	/*	PB0 Button initialization */
 	GPIO_PinModeSet(PB0_Port, PB0_Pin, gpioModeInputPull, true);
 	/*	PB0 Button initialization */

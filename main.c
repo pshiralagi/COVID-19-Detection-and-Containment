@@ -47,7 +47,7 @@
 #include "bspconfig.h"
 #endif
 
-
+eState eNextState;
 /***********************************************************************************************//**
  * @addtogroup Application
  * @{
@@ -59,6 +59,7 @@
  **************************************************************************************************/
 
 bool mesh_bgapi_listener(struct gecko_cmd_packet *evt);
+eState eNextState;
 
 /// Maximum number of simultaneous Bluetooth connections
 #define MAX_CONNECTIONS 2
@@ -133,10 +134,13 @@ int main(void)
   logInit();
   /*	Initialize required gpios	*/
   gpioInit();
-  displayInit();
+
   /*	Initialize clocks	*/
   cmuInit();
-  letimerInit();
+  letimer_Init();
+  I2C_Initialize();
+  eNextState = POWER_OFF;
+  displayInit();
 
   // Minimize advertisement latency by allowing the advertiser to always
   // interrupt the scanner.

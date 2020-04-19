@@ -87,7 +87,12 @@ src/energy.o: ../src/energy.c ../src/energy.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\middleware\glib/dmd/dmd.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\middleware\glib/em_types.h \
  ../src/ble_mesh_device_type.h \
- C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/app.h
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/app.h \
+ ../src/i2c.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\drivers/i2cspm.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\halconfig/i2cspmhalconfig.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emlib\inc/em_i2c.h \
+ ../src/temperature.h
 
 ../src/energy.h:
 
@@ -272,3 +277,13 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\
 ../src/ble_mesh_device_type.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/app.h:
+
+../src/i2c.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\drivers/i2cspm.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\halconfig/i2cspmhalconfig.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emlib\inc/em_i2c.h:
+
+../src/temperature.h:

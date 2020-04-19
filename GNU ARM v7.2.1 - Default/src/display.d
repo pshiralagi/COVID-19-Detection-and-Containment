@@ -88,6 +88,11 @@ src/display.o: ../src/display.c \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc\common/bg_gattdb_def.h \
  ../src/gecko_ble_errors.h ../src/display.h ../src/ble_mesh_device_type.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/app.h \
+ ../src/i2c.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\drivers/i2cspm.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\halconfig/i2cspmhalconfig.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emlib\inc/em_i2c.h \
+ ../src/temperature.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emdrv\gpiointerrupt\inc/gpiointerrupt.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/hardware/kit/common/drivers/display.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/hardware/kit/common/drivers/emstatus.h \
@@ -280,6 +285,16 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\
 ../src/ble_mesh_device_type.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/app.h:
+
+../src/i2c.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\drivers/i2cspm.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\halconfig/i2cspmhalconfig.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emlib\inc/em_i2c.h:
+
+../src/temperature.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emdrv\gpiointerrupt\inc/gpiointerrupt.h:
 

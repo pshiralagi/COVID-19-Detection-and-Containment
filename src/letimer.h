@@ -1,44 +1,30 @@
 /*
- * @filename : letimer.h
+ * letimer.h
  *
- *  @date : Jan 29, 2020
- *  @description : File containing clock initialization function
- *
- *    	@author : pshiralagi
- *    	@reference : https://siliconlabs.github.io/Gecko_SDK_Doc/efr32bg13/html/index.html
+ *  Created on: Jan 29, 2020
+ *      Author: Gitanjali Suresh
  */
-#ifndef letimer_h
-#define letimer_h
-#include <em_letimer.h>
-#include "main.h"
-#include <em_core.h>
 
+#ifndef SRC_LETIMER_H_
+#define SRC_LETIMER_H_
+
+/******** Board Includes *******/
+#include <em_letimer.h>
+#include <em_cmu.h>
+#include <stdint.h>
+#include "main.h"
+#include <native_gecko.h>
+
+
+#define On_Time 3000
 #define TIMER_SUPPORTS_1HZ_TIMER_EVENT	1
 
+extern bool flag;
+/********* Function Prototypes *******/
+void letimer_Init(void);							/* Function to initialize LETIMER0 */
+void compute_CompVal(void);							/* Function to compute the COMP0 register values for ON and OFF times */
+void timerWaitUs(uint32_t wait_us);					/* Function to wait for a given microseconds */
+uint32_t timerGetRunTimeMilliseconds(void);			/* Function to get the run time in milliseconds */
+//void timerSetEventInMs(uint32_t ms_until_wakeup);	/* Function to wait for a given millisecond */
 
-/*	Defines		*/
-#define primary_period (3000)		//Primary interrupt interval in milliseconds
-#define on_time (3000)		//Secondary/alternate interrupt if required in milliseconds
-
-/*	Functions	*/
-
-/*
- * @brief : Initialization routine for letimer0
- */
-void letimerInit(void);
-
-/*	@brief : Blocking function to wait us_wait us of time
- *  @param : us_wait in us
- */
-void timerWaitUs(uint32_t us_wait);	//Blocking wait function, input in us
-
-/*	@brief : Function to generate an interrupt after the given ms_wait time in milliseconds
- *	@param : ms_wait is the time to interrupt at in milliseconds
- *	 */
-void ms_sleep(uint32_t ms_wait);	//Function to generate timer interrupt at parameter value of time in milliseconds
-
-/*	Variables	*/
-uint16_t calc_primary_period, calc_secondary_period;
-extern uint16_t overflow_count;
-
-#endif
+#endif /* SRC_LETIMER_H_ */

@@ -22,6 +22,8 @@
 extern "C" {
 #endif
 
+
+
 /***********************************************************************************************//**
  * \defgroup app Application Code
  * \brief Sample Application Implementation
@@ -51,6 +53,7 @@ void gecko_bgapi_classes_init_client_lpn(void);
  * @param[in] evt     Pointer to incoming event.
  ******************************************************************************/
 void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt);
+
 
 /** @} (end addtogroup app) */
 /** @} (end addtogroup Application) */

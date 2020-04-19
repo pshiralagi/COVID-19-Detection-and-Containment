@@ -10,10 +10,7 @@
 #ifndef main_h
 #define main_h
 
-enum states {
-	button_press,
-	num_states
-};//External states
+
 
 #include "gecko_configuration.h"
 #include "gpio.h"
@@ -30,7 +27,10 @@ enum states {
 #include "display.h"
 #include "ble_mesh_device_type.h"
 #include "app.h"
-
+#include "lpm.h"
+#include "state_machine.h"
+#include "i2c.h"
+#include "non_blocking_wait.h"
 
 
 #endif

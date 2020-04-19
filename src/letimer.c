@@ -1,99 +1,112 @@
 /*
- * @filename : letimer.c
+ * letimer.c
  *
- *  @date : Jan 29, 2020
- *  @description : File containing letimer initialization function
- *
- *    	@author : pshiralagi
- *    	@reference : https://siliconlabs.github.io/Gecko_SDK_Doc/efr32bg13/html/index.html
+ *  Created on: Jan 29, 2020
+ *      Author: Gitanjali Suresh
+ *   Reference: https://siliconlabs.github.io/Gecko_SDK_Doc/efr32bg13/html/group__LETIMER.html
  */
 
 #include "letimer.h"
+extern bool interrupt_flag;
+/* Global variable declarations */
+uint16_t On_val;
+uint32_t overflow_count = 0;
 
-/*
- * @brief : Initialization routine for letimer0
- */
-uint16_t overflow_count;
-void letimerInit(void)
+/* Function to initialize LETIMER0 */
+void letimer_Init(void)
 {
-	LETIMER_Init_TypeDef letimer_default =  {false, false, true, false, 0, 0, letimerUFOANone, letimerUFOANone, letimerRepeatFree, 0} ;	//Instance of default values
-	LETIMER_Init(LETIMER0, &letimer_default);		//Initialization of letimer0 with default values
-	//calc_led_period = ((CMU_ClockFreqGet(cmuClock_LETIMER0))*(led_period - led_on_time))/1000;//calculating ledperiod
-	calc_primary_period = ((CMU_ClockFreqGet(cmuClock_LETIMER0))*(primary_period))/1000;//calculating ledontime
-	LETIMER_CompareSet(LETIMER0, 0, (calc_primary_period));		//Comparator 0, value to be loaded set
-	LETIMER_CompareSet(LETIMER0, 1, 0xFFFF);
-	LETIMER_IntEnable(LETIMER0, LETIMER_IEN_UF);					//Enable interrupts
-	LETIMER_IntDisable(LETIMER0, LETIMER_IEN_COMP0);
+	LETIMER_Init_TypeDef Init;
+
+	Init.bufTop = false;
+	Init.comp0Top = true;
+	Init.debugRun = false;
+	Init.enable = false;
+	Init.out0Pol = 0;
+	Init.out1Pol = 0;
+	Init.repMode = letimerRepeatFree;
+	Init.ufoa0 = letimerUFOANone;
+	Init.ufoa1 = letimerUFOANone;
+	Init.topValue = 0;
+
+	LETIMER_Init(LETIMER0,&Init);
+	compute_CompVal();
+	LETIMER_CompareSet(LETIMER0,0,On_val);
+	//	LETIMER_CompareSet(LETIMER0,1,0xFFFF);
+	LETIMER_IntEnable(LETIMER0,LETIMER_IEN_UF);
 	LETIMER_IntDisable(LETIMER0,LETIMER_IEN_COMP1);
 	NVIC_EnableIRQ(LETIMER0_IRQn);
-	LETIMER_Enable(LETIMER0, true);
-
 }
 
-/*	@brief : Interrupt handler for LETIMER0	*/
+/* Function to compute the COMP0 register values for ON and OFF times */
+void compute_CompVal(void)
+{
+	uint32_t clock_freq;
+	clock_freq = CMU_ClockFreqGet(cmuClock_LETIMER0);
+	On_val = ((On_Time)*clock_freq)/1000;
+}
+
+/* LETIMER0 Interrupt Handler */
 void LETIMER0_IRQHandler(void)
 {
-	/*	Code to set event 1	*/
-	/*Setting event handler flag for assignment 2*/
-	uint32_t flag = LETIMER_IntGetEnabled(LETIMER0);
-	if(flag & LETIMER_IF_UF)
+	CORE_DECLARE_IRQ_STATE;
+	uint32_t interrupt = LETIMER_IntGet(LETIMER0);
+	if(interrupt & LETIMER_IF_COMP1)
 	{
-		CORE_DECLARE_IRQ_STATE;
-		CORE_ENTER_CRITICAL();
+		LETIMER_CompareSet(LETIMER0, 1, 0xFFFF); //Load values to COMP1
+		LETIMER_IntDisable(LETIMER0,LETIMER_IEN_COMP1); //Disable COMP1 interrupt
+
+		if(eNextState == WRITE_START)
+		{
+			gecko_external_signal(0x03);
+		}
+		else if(eNextState == READ_START)
+		{
+			gecko_external_signal(0x05);
+		}
+
+	}
+	if(interrupt & LETIMER_IF_UF)
+	{
 		overflow_count++;
-		CORE_EXIT_CRITICAL();
+		CORE_ENTER_CRITICAL(); //Critical section starts
+		interrupt_flag = true; //Set the event
+		eNextState = POWER_UP; //Select the next state after POWER_OFF
+		gecko_external_signal(0x02);
+		CORE_EXIT_CRITICAL(); //Critical section ends
+		LETIMER_CompareSet(LETIMER0, 0, On_val);
 	}
-	LETIMER_IntClear(LETIMER0, flag);					//clearing the flag
-
+	LETIMER_IntClear(LETIMER0, interrupt); //Clear LETIMER0 interrupt
 }
-/*	@brief : Blocking function to wait us_wait us of time
- *  @param : us_wait in us
- */
-void timerWaitUs(uint32_t us_wait)
+
+/* Function to get the run time in milliseconds */
+uint32_t timerGetRunTimeMilliseconds(void)
 {
-	uint32_t max_cnt, us_cnt, clk_freq, current_cnt;
-	max_cnt = LETIMER_CompareGet(LETIMER0, 0);
-	clk_freq = CMU_ClockFreqGet(cmuClock_LETIMER0);
-	us_cnt = ((us_wait/1000)*clk_freq)/(1000);
-	current_cnt = LETIMER_CounterGet(LETIMER0);
-	if (us_cnt < current_cnt)
-	{
-		while (LETIMER_CounterGet(LETIMER0) != (current_cnt - us_cnt))
-		{
-			;
-		}
-	}
-	else if (us_cnt >= current_cnt)
-	{
-		while (LETIMER_CounterGet(LETIMER0) != (max_cnt - (us_cnt - current_cnt)))
-		{
-			;
-		}
-	}
-
+	volatile uint32_t milli_sec, curr_ticks, tot_ticks;
+	uint32_t clock_freq;
+	curr_ticks = LETIMER_CounterGet(LETIMER0);
+	tot_ticks = LETIMER_CompareGet(LETIMER0,0);
+	clock_freq = CMU_ClockFreqGet(cmuClock_LETIMER0);
+	milli_sec = ((tot_ticks - curr_ticks)*1000)/clock_freq;
+	milli_sec += (overflow_count*tot_ticks);
+	return milli_sec;
 }
 
-/*	@brief : Function to generate an interrupt after the given ms_wait time in milliseconds
- *	@param : ms_wait is the time to interrupt at in milliseconds
- *	 */
-void ms_sleep(uint32_t ms_wait)
-{
-	uint32_t max_cnt, clk_freq, current_cnt, reload_val;
-	max_cnt = LETIMER_CompareGet(LETIMER0, 0);
-	clk_freq = CMU_ClockFreqGet(cmuClock_LETIMER0);
-	current_cnt = LETIMER_CounterGet(LETIMER0);
-	ms_wait = (ms_wait*clk_freq)/(1000);
-	if (ms_wait < current_cnt)
-	{
-		reload_val = (current_cnt - ms_wait);
-
-	}
-	else if (ms_wait >= current_cnt)
-	{
-		reload_val = (max_cnt - (ms_wait - current_cnt));
-	}
-
-	LETIMER_CompareSet(LETIMER0,1,reload_val);
-	LETIMER_IntEnable(LETIMER0, LETIMER_IEN_COMP1);
-
-}
+///* Function to wait for a given millisecond */
+//void timerSetEventInMs(uint32_t ms_until_wakeup)
+//{
+//	uint32_t wait_val, curr_val, tot_val, new_val;
+//	uint32_t clock_freq = CMU_ClockFreqGet(cmuClock_LETIMER0);
+//	wait_val = (ms_until_wakeup * clock_freq)/1000;
+//	curr_val = LETIMER_CounterGet(LETIMER0);
+//	tot_val = LETIMER_CompareGet(LETIMER0,0);
+//	if(curr_val >= wait_val)
+//	{
+//		new_val = curr_val - wait_val;
+//	}
+//	else
+//	{
+//		new_val = tot_val - (wait_val - curr_val);
+//	}
+//	LETIMER_CompareSet(LETIMER0,1,new_val);
+//	LETIMER_IntEnable(LETIMER0,LETIMER_IEN_COMP1);
+//}

@@ -29,6 +29,7 @@
 #include "mesh_generic_model_capi_types.h"
 #include "mesh_lib.h"
 
+
 /* GPIO peripheral library */
 #include <em_gpio.h>
 
@@ -62,10 +63,13 @@ static uint8_t num_connections = 0;
 /// Handle of the last opened LE connection
 static uint8_t conn_handle = 0xFF;
 
+#if DEVICE_USES_BLE_MESH_CLIENT_MODEL
 /// on/off transaction identifier
 static uint8_t trid = 0;
 /// For indexing elements of the node (this example has only one element)
 static uint16_t _elem_index = 0xffff;
+#endif
+
 
 /// Flag for indicating that initialization was performed
 static uint8_t init_done = 0;
@@ -171,10 +175,10 @@ void gecko_bgapi_classes_init(void)
   //gecko_bgapi_class_mesh_test_init();
   //gecko_bgapi_class_mesh_lpn_init();
   gecko_bgapi_class_mesh_friend_init();
-  gecko_bgapi_class_mesh_lc_server_init();
-  gecko_bgapi_class_mesh_lc_setup_server_init();
-  gecko_bgapi_class_mesh_scene_server_init();
-  gecko_bgapi_class_mesh_scene_setup_server_init();
+//  gecko_bgapi_class_mesh_lc_server_init();
+//  gecko_bgapi_class_mesh_lc_setup_server_init();
+//  gecko_bgapi_class_mesh_scene_server_init();
+//  gecko_bgapi_class_mesh_scene_setup_server_init();
 }
 
 
@@ -198,8 +202,8 @@ void gecko_bgapi_classes_init_client_lpn(void)
 	  gecko_bgapi_class_mesh_node_init();
 	  //gecko_bgapi_class_mesh_prov_init();
 	  gecko_bgapi_class_mesh_proxy_init();
-	  gecko_bgapi_class_mesh_proxy_server_init();
-	  //gecko_bgapi_class_mesh_proxy_client_init();
+//	  gecko_bgapi_class_mesh_proxy_server_init();
+	  gecko_bgapi_class_mesh_proxy_client_init();
 	  gecko_bgapi_class_mesh_generic_client_init();
 	  //gecko_bgapi_class_mesh_generic_server_init();
 	  //gecko_bgapi_class_mesh_vendor_model_init();
@@ -224,24 +228,30 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	  uint16_t result;
 	  char buf[30];
 
-	  if (NULL == evt) {
+	  if (NULL == evt)
+	  {
 	    return;
 	  }
 
-	  switch (evt_id) {
+	  switch (evt_id)
+	  {
 	    case gecko_evt_system_boot_id:
 	      // check pushbutton state at startup. If either PB0 or PB1 is held down then do factory reset
 	      if ((GPIO_PinInGet(PB0_Port,PB0_Pin) == 0 ) || (GPIO_PinInGet(PB1_Port,PB1_Pin) == 0 ))
-	     {
+	      {
 	        initiate_factory_reset();
-	      } else {
+	      }
+	      else
+	      {
 	        struct gecko_msg_system_get_bt_address_rsp_t *pAddr = gecko_cmd_system_get_bt_address();
 
 	        set_device_name(&pAddr->address);
 
 	        // Initialize Mesh stack in Node operation mode, it will generate initialized event
 	        result = gecko_cmd_mesh_node_init()->result;
-	        if (result) {
+
+	        if (result)
+	        {
 	          sprintf(buf, "init failed (0x%x)", result);
 	          displayPrintf(DISPLAY_ROW_ACTION, buf);
 	        }
@@ -249,7 +259,8 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      break;
 
 	    case gecko_evt_hardware_soft_timer_id:
-	      switch (evt->data.evt_hardware_soft_timer.handle) {
+	      switch (evt->data.evt_hardware_soft_timer.handle)
+	      {
 	        case TIMER_ID_FACTORY_RESET:
 	          // reset the device to finish factory reset
 	          gecko_cmd_system_reset(0);
@@ -262,7 +273,8 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 
 	        case TIMER_ID_PROVISIONING:
 	          // toggle LED to indicate the provisioning state
-	          if (!init_done) {
+	          if (!init_done)
+	          {
 	            toggleLed();
 	          }
 	          break;
@@ -278,13 +290,15 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 
 	      // Initialize generic server models
 	      result = gecko_cmd_mesh_generic_server_init()->result;
-	      if (result) {
+	      if (result)
+	      {
 	        LOG_INFO("mesh_generic_server_init failed, code 0x%x", result);
 	      }
 
 	      struct gecko_msg_mesh_node_initialized_evt_t *pData = (struct gecko_msg_mesh_node_initialized_evt_t *)&(evt->data);
 
-	      if (pData->provisioned) {
+	      if (pData->provisioned)
+	      {
 	        LOG_INFO("node is provisioned. address:%x, ivi:%ld", pData->address, pData->ivi);
 
 	        _my_address = pData->address;
@@ -292,11 +306,14 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	        /* Initialize mesh lib */
 	        mesh_lib_init(malloc, free, 11);
 	        result = gecko_cmd_mesh_friend_init()->result;
-	        if (result) {
+	        if (result)
+	        {
 	          printf("*********************Friend init failed 0x%x\r\n", result);
 	        }
 	        displayPrintf(DISPLAY_ROW_ACTION, "Provisioned");
-	      } else {
+	      }
+	      else
+	      {
 	        LOG_INFO("node is unprovisioned");
 	        displayPrintf(DISPLAY_ROW_ACTION, "Un-provisioned");
 
@@ -317,7 +334,8 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      enable_button_interrupts();
 	      mesh_lib_init(malloc, free, 11);
 	      result = gecko_cmd_mesh_friend_init()->result;
-	      if (result) {
+	      if (result)
+	      {
 	        printf("*******************Friend init failed 0x%x\r\n", result);
 	      }
 	      // stop LED blinking when provisioning complete
@@ -353,41 +371,56 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      // the callback functions registered by application
 	      mesh_lib_generic_server_event_handler(evt);
 	      break;
-	      case gecko_evt_system_external_signal_id:
-	          {
-	        	  struct mesh_generic_state req;
-	        	  if (evt->data.evt_system_external_signal.extsignals & 0x40)
-	            {
-	        		  req.kind = mesh_generic_state_on_off;
-	        		  if(GPIO_PinInGet(PB0_Port, PB0_Pin) == 0)
-	        		  {
-	        			  req.on_off.on = MESH_GENERIC_ON_OFF_STATE_ON;
-	        			  displayPrintf(DISPLAY_ROW_TEMPVALUE,"Button Pressed");
-	        		  }
-	        		  else
-	        		  {
-	        			  req.on_off.on = MESH_GENERIC_ON_OFF_STATE_OFF;
-	        			  displayPrintf(DISPLAY_ROW_TEMPVALUE,"Button Released");
-	        		  }
-	        		  mesh_lib_generic_server_update(MESH_GENERIC_ON_OFF_SERVER_MODEL_ID,
-	        		  								   	   	   0,
-	        		  										   NULL,
-	        		  										   &req,
-	        		  										   0);
-	        		  uint16_t resp = mesh_lib_generic_server_publish(MESH_GENERIC_ON_OFF_SERVER_MODEL_ID, 0, mesh_generic_state_on_off);
-	        		  LOG_INFO("\n\r**************parameter data = %d**********************\n\r", req.on_off.on);
 
-	            	  if (resp)
-	            	  {
-	            		  LOG_INFO("gecko_cmd_mesh_generic_client_publish failed, code 0x%x\r\n", resp);
-	            	  }
-	            	  else
-	            	  {
-	            		  LOG_INFO("on/off request sent, trid = %u", trid);
-	            	  }
-	            }
-	          }
-	        break;
+	      case gecko_evt_system_external_signal_id:
+	      {
+	    	  	  struct mesh_generic_state req;
+					if ((evt->data.evt_system_external_signal.extsignals) == 0x01)
+					{
+						LOG_INFO("In external signal 0x01");
+						state(); //Calling state machine implementation
+						Temp_Buffer(); //Loading temperature buffer with appropriate values
+					}
+					else if (((evt->data.evt_system_external_signal.extsignals) >= 0x02) && ((evt->data.evt_system_external_signal.extsignals) <= 0x06))
+					{
+						LOG_INFO("In external signal 0x02-0x06");
+						state(); //Calling state machine implementation
+					}
+					if ((evt->data.evt_system_external_signal.extsignals) == 0x40)
+					{
+
+						  req.kind = mesh_generic_state_on_off;
+						  if(GPIO_PinInGet(PB0_Port, PB0_Pin) == 0)
+						  {
+							  req.on_off.on = MESH_GENERIC_ON_OFF_STATE_ON;
+							  displayPrintf(DISPLAY_ROW_TEMPVALUE,"Button Pressed");
+						  }
+						  else
+						  {
+							  req.on_off.on = MESH_GENERIC_ON_OFF_STATE_OFF;
+							  displayPrintf(DISPLAY_ROW_TEMPVALUE,"Button Released");
+						  }
+						  mesh_lib_generic_server_update(MESH_GENERIC_ON_OFF_SERVER_MODEL_ID,
+																   0,
+																   NULL,
+																   &req,
+																   0);
+						  uint16_t resp = mesh_lib_generic_server_publish(MESH_GENERIC_ON_OFF_SERVER_MODEL_ID, 0, mesh_generic_state_on_off);
+						  LOG_INFO("\n\r**************parameter data = %d**********************\n\r", req.on_off.on);
+
+						  if (resp)
+						  {
+							  LOG_INFO("gecko_cmd_mesh_generic_client_publish failed, code 0x%x\r\n", resp);
+						  }
+						  else
+						  {
+							  ;
+						  }
+
+					}
+	      }
+					break;
+
 	    case gecko_evt_mesh_generic_server_state_changed_id:
 	      mesh_lib_generic_server_event_handler(evt);
 	      break;
@@ -406,6 +439,9 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	    case gecko_evt_mesh_friend_friendship_established_id:
 	      printf("evt gecko_evt_mesh_friend_friendship_established, lpn_address=%x\r\n", evt->data.evt_mesh_friend_friendship_established.lpn_address);
 	      displayPrintf(DISPLAY_ROW_BTADDR2, "FRIEND");
+			/*	Initialize timer	*/
+
+		    LETIMER_Enable(LETIMER0, true);
 	      break;
 
 	    case gecko_evt_mesh_friend_friendship_terminated_id:
@@ -429,6 +465,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	    														  evt->data.rsp_system_get_bt_address.address.addr[4],
 	    														  evt->data.rsp_system_get_bt_address.address.addr[5]);
 	      displayPrintf(DISPLAY_ROW_CONNECTION, "Connected");
+
 	      break;
 
 	    case gecko_evt_le_connection_parameters_id:
@@ -436,6 +473,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      break;
 
 	    case gecko_evt_le_connection_closed_id:
+//	    	LETIMER_Disable(LETIMER0, LETIMER_IEN_UF);
 	      /* Check if need to boot to dfu mode */
 	      if (boot_to_dfu) {
 	        /* Enter to DFU OTA mode */
@@ -471,6 +509,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      break;
 	  }
 }
+
 
 #endif
 
@@ -693,6 +732,8 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
   }
 }
 #endif
+
+/*	@brief : Function to disable I2C interrupts and clear the event	*/
 
 
 /** @} (end addtogroup app) */

@@ -89,7 +89,11 @@ app.o: ../app.c ../src/main.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\middleware\glib/em_types.h \
  ../src/ble_mesh_device_type.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/app.h \
- ../gatt_db.h \
+ ../src/i2c.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\drivers/i2cspm.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\halconfig/i2cspmhalconfig.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emlib\inc/em_i2c.h \
+ ../src/temperature.h ../gatt_db.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_generic_model_capi_types.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_lib.h \
  ../app.h
@@ -279,6 +283,16 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\
 ../src/ble_mesh_device_type.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/app.h:
+
+../src/i2c.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\drivers/i2cspm.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\halconfig/i2cspmhalconfig.h:
+
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emlib\inc/em_i2c.h:
+
+../src/temperature.h:
 
 ../gatt_db.h:
 
