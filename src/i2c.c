@@ -1,7 +1,7 @@
 /*
  * @filename	: i2c.c
  * @description	: This file contains the source code
- * @author 		: Sarayu Managoli
+ * @author 		: Pavan Shiralagi, Sarayu Managoli
  * @course      : Internet of Things Embedded Firmware
  * 				  https://siliconlabs.github.io/Gecko_SDK_Doc/efr32bg13/html/index.html
  * 				  Health thermometer demo project
@@ -12,7 +12,7 @@
 uint8_t read_data[2];
 I2C_TransferSeq_TypeDef seq_write;
 I2C_TransferSeq_TypeDef seq_read;
-uint8_t write_data = 0xF3; //No Master Hold Mode
+uint8_t write_data = 0xE5; //No Master Hold Mode HUMIDITY
 
 uint32_t i2c_interrupt;
 float Received_Data;
@@ -72,24 +72,24 @@ void I2C_Read()
 
 }
 
-void Get_Temp()
+void Get_Humidity()
 {
 	LOG_INFO("read_data[0] = %d",read_data[0]);
 	LOG_INFO("read_data[1] = %d",read_data[1]);
 	Received_Data = (read_data[0]<<8) + read_data[1]; //To store the temperature sensed in one Word
 	LOG_INFO("Received data = %f",Received_Data);
-	Received_Data = (((175.72 * Received_Data)/65536) - 46.85); //Calculation for temperature in degree Celsius
-	LOG_INFO("Temperature = %f",Received_Data);
+	Received_Data = (((125 * Received_Data)/65536) - 6); //Calculation for temperature in degree Celsius
+	LOG_INFO("Humidity = %f",Received_Data);
 }
 
 
-void Temp_Buffer()
+void Hum_Buffer()
 {
 	LOG_INFO("In Temp_Buffer");
 //	int32_t temp = Received_Data*1000;
 //	uint8_t TempBuffer[5];
 //	uint8_t *p = TempBuffer;
-	char TempBufferChar[32]={0};
+	char HumBufferChar[32]={0};
 //	uint32_t temperature;
 //
 //	UINT8_TO_BITSTREAM(p, 0x00);
@@ -99,8 +99,8 @@ void Temp_Buffer()
 //	UINT32_TO_BITSTREAM(p, temperature);
 //	gecko_cmd_gatt_server_send_characteristic_notification(
 //			0xFF, gattdb_temperature_measurement, 5, TempBuffer);
-	snprintf(TempBufferChar, sizeof (TempBufferChar), "%f", Received_Data);
-	displayPrintf(DISPLAY_ROW_TEMPVALUE,TempBufferChar);
+	snprintf(HumBufferChar, sizeof (HumBufferChar), "%f", Received_Data);
+	displayPrintf(DISPLAY_ROW_TEMPVALUE,HumBufferChar);
 
 }
 

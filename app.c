@@ -379,7 +379,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 					{
 						LOG_INFO("In external signal 0x01");
 						state(); //Calling state machine implementation
-						Temp_Buffer(); //Loading temperature buffer with appropriate values
+						Hum_Buffer(); //Loading temperature buffer with appropriate values
 					}
 					else if (((evt->data.evt_system_external_signal.extsignals) >= 0x02) && ((evt->data.evt_system_external_signal.extsignals) <= 0x06))
 					{
@@ -418,6 +418,10 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 						  }
 
 					}
+					if ((evt->data.evt_system_external_signal.extsignals) == 0x50)
+					{
+						//LOG_INFO("******************HUMAN DETECTED*********************");
+					}
 	      }
 					break;
 
@@ -440,8 +444,8 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      printf("evt gecko_evt_mesh_friend_friendship_established, lpn_address=%x\r\n", evt->data.evt_mesh_friend_friendship_established.lpn_address);
 	      displayPrintf(DISPLAY_ROW_BTADDR2, "FRIEND");
 			/*	Initialize timer	*/
-
 		    LETIMER_Enable(LETIMER0, true);
+		    pirInit();
 	      break;
 
 	    case gecko_evt_mesh_friend_friendship_terminated_id:
@@ -473,7 +477,6 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      break;
 
 	    case gecko_evt_le_connection_closed_id:
-//	    	LETIMER_Disable(LETIMER0, LETIMER_IEN_UF);
 	      /* Check if need to boot to dfu mode */
 	      if (boot_to_dfu) {
 	        /* Enter to DFU OTA mode */

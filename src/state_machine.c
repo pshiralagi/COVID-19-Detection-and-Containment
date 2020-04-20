@@ -51,7 +51,7 @@ void state(void)
 
 		case READ_COMPLETE: LOG_INFO("READ_COMPLETE STATE");
 			eNextState = POWER_OFF;
-			Get_Temp(); //Calculate temperature read
+			Get_Humidity(); //Calculate temperature read
 			gecko_external_signal(0x01); //Setting signal event for next state
 		break;
 		}

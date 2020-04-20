@@ -46,6 +46,9 @@ void gpioEnableDisplay(void);
 /*	@brief : Refreshes the screen	*/
 void gpioSetDisplayExtcomin(bool state);
 
+void pirInit(void);
+
+void motionDetected(uint8_t pin);
 
 
 /***************************************************************************//**
@@ -85,6 +88,9 @@ void enable_button_interrupts(void);
 #define PB0_Pin 6
 #define PB1_Port gpioPortF
 #define PB1_Pin 7
+
+#define MOTION_PORT         gpioPortD
+#define MOTION_PIN          13
 
 #define GPIO_SET_DISPLAY_EXT_COMIN_IMPLEMENTED 	1
 #define GPIO_DISPLAY_SUPPORT_IMPLEMENTED		1

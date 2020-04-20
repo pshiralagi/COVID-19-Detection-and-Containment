@@ -1,7 +1,7 @@
 /*
  * @filename	  : i2c.h
  * @description	  : This file contains header files for i2c.c
- * @author 		  : Sarayu Managoli
+ * @author 		  : Pavan Shiralagi, Sarayu Managoli
  * @course        : Internet of Things Embedded Firmware
  * @code leverage : Lecture slides for Internet of Things Embedded Firmware
  *					https://siliconlabs.github.io/Gecko_SDK_Doc/efr32bg13/html/index.html
@@ -73,8 +73,8 @@ void I2C0_IRQHandler(void);
  *
  * @return  Void
  *****************************************************************************/
-void Get_Temp(void);
+void Get_Humidity(void);
 
-void Temp_Buffer(void);
+void Hum_Buffer(void);
 
 #endif /* SRC_I2C_H_ */
