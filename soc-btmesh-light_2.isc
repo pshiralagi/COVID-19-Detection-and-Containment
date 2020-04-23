@@ -1,5 +1,5 @@
 #ISD afv6
-# Simplicity Studio version: 5.17.0.202003101220-27
+# Simplicity Studio version: 5.14.0.201912061158-11
 
 # Application configuration
 stackId: com.silabs.sdk.stack.btmesh
@@ -194,7 +194,7 @@ appPlugin: slot-manager=false
     "MAX_PROVISIONED_DEVICE_NETKEYS": "0",
     "MAX_PROVISIONED_DEVICE_APPKEYS": "0",
     "MAX_FOUNDATION_CLIENT_CMDS": "0",
-    "MAX_FRIENDSHIPS": "1",
+    "MAX_FRIENDSHIPS": "2",
     "FRIEND_MAX_SUBS_LIST": "5",
     "FRIEND_MAX_TOTAL_CACHE": "5",
     "FRIEND_MAX_SINGLE_CACHE": "5"

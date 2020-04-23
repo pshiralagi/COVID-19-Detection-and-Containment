@@ -40,7 +40,7 @@ void I2C_Initialize()
 
 void I2C_Write()
 {
-	LOG_INFO("In I2C write");
+//	LOG_INFO("In I2C write");
 	I2C_TransferReturn_TypeDef ret;
 
 	seq_write.addr = SLAVE_ADDRESS << 1; //Left shifting the slave address
@@ -56,7 +56,7 @@ void I2C_Write()
 
 void I2C_Read()
 {
-	LOG_INFO("In I2C read");
+//	LOG_INFO("In I2C read");
 	I2C_TransferReturn_TypeDef ret;
 
 	seq_read.addr = SLAVE_ADDRESS << 1; //Left shifting the slave address
@@ -74,10 +74,10 @@ void I2C_Read()
 
 void Get_Humidity()
 {
-	LOG_INFO("read_data[0] = %d",read_data[0]);
-	LOG_INFO("read_data[1] = %d",read_data[1]);
+//	LOG_INFO("read_data[0] = %d",read_data[0]);
+//	LOG_INFO("read_data[1] = %d",read_data[1]);
 	Received_Data = (read_data[0]<<8) + read_data[1]; //To store the temperature sensed in one Word
-	LOG_INFO("Received data = %f",Received_Data);
+//	LOG_INFO("Received data = %f",Received_Data);
 	Received_Data = (((125 * Received_Data)/65536) - 6); //Calculation for temperature in degree Celsius
 	LOG_INFO("Humidity = %f",Received_Data);
 }
@@ -85,7 +85,7 @@ void Get_Humidity()
 
 void Hum_Buffer()
 {
-	LOG_INFO("In Temp_Buffer");
+//	LOG_INFO("In Temp_Buffer");
 //	int32_t temp = Received_Data*1000;
 //	uint8_t TempBuffer[5];
 //	uint8_t *p = TempBuffer;
@@ -120,7 +120,7 @@ void I2C0_IRQHandler()
 			gecko_external_signal(0x04); //Setting signal event for next state
 		}
 
-		LOG_INFO("WRITE SUCCESS");
+//		LOG_INFO("WRITE SUCCESS");
 	}
 }
 

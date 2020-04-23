@@ -56,6 +56,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt);
 
 void psDataLoad(uint16_t key, void *value, uint8_t size);
 void psDataSave(uint16_t key, void *value, uint8_t size);
+void friendInit(void);
 /** @} (end addtogroup app) */
 /** @} (end addtogroup Application) */
 

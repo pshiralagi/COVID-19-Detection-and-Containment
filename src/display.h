@@ -55,6 +55,7 @@ enum display_row {
 void displayInit();
 bool displayUpdate();
 void displayPrintf(enum display_row row, const char *format, ... );
+#define TIMER_ID_DISPLAY_UPDATES (1)
 #else
 static inline void displayInit() { }
 static inline bool displayUpdate() { return true; }

@@ -52,6 +52,7 @@ void pirInit(void);
 void motionDetected(uint8_t pin);
 
 
+
 /***************************************************************************//**
  * This is a callback function that is invoked each time a GPIO interrupt
  * in one of the pushbutton inputs occurs. Pin number is passed as parameter.

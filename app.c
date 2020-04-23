@@ -274,6 +274,9 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	    case gecko_evt_hardware_soft_timer_id:
 	      switch (evt->data.evt_hardware_soft_timer.handle)
 	      {
+	        case TIMER_ID_DISPLAY_UPDATES:
+				displayUpdate();
+				break;
 	        case TIMER_ID_FACTORY_RESET:
 	          // reset the device to finish factory reset
 	          gecko_cmd_system_reset(0);
@@ -327,13 +330,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 
 	        _my_address = pData->address;
 	        enable_button_interrupts();
-	        /* Initialize mesh lib */
-	        mesh_lib_init(malloc, free, 11);
-	        result = gecko_cmd_mesh_friend_init()->result;
-	        if (result)
-	        {
-	          printf("Friend init failed 0x%x\r\n", result);
-	        }
+	        friendInit();
 	        displayPrintf(DISPLAY_ROW_ACTION, "Provisioned");
 	      }
 	      else
@@ -356,12 +353,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	    case gecko_evt_mesh_node_provisioned_id:
 	      LOG_INFO("node provisioned, got address=%x", evt->data.evt_mesh_node_provisioned.address);
 	      enable_button_interrupts();
-	      mesh_lib_init(malloc, free, 11);
-	      result = gecko_cmd_mesh_friend_init()->result;
-	      if (result)
-	      {
-	        printf("*******************Friend init failed 0x%x\r\n", result);
-	      }
+	      friendInit();
 	      // stop LED blinking when provisioning complete
 	      BTSTACK_CHECK_RESPONSE(gecko_cmd_hardware_set_soft_timer(0, TIMER_ID_PROVISIONING, 0));
 	      clearAlert();
@@ -823,7 +815,13 @@ void psDataLoad(uint16_t key, void *value, uint8_t size)
 
 void friendInit(void)
 {
-
+	static uint16_t result = 0;
+    mesh_lib_init(malloc, free, 11);
+    result = gecko_cmd_mesh_friend_init()->result;
+    if (result)
+    {
+      printf("*******************Friend init failed 0x%x\r\n", result);
+    }
 }
 
 /** @} (end addtogroup app) */

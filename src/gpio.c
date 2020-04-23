@@ -40,7 +40,6 @@ void gpioInit()
 	GPIO_PinModeSet(PB1_Port, PB1_Pin, gpioModeInputPull, true);
 }
 
-
 void gpioLed0SetOn()
 {
 	GPIO_PinOutSet(LED0_port,LED0_pin);
