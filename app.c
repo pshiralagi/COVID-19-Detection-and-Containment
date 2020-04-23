@@ -62,6 +62,18 @@ static uint16_t _my_address = 0;
 static uint8_t num_connections = 0;
 /// Handle of the last opened LE connection
 static uint8_t conn_handle = 0xFF;
+//Count of connected LPNs
+static uint8_t lpnCount = 0;
+//Persistent storage keys
+#define MAX_TEMP (0xa000)
+#define AUTHORIZED_PERSONNEL (0xb000)
+#define BUTTON_COUNT (0xc000)
+
+//Storage types for peristent data
+static uint16_t high_temp = 0;
+static uint8_t authorized_personnel = 0;
+static uint8_t buttonPressed = 0;
+
 
 #if DEVICE_USES_BLE_MESH_CLIENT_MODEL
 /// on/off transaction identifier
@@ -243,6 +255,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      }
 	      else
 	      {
+//	    	BTSTACK_CHECK_RESPONSE(gecko_cmd_flash_ps_erase_all());
 	        struct gecko_msg_system_get_bt_address_rsp_t *pAddr = gecko_cmd_system_get_bt_address();
 
 	        set_device_name(&pAddr->address);
@@ -295,6 +308,17 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	        LOG_INFO("mesh_generic_server_init failed, code 0x%x", result);
 	      }
 
+	      psDataLoad(BUTTON_COUNT, &buttonPressed, sizeof(buttonPressed));
+	      LOG_INFO("******BUTTON PRESSED COUNT******** %d ***********", buttonPressed);
+	      psDataLoad(AUTHORIZED_PERSONNEL, &authorized_personnel, sizeof(authorized_personnel));
+	      if(authorized_personnel)
+	      {
+	    	  LOG_INFO("Authorized personnel present in room");
+	      }
+	      else
+	      {
+	    	  LOG_INFO("Authorized personnel not present in room");
+	      }
 	      struct gecko_msg_mesh_node_initialized_evt_t *pData = (struct gecko_msg_mesh_node_initialized_evt_t *)&(evt->data);
 
 	      if (pData->provisioned)
@@ -308,7 +332,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	        result = gecko_cmd_mesh_friend_init()->result;
 	        if (result)
 	        {
-	          printf("*********************Friend init failed 0x%x\r\n", result);
+	          printf("Friend init failed 0x%x\r\n", result);
 	        }
 	        displayPrintf(DISPLAY_ROW_ACTION, "Provisioned");
 	      }
@@ -340,6 +364,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      }
 	      // stop LED blinking when provisioning complete
 	      BTSTACK_CHECK_RESPONSE(gecko_cmd_hardware_set_soft_timer(0, TIMER_ID_PROVISIONING, 0));
+	      clearAlert();
 	      displayPrintf(DISPLAY_ROW_ACTION, "Provisioned");
 	      break;
 
@@ -363,10 +388,23 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      LOG_INFO("evt gecko_evt_mesh_generic_server_client_request_id");
 	        req = &(evt->data.evt_mesh_generic_server_client_request);
 	        printf("******************* Button Press - %d", req->parameters.data[0]);
-	        if (req->parameters.data[0] == 0)
-	      	  displayPrintf(DISPLAY_ROW_TEMPVALUE, "Button Released");
-	        else
-	  		  displayPrintf(DISPLAY_ROW_TEMPVALUE, "Button Pressed");
+	        if (req->parameters.data[0] == 1)
+	        {
+	        	displayPrintf(DISPLAY_ROW_TEMPVALUE, "Button Pressed");
+	        	psDataSave(AUTHORIZED_PERSONNEL, &authorized_personnel, sizeof(authorized_personnel));
+	        	if(authorized_personnel)
+	        	{
+	        		GPIO_ExtIntConfig(MOTION_PORT, MOTION_PIN, MOTION_PIN, true, true, true);
+	        		authorized_personnel = 0;
+	        	}
+	        	else
+	        	{
+	        		GPIO_ExtIntConfig(MOTION_PORT, MOTION_PIN, MOTION_PIN, true, true, false);
+	        		authorized_personnel = 1;
+	        	}
+	        }
+
+
 	      // pass the server client request event to mesh lib handler that will invoke
 	      // the callback functions registered by application
 	      mesh_lib_generic_server_event_handler(evt);
@@ -379,7 +417,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 					{
 						LOG_INFO("In external signal 0x01");
 						state(); //Calling state machine implementation
-						Hum_Buffer(); //Loading temperature buffer with appropriate values
+						Hum_Buffer(); //Loading humidity buffer with appropriate values
 					}
 					else if (((evt->data.evt_system_external_signal.extsignals) >= 0x02) && ((evt->data.evt_system_external_signal.extsignals) <= 0x06))
 					{
@@ -394,6 +432,8 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 						  {
 							  req.on_off.on = MESH_GENERIC_ON_OFF_STATE_ON;
 							  displayPrintf(DISPLAY_ROW_TEMPVALUE,"Button Pressed");
+							  buttonPressed++;
+							  psDataSave(BUTTON_COUNT, &buttonPressed, sizeof(buttonPressed));
 						  }
 						  else
 						  {
@@ -420,7 +460,15 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 					}
 					if ((evt->data.evt_system_external_signal.extsignals) == 0x50)
 					{
-						//LOG_INFO("******************HUMAN DETECTED*********************");
+						if (authorized_personnel)
+						{
+							clearAlert();
+						}
+						else
+						{
+							redAlert();
+						}
+						LOG_INFO("******************HUMAN DETECTED*********************");
 					}
 	      }
 					break;
@@ -443,6 +491,8 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	    case gecko_evt_mesh_friend_friendship_established_id:
 	      printf("evt gecko_evt_mesh_friend_friendship_established, lpn_address=%x\r\n", evt->data.evt_mesh_friend_friendship_established.lpn_address);
 	      displayPrintf(DISPLAY_ROW_BTADDR2, "FRIEND");
+	      lpnCount++;
+	      LOG_INFO("Number of LPNs in mesh - %d",lpnCount);
 			/*	Initialize timer	*/
 		    LETIMER_Enable(LETIMER0, true);
 		    pirInit();
@@ -451,6 +501,8 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	    case gecko_evt_mesh_friend_friendship_terminated_id:
 	      printf("evt gecko_evt_mesh_friend_friendship_terminated, reason=%x\r\n", evt->data.evt_mesh_friend_friendship_terminated.reason);
 	      displayPrintf(DISPLAY_ROW_BTADDR2,"No LPN");
+	      lpnCount--;
+	      LOG_INFO("Number of LPNs in mesh - %d",lpnCount);
 	      break;
 
 	    case gecko_evt_le_gap_adv_timeout_id:
@@ -736,8 +788,43 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 }
 #endif
 
-/*	@brief : Function to disable I2C interrupts and clear the event	*/
+/*
+ * @brief	Store data in persistent memory
+ *
+ */
+void psDataSave(uint16_t key, void *value, uint8_t size)
+{
+	struct gecko_msg_flash_ps_save_rsp_t *resp;
 
+	resp = gecko_cmd_flash_ps_save(key, size, value);
+
+	if(resp->result != 0)
+		LOG_ERROR("Error saving data\r\n");
+}
+
+/*
+ * @brief	Load data from persistent memory
+ */
+void psDataLoad(uint16_t key, void *value, uint8_t size)
+{
+	struct gecko_msg_flash_ps_load_rsp_t *resp;
+
+	resp = gecko_cmd_flash_ps_load(key);
+
+	if(resp->result == 0)
+	{
+		memcpy(value, resp->value.data, resp->value.len);
+	}
+	else
+	{
+		LOG_ERROR("Error loading data\r\n");
+	}
+}
+
+void friendInit(void)
+{
+
+}
 
 /** @} (end addtogroup app) */
 /** @} (end addtogroup Application) */

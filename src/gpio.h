@@ -20,7 +20,8 @@ void gpioLed0SetOn();	//Sets LED 0
 void gpioLed0SetOff();	//Clears LED 0
 void gpioLed1SetOn();	//Sets LED 1
 void gpioLed1SetOff();	//Clears LED 1
-
+void redAlert(void);
+void clearAlert(void);
 /*
  * @brief : Function to deinitialize required GPIO pins
  *

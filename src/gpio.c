@@ -19,6 +19,13 @@
 
 void gpioInit()
 {
+	/* LED initializations */
+	GPIO_DriveStrengthSet(LED0_port, gpioDriveStrengthStrongAlternateStrong);
+//	GPIO_DriveStrengthSet(LED0_port, gpioDriveStrengthWeakAlternateWeak);
+	GPIO_PinModeSet(LED0_port, LED0_pin, gpioModePushPull, false);
+	GPIO_DriveStrengthSet(LED1_port, gpioDriveStrengthStrongAlternateStrong);
+//	GPIO_DriveStrengthSet(LED1_port, gpioDriveStrengthWeakAlternateWeak);
+	GPIO_PinModeSet(LED1_port, LED1_pin, gpioModePushPull, false);
 	/*	I2C enables	*/
 	GPIO_DriveStrengthSet(SCL_port, gpioDriveStrengthWeakAlternateWeak);
 	GPIO_PinModeSet(SCL_port, SCL_pin, gpioModePushPull, false);
@@ -31,9 +38,6 @@ void gpioInit()
 	GPIO_PinModeSet(PB0_Port, PB0_Pin, gpioModeInputPull, true);
 	/*	PB0 Button initialization */
 	GPIO_PinModeSet(PB1_Port, PB1_Pin, gpioModeInputPull, true);
-	/* Configure port C pin 12 as input */
-//	GPIO_PinModeSet(MOTION_PORT, MOTION_PIN, gpioModeInput, 0);
-	//CMU_ClockEnable(cmuClock_GPIO, true);
 }
 
 
@@ -118,9 +122,22 @@ void enable_button_interrupts(void)
   GPIOINT_CallbackRegister(PB0_Pin, gpioint);
 }
 
+void redAlert(void)
+{
+	gpioLed0SetOn();
+	gpioLed1SetOn();
+}
+
+void clearAlert(void)
+{
+	gpioLed0SetOff();
+	gpioLed1SetOff();
+}
+
 
 void pirInit(void)
 {
+	//Pin D 13 is used as input
 	GPIO_PinModeSet(MOTION_PORT, MOTION_PIN, gpioModeInput, 0);
 	CMU_ClockEnable(cmuClock_GPIO, true);
 	GPIOINT_Init();
@@ -134,27 +151,10 @@ void motionDetected(uint8_t pin)
 {
 	if(pin == MOTION_PIN)
 	{
-		//CORE_DECLARE_IRQ_STATE;
 		if(GPIO_PinInGet(MOTION_PORT, MOTION_PIN) == 1)
 		{
-			//CORE_ENTER_CRITICAL();
 			gecko_external_signal(0x50);
-			printf("\n--------------HIGH");
-			//CORE_EXIT_CRITICAL();
 		}
-		if(GPIO_PinInGet(MOTION_PORT, MOTION_PIN) == 0)
-		{
-			//CORE_ENTER_CRITICAL();
-			//gecko_external_signal(0x50);
-			printf("\n--------------LOW");
-			//CORE_EXIT_CRITICAL();
-		}
-//		else
-//		{
-//			CORE_ENTER_CRITICAL();
-//			gecko_external_signal(0x60);
-//			CORE_EXIT_CRITICAL();
-//		}
 	}
 
 }
