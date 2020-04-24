@@ -723,7 +723,7 @@ seq_read            0x14              ./src/i2c.o
 eNextState          0x1               ./main.o
 btlePublicDevAddr   0x6               C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(init.c.obj)
 bluetooth_stack_heap
-                    0x3ad6            ./main.o
+                    0x3914            ./main.o
 RAILINT_567bc629b3cddc4309da26d99a2af1e8
                     0x1f4             C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(zwave_efr32xg13_configurator_out.o)
 ll_events           0x4               C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_task.c.obj)
@@ -8031,7 +8031,7 @@ LOAD c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/
                 0x0000b800                __text_start__ = .
 
 .text_application
-                0x0000b800    0x55a44
+                0x0000b800    0x55a34
  *(.vectors)
  .vectors       0x0000b800       0xfc ./platform/Device/SiliconLabs/EFR32BG13P/Source/GCC/startup_efr32bg13p.o
                 0x0000b800                __Vectors
@@ -9211,11 +9211,11 @@ LOAD c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/
                 0x0001a552                LPM_Off
  *fill*         0x0001a56a        0x2 
  .text.onoff_request
-                0x0001a56c      0x130 ./src/lpn_data.o
+                0x0001a56c      0x12c ./src/lpn_data.o
                 0x0001a56c                onoff_request
  .text.level_request
-                0x0001a69c       0xa0 ./src/lpn_data.o
-                0x0001a69c                level_request
+                0x0001a698       0xa4 ./src/lpn_data.o
+                0x0001a698                level_request
  .text.LETIMER_IntEnable
                 0x0001a73c       0x22 ./src/non_blocking_wait.o
  *fill*         0x0001a75e        0x2 
@@ -16282,688 +16282,688 @@ LOAD c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/
                 0x00057b7c        0xb ./app.o
  *fill*         0x00057b87        0x1 
  .rodata.__mesh_dcd
-                0x00057b88       0x38 ./dcd.o
+                0x00057b88       0x2a ./dcd.o
                 0x00057b88                __mesh_dcd
+ *fill*         0x00057bb2        0x2 
  .rodata.__mesh_dcd_len
-                0x00057bc0        0x4 ./dcd.o
-                0x00057bc0                __mesh_dcd_len
+                0x00057bb4        0x4 ./dcd.o
+                0x00057bb4                __mesh_dcd_len
  .rodata.__mesh_memory_config
-                0x00057bc4       0x2c ./dcd.o
-                0x00057bc4                __mesh_memory_config
+                0x00057bb8       0x2c ./dcd.o
+                0x00057bb8                __mesh_memory_config
  .rodata.bg_gattdb_data_uuidtable_16_map
-                0x00057bf0       0x26 ./gatt_db.o
-                0x00057bf0                bg_gattdb_data_uuidtable_16_map
- *fill*         0x00057c16        0x2 
+                0x00057be4       0x26 ./gatt_db.o
+                0x00057be4                bg_gattdb_data_uuidtable_16_map
+ *fill*         0x00057c0a        0x2 
  .rodata.bg_gattdb_data_uuidtable_128_map
-                0x00057c18       0x20 ./gatt_db.o
-                0x00057c18                bg_gattdb_data_uuidtable_128_map
+                0x00057c0c       0x20 ./gatt_db.o
+                0x00057c0c                bg_gattdb_data_uuidtable_128_map
  .rodata.bg_gattdb_data_attribute_field_30
-                0x00057c38        0x8 ./gatt_db.o
-                0x00057c38                bg_gattdb_data_attribute_field_30
+                0x00057c2c        0x8 ./gatt_db.o
+                0x00057c2c                bg_gattdb_data_attribute_field_30
  .rodata.bg_gattdb_data_attribute_field_29
-                0x00057c40       0x15 ./gatt_db.o
-                0x00057c40                bg_gattdb_data_attribute_field_29
- *fill*         0x00057c55        0x3 
+                0x00057c34       0x15 ./gatt_db.o
+                0x00057c34                bg_gattdb_data_attribute_field_29
+ *fill*         0x00057c49        0x3 
  .rodata.bg_gattdb_data_attribute_field_28
-                0x00057c58       0x12 ./gatt_db.o
-                0x00057c58                bg_gattdb_data_attribute_field_28
- *fill*         0x00057c6a        0x2 
+                0x00057c4c       0x12 ./gatt_db.o
+                0x00057c4c                bg_gattdb_data_attribute_field_28
+ *fill*         0x00057c5e        0x2 
  .rodata.bg_gattdb_data_attribute_field_26
-                0x00057c6c        0x8 ./gatt_db.o
-                0x00057c6c                bg_gattdb_data_attribute_field_26
+                0x00057c60        0x8 ./gatt_db.o
+                0x00057c60                bg_gattdb_data_attribute_field_26
  .rodata.bg_gattdb_data_attribute_field_25
-                0x00057c74        0x7 ./gatt_db.o
-                0x00057c74                bg_gattdb_data_attribute_field_25
- *fill*         0x00057c7b        0x1 
+                0x00057c68        0x7 ./gatt_db.o
+                0x00057c68                bg_gattdb_data_attribute_field_25
+ *fill*         0x00057c6f        0x1 
  .rodata.bg_gattdb_data_attribute_field_24
-                0x00057c7c        0x8 ./gatt_db.o
-                0x00057c7c                bg_gattdb_data_attribute_field_24
+                0x00057c70        0x8 ./gatt_db.o
+                0x00057c70                bg_gattdb_data_attribute_field_24
  .rodata.bg_gattdb_data_attribute_field_23
-                0x00057c84        0x7 ./gatt_db.o
-                0x00057c84                bg_gattdb_data_attribute_field_23
- *fill*         0x00057c8b        0x1 
+                0x00057c78        0x7 ./gatt_db.o
+                0x00057c78                bg_gattdb_data_attribute_field_23
+ *fill*         0x00057c7f        0x1 
  .rodata.bg_gattdb_data_attribute_field_22
-                0x00057c8c        0x4 ./gatt_db.o
-                0x00057c8c                bg_gattdb_data_attribute_field_22
+                0x00057c80        0x4 ./gatt_db.o
+                0x00057c80                bg_gattdb_data_attribute_field_22
  .rodata.bg_gattdb_data_attribute_field_20
-                0x00057c90        0x8 ./gatt_db.o
-                0x00057c90                bg_gattdb_data_attribute_field_20
+                0x00057c84        0x8 ./gatt_db.o
+                0x00057c84                bg_gattdb_data_attribute_field_20
  .rodata.bg_gattdb_data_attribute_field_19
-                0x00057c98        0x7 ./gatt_db.o
-                0x00057c98                bg_gattdb_data_attribute_field_19
- *fill*         0x00057c9f        0x1 
+                0x00057c8c        0x7 ./gatt_db.o
+                0x00057c8c                bg_gattdb_data_attribute_field_19
+ *fill*         0x00057c93        0x1 
  .rodata.bg_gattdb_data_attribute_field_18
-                0x00057ca0        0x8 ./gatt_db.o
-                0x00057ca0                bg_gattdb_data_attribute_field_18
+                0x00057c94        0x8 ./gatt_db.o
+                0x00057c94                bg_gattdb_data_attribute_field_18
  .rodata.bg_gattdb_data_attribute_field_17
-                0x00057ca8        0x7 ./gatt_db.o
-                0x00057ca8                bg_gattdb_data_attribute_field_17
- *fill*         0x00057caf        0x1 
+                0x00057c9c        0x7 ./gatt_db.o
+                0x00057c9c                bg_gattdb_data_attribute_field_17
+ *fill*         0x00057ca3        0x1 
  .rodata.bg_gattdb_data_attribute_field_16
-                0x00057cb0        0x4 ./gatt_db.o
-                0x00057cb0                bg_gattdb_data_attribute_field_16
+                0x00057ca4        0x4 ./gatt_db.o
+                0x00057ca4                bg_gattdb_data_attribute_field_16
  .rodata.bg_gattdb_data_attribute_field_15
-                0x00057cb4        0xe ./gatt_db.o
-                0x00057cb4                bg_gattdb_data_attribute_field_15
- *fill*         0x00057cc2        0x2 
+                0x00057ca8        0xe ./gatt_db.o
+                0x00057ca8                bg_gattdb_data_attribute_field_15
+ *fill*         0x00057cb6        0x2 
  .rodata.bg_gattdb_data_attribute_field_14
-                0x00057cc4        0x7 ./gatt_db.o
-                0x00057cc4                bg_gattdb_data_attribute_field_14
- *fill*         0x00057ccb        0x1 
+                0x00057cb8        0x7 ./gatt_db.o
+                0x00057cb8                bg_gattdb_data_attribute_field_14
+ *fill*         0x00057cbf        0x1 
  .rodata.bg_gattdb_data_attribute_field_13
-                0x00057ccc        0x4 ./gatt_db.o
-                0x00057ccc                bg_gattdb_data_attribute_field_13
+                0x00057cc0        0x4 ./gatt_db.o
+                0x00057cc0                bg_gattdb_data_attribute_field_13
  .rodata.bg_gattdb_data_attribute_field_12
-                0x00057cd0        0x4 ./gatt_db.o
-                0x00057cd0                bg_gattdb_data_attribute_field_12
+                0x00057cc4        0x4 ./gatt_db.o
+                0x00057cc4                bg_gattdb_data_attribute_field_12
  .rodata.bg_gattdb_data_attribute_field_11
-                0x00057cd4        0x7 ./gatt_db.o
-                0x00057cd4                bg_gattdb_data_attribute_field_11
- *fill*         0x00057cdb        0x1 
+                0x00057cc8        0x7 ./gatt_db.o
+                0x00057cc8                bg_gattdb_data_attribute_field_11
+ *fill*         0x00057ccf        0x1 
  .rodata.bg_gattdb_data_attribute_field_10
-                0x00057cdc        0x8 ./gatt_db.o
-                0x00057cdc                bg_gattdb_data_attribute_field_10
+                0x00057cd0        0x8 ./gatt_db.o
+                0x00057cd0                bg_gattdb_data_attribute_field_10
  .rodata.bg_gattdb_data_attribute_field_9
-                0x00057ce4        0x7 ./gatt_db.o
-                0x00057ce4                bg_gattdb_data_attribute_field_9
- *fill*         0x00057ceb        0x1 
+                0x00057cd8        0x7 ./gatt_db.o
+                0x00057cd8                bg_gattdb_data_attribute_field_9
+ *fill*         0x00057cdf        0x1 
  .rodata.bg_gattdb_data_attribute_field_8
-                0x00057cec        0x4 ./gatt_db.o
-                0x00057cec                bg_gattdb_data_attribute_field_8
+                0x00057ce0        0x4 ./gatt_db.o
+                0x00057ce0                bg_gattdb_data_attribute_field_8
  .rodata.bg_gattdb_data_attribute_field_7
-                0x00057cf0        0x8 ./gatt_db.o
-                0x00057cf0                bg_gattdb_data_attribute_field_7
+                0x00057ce4        0x8 ./gatt_db.o
+                0x00057ce4                bg_gattdb_data_attribute_field_7
  .rodata.bg_gattdb_data_attribute_field_6
-                0x00057cf8        0x7 ./gatt_db.o
-                0x00057cf8                bg_gattdb_data_attribute_field_6
- *fill*         0x00057cff        0x1 
+                0x00057cec        0x7 ./gatt_db.o
+                0x00057cec                bg_gattdb_data_attribute_field_6
+ *fill*         0x00057cf3        0x1 
  .rodata.bg_gattdb_data_attribute_field_5
-                0x00057d00        0x8 ./gatt_db.o
-                0x00057d00                bg_gattdb_data_attribute_field_5
+                0x00057cf4        0x8 ./gatt_db.o
+                0x00057cf4                bg_gattdb_data_attribute_field_5
  .rodata.bg_gattdb_data_attribute_field_4
-                0x00057d08        0x7 ./gatt_db.o
-                0x00057d08                bg_gattdb_data_attribute_field_4
- *fill*         0x00057d0f        0x1 
+                0x00057cfc        0x7 ./gatt_db.o
+                0x00057cfc                bg_gattdb_data_attribute_field_4
+ *fill*         0x00057d03        0x1 
  .rodata.bg_gattdb_data_attribute_field_2
-                0x00057d10        0x8 ./gatt_db.o
-                0x00057d10                bg_gattdb_data_attribute_field_2
+                0x00057d04        0x8 ./gatt_db.o
+                0x00057d04                bg_gattdb_data_attribute_field_2
  .rodata.bg_gattdb_data_attribute_field_1
-                0x00057d18        0x7 ./gatt_db.o
-                0x00057d18                bg_gattdb_data_attribute_field_1
- *fill*         0x00057d1f        0x1 
+                0x00057d0c        0x7 ./gatt_db.o
+                0x00057d0c                bg_gattdb_data_attribute_field_1
+ *fill*         0x00057d13        0x1 
  .rodata.bg_gattdb_data_attribute_field_0
-                0x00057d20        0x4 ./gatt_db.o
-                0x00057d20                bg_gattdb_data_attribute_field_0
+                0x00057d14        0x4 ./gatt_db.o
+                0x00057d14                bg_gattdb_data_attribute_field_0
  .rodata.bg_gattdb_data_attributes_map
-                0x00057d24      0x174 ./gatt_db.o
-                0x00057d24                bg_gattdb_data_attributes_map
+                0x00057d18      0x174 ./gatt_db.o
+                0x00057d18                bg_gattdb_data_attributes_map
  .rodata.bg_gattdb_data_attributes_dynamic_mapping_map
-                0x00057e98       0x12 ./gatt_db.o
-                0x00057e98                bg_gattdb_data_attributes_dynamic_mapping_map
- *fill*         0x00057eaa        0x2 
+                0x00057e8c       0x12 ./gatt_db.o
+                0x00057e8c                bg_gattdb_data_attributes_dynamic_mapping_map
+ *fill*         0x00057e9e        0x2 
  .rodata.bg_gattdb_data_adv_uuid16_map
-                0x00057eac        0x1 ./gatt_db.o
-                0x00057eac                bg_gattdb_data_adv_uuid16_map
- *fill*         0x00057ead        0x3 
+                0x00057ea0        0x1 ./gatt_db.o
+                0x00057ea0                bg_gattdb_data_adv_uuid16_map
+ *fill*         0x00057ea1        0x3 
  .rodata.bg_gattdb_data_adv_uuid128_map
-                0x00057eb0        0x1 ./gatt_db.o
-                0x00057eb0                bg_gattdb_data_adv_uuid128_map
- *fill*         0x00057eb1        0x3 
+                0x00057ea4        0x1 ./gatt_db.o
+                0x00057ea4                bg_gattdb_data_adv_uuid128_map
+ *fill*         0x00057ea5        0x3 
  .rodata.bg_gattdb_data
-                0x00057eb4       0x34 ./gatt_db.o
-                0x00057eb4                bg_gattdb_data
- .rodata        0x00057ee8       0x32 ./init_mcu.o
- *fill*         0x00057f1a        0x2 
+                0x00057ea8       0x34 ./gatt_db.o
+                0x00057ea8                bg_gattdb_data
+ .rodata        0x00057edc       0x32 ./init_mcu.o
+ *fill*         0x00057f0e        0x2 
  .rodata.config
-                0x00057f1c       0x48 ./main.o
-                0x00057f1c                config
- .rodata        0x00057f64       0x14 ./pti.o
- .rodata        0x00057f78       0x15 ./hardware/kit/common/drivers/displayls013b7dh03.o
- *fill*         0x00057f8d        0x3 
- .rodata        0x00057f90       0x18 ./hardware/kit/common/drivers/displaypalemlib.o
- .rodata        0x00057fa8       0x18 ./hardware/kit/common/drivers/mx25flash_spi.o
- .rodata        0x00057fc0       0x1c ./hardware/kit/common/drivers/retargetserial.o
- .rodata        0x00057fdc        0x9 ./hardware/kit/common/drivers/udelay.o
- *fill*         0x00057fe5        0x3 
+                0x00057f10       0x48 ./main.o
+                0x00057f10                config
+ .rodata        0x00057f58       0x14 ./pti.o
+ .rodata        0x00057f6c       0x15 ./hardware/kit/common/drivers/displayls013b7dh03.o
+ *fill*         0x00057f81        0x3 
+ .rodata        0x00057f84       0x18 ./hardware/kit/common/drivers/displaypalemlib.o
+ .rodata        0x00057f9c       0x18 ./hardware/kit/common/drivers/mx25flash_spi.o
+ .rodata        0x00057fb4       0x1c ./hardware/kit/common/drivers/retargetserial.o
+ .rodata        0x00057fd0        0x9 ./hardware/kit/common/drivers/udelay.o
+ *fill*         0x00057fd9        0x3 
  .rodata.nvm3_halFlashHandle
-                0x00057fe8       0x1c ./platform/emdrv/nvm3/src/nvm3_hal_flash.o
-                0x00057fe8                nvm3_halFlashHandle
+                0x00057fdc       0x1c ./platform/emdrv/nvm3/src/nvm3_hal_flash.o
+                0x00057fdc                nvm3_halFlashHandle
  .rodata.nvm3_maxFragmentCount
-                0x00058004        0x1 ./platform/emdrv/nvm3/src/nvm3_lock.o
-                0x00058004                nvm3_maxFragmentCount
- *fill*         0x00058005        0x3 
+                0x00057ff8        0x1 ./platform/emdrv/nvm3/src/nvm3_lock.o
+                0x00057ff8                nvm3_maxFragmentCount
+ *fill*         0x00057ff9        0x3 
  .rodata.nvm3_objHandleSize
-                0x00058008        0x4 ./platform/emdrv/nvm3/src/nvm3_lock.o
-                0x00058008                nvm3_objHandleSize
+                0x00057ffc        0x4 ./platform/emdrv/nvm3/src/nvm3_lock.o
+                0x00057ffc                nvm3_objHandleSize
  .rodata.flashWsTable
-                0x0005800c       0x28 ./platform/emlib/src/em_cmu.o
+                0x00058000       0x28 ./platform/emlib/src/em_cmu.o
  .rodata.i2cNSum
-                0x00058034        0x4 ./platform/emlib/src/em_i2c.o
+                0x00058028        0x4 ./platform/emlib/src/em_i2c.o
  .rodata.resetCauseMasks
-                0x00058038       0x48 ./platform/emlib/src/em_rmu.o
+                0x0005802c       0x48 ./platform/emlib/src/em_rmu.o
  .rodata.GLIB_FontNarrow6x8PixMap
-                0x00058080      0x320 ./platform/middleware/glib/glib/glib_font_narrow_6x8.o
+                0x00058074      0x320 ./platform/middleware/glib/glib/glib_font_narrow_6x8.o
  .rodata.GLIB_FontNarrow6x8
-                0x000583a0       0x10 ./platform/middleware/glib/glib/glib_font_narrow_6x8.o
-                0x000583a0                GLIB_FontNarrow6x8
+                0x00058394       0x10 ./platform/middleware/glib/glib/glib_font_narrow_6x8.o
+                0x00058394                GLIB_FontNarrow6x8
  .rodata.GLIB_FontNormal8x8PixMap
-                0x000583b0      0x320 ./platform/middleware/glib/glib/glib_font_normal_8x8.o
+                0x000583a4      0x320 ./platform/middleware/glib/glib/glib_font_normal_8x8.o
  .rodata.GLIB_FontNormal8x8
-                0x000586d0       0x10 ./platform/middleware/glib/glib/glib_font_normal_8x8.o
-                0x000586d0                GLIB_FontNormal8x8
- .rodata        0x000586e0       0x13 ./platform/service/sleeptimer/src/sl_sleeptimer_hal_rtcc.o
- *fill*         0x000586f3        0x1 
+                0x000586c4       0x10 ./platform/middleware/glib/glib/glib_font_normal_8x8.o
+                0x000586c4                GLIB_FontNormal8x8
+ .rodata        0x000586d4       0x13 ./platform/service/sleeptimer/src/sl_sleeptimer_hal_rtcc.o
+ *fill*         0x000586e7        0x1 
  .rodata.sl_app_properties
-                0x000586f4       0x40 ./protocol/bluetooth/bt_mesh/src/bg_application_properties.o
-                0x000586f4                sl_app_properties
- .rodata        0x00058734      0x2fb ./src/display.o
- *fill*         0x00058a2f        0x1 
+                0x000586e8       0x40 ./protocol/bluetooth/bt_mesh/src/bg_application_properties.o
+                0x000586e8                sl_app_properties
+ .rodata        0x00058728      0x2fb ./src/display.o
+ *fill*         0x00058a23        0x1 
  .rodata.__func__.19524
-                0x00058a30       0x19 ./src/display.o
- *fill*         0x00058a49        0x3 
+                0x00058a24       0x19 ./src/display.o
+ *fill*         0x00058a3d        0x3 
  .rodata.__func__.19537
-                0x00058a4c        0xe ./src/display.o
- *fill*         0x00058a5a        0x2 
+                0x00058a40        0xe ./src/display.o
+ *fill*         0x00058a4e        0x2 
  .rodata.__func__.19544
-                0x00058a5c       0x10 ./src/display.o
- .rodata        0x00058a6c     0x4eac ./src/gecko_ble_errors.o
- .rodata        0x0005d918       0x25 ./src/gpio.o
- *fill*         0x0005d93d        0x3 
+                0x00058a50       0x10 ./src/display.o
+ .rodata        0x00058a60     0x4eac ./src/gecko_ble_errors.o
+ .rodata        0x0005d90c       0x25 ./src/gpio.o
+ *fill*         0x0005d931        0x3 
  .rodata.__func__.19476
-                0x0005d940        0x8 ./src/gpio.o
- .rodata        0x0005d948       0x87 ./src/i2c.o
- *fill*         0x0005d9cf        0x1 
+                0x0005d934        0x8 ./src/gpio.o
+ .rodata        0x0005d93c       0x87 ./src/i2c.o
+ *fill*         0x0005d9c3        0x1 
  .rodata.__func__.19453
-                0x0005d9d0        0xa ./src/i2c.o
- *fill*         0x0005d9da        0x2 
+                0x0005d9c4        0xa ./src/i2c.o
+ *fill*         0x0005d9ce        0x2 
  .rodata.__func__.19457
-                0x0005d9dc        0x9 ./src/i2c.o
- *fill*         0x0005d9e5        0x3 
+                0x0005d9d0        0x9 ./src/i2c.o
+ *fill*         0x0005d9d9        0x3 
  .rodata.__func__.19460
-                0x0005d9e8        0xd ./src/i2c.o
- *fill*         0x0005d9f5        0x3 
- .rodata        0x0005d9f8       0x29 ./src/log.o
- *fill*         0x0005da21        0x3 
+                0x0005d9dc        0xd ./src/i2c.o
+ *fill*         0x0005d9e9        0x3 
+ .rodata        0x0005d9ec       0x29 ./src/log.o
+ *fill*         0x0005da15        0x3 
  .rodata.__func__.19463
-                0x0005da24        0x8 ./src/log.o
- .rodata        0x0005da2c      0x15a ./src/lpn_data.o
- *fill*         0x0005db86        0x2 
+                0x0005da18        0x8 ./src/log.o
+ .rodata        0x0005da20      0x15a ./src/lpn_data.o
+ *fill*         0x0005db7a        0x2 
  .rodata.__func__.19454
-                0x0005db88        0xe ./src/lpn_data.o
- *fill*         0x0005db96        0x2 
+                0x0005db7c        0xe ./src/lpn_data.o
+ *fill*         0x0005db8a        0x2 
  .rodata.__func__.19469
-                0x0005db98        0xe ./src/lpn_data.o
- *fill*         0x0005dba6        0x2 
- .rodata        0x0005dba8       0xa9 ./src/state_machine.o
- *fill*         0x0005dc51        0x3 
+                0x0005db8c        0xe ./src/lpn_data.o
+ *fill*         0x0005db9a        0x2 
+ .rodata        0x0005db9c       0xa9 ./src/state_machine.o
+ *fill*         0x0005dc45        0x3 
  .rodata.__func__.19450
-                0x0005dc54        0x6 ./src/state_machine.o
- *fill*         0x0005dc5a        0x2 
+                0x0005dc48        0x6 ./src/state_machine.o
+ *fill*         0x0005dc4e        0x2 
  .rodata.multiTimerCb
-                0x0005dc5c       0x28 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_singleprotocol.o)
+                0x0005dc50       0x28 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_singleprotocol.o)
  .rodata.rfhalTimerCb
-                0x0005dc84       0x28 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_singleprotocol.o)
+                0x0005dc78       0x28 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_singleprotocol.o)
  .rodata.CSWTCH.2
-                0x0005dcac        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(tmrdrv_config.o)
+                0x0005dca0        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(tmrdrv_config.o)
  .rodata.paCtunes
-                0x0005dcb0        0xa C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rfhal_pa.o)
+                0x0005dca4        0xa C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rfhal_pa.o)
  .rodata.regBases
-                0x0005dcba        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rfhal_radio.o)
+                0x0005dcae        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rfhal_radio.o)
  .rodata.divLookup
-                0x0005dcbe        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rfhal_synth.o)
- *fill*         0x0005dcc7        0x1 
+                0x0005dcb2        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rfhal_synth.o)
+ *fill*         0x0005dcbb        0x1 
  .rodata.CSWTCH.235
-                0x0005dcc8        0xc C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_rf_hal.o)
+                0x0005dcbc        0xc C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_rf_hal.o)
  .rodata.CSWTCH.17
-                0x0005dcd4        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_ble_rf_hal.o)
+                0x0005dcc8        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_ble_rf_hal.o)
  .rodata.ble_LR_DSA_125kb_timing
-                0x0005dcd8        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_ble_rf_hal.o)
-                0x0005dcd8                ble_LR_DSA_125kb_timing
+                0x0005dccc        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_ble_rf_hal.o)
+                0x0005dccc                ble_LR_DSA_125kb_timing
  .rodata.ble_LR_DSA_500kb_timing
-                0x0005dce0        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_ble_rf_hal.o)
-                0x0005dce0                ble_LR_DSA_500kb_timing
+                0x0005dcd4        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_ble_rf_hal.o)
+                0x0005dcd4                ble_LR_DSA_500kb_timing
  .rodata.ble_viterbi1M_timing
-                0x0005dce8        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_ble_rf_hal.o)
-                0x0005dce8                ble_viterbi1M_timing
+                0x0005dcdc        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_ble_rf_hal.o)
+                0x0005dcdc                ble_viterbi1M_timing
  .rodata.ble_viterbi2M_timing
-                0x0005dcf0        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_ble_rf_hal.o)
-                0x0005dcf0                ble_viterbi2M_timing
+                0x0005dce4        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rail_ble_rf_hal.o)
+                0x0005dce4                ble_viterbi2M_timing
  .rodata.genericSeqProg
-                0x0005dcf8     0x1d20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(generic_efr32xg13_seq.o)
-                0x0005dcf8                RAILINT_0cdb976df793f6799e20dfa42e2be4c6
+                0x0005dcec     0x1d20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(generic_efr32xg13_seq.o)
+                0x0005dcec                RAILINT_0cdb976df793f6799e20dfa42e2be4c6
  .rodata.genericSeqProg_size
-                0x0005fa18        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(generic_efr32xg13_seq.o)
-                0x0005fa18                RAILINT_9ddc548f8cc13ce471f7904212de4bec
+                0x0005fa0c        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(generic_efr32xg13_seq.o)
+                0x0005fa0c                RAILINT_9ddc548f8cc13ce471f7904212de4bec
  .rodata.ble_1M_modemConfigBase
-                0x0005fa1c      0x10c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x0005fa1c                RAILINT_0948d0e7b18f5057ec0771a6caca7fa3
+                0x0005fa10      0x10c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x0005fa10                RAILINT_0948d0e7b18f5057ec0771a6caca7fa3
  .rodata.ble_LR_DSA_125kb_channelConfig
-                0x0005fb28       0x14 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x0005fb28                RAILINT_caf3b6762d71f93ef040bbb1b7539a40
+                0x0005fb1c       0x14 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x0005fb1c                RAILINT_caf3b6762d71f93ef040bbb1b7539a40
  .rodata.ble_LR_DSA_125kb_channels
-                0x0005fb3c       0x18 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x0005fb3c                RAILINT_23523f3453ef8e3ac2aaa95547ce9ec8
+                0x0005fb30       0x18 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x0005fb30                RAILINT_23523f3453ef8e3ac2aaa95547ce9ec8
  .rodata.ble_LR_DSA_125kb_modemConfig
-                0x0005fb54      0x130 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x0005fb54                RAILINT_619b69b2ff076847a1040f34db8c106a
+                0x0005fb48      0x130 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x0005fb48                RAILINT_619b69b2ff076847a1040f34db8c106a
  .rodata.ble_LR_DSA_500kb_channelConfig
-                0x0005fc84       0x14 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x0005fc84                RAILINT_f4a6abaf13951cb3629f3332596b8f2e
+                0x0005fc78       0x14 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x0005fc78                RAILINT_f4a6abaf13951cb3629f3332596b8f2e
  .rodata.ble_LR_DSA_500kb_channels
-                0x0005fc98       0x18 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x0005fc98                RAILINT_818082925041f439537fa38a6767ea53
+                0x0005fc8c       0x18 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x0005fc8c                RAILINT_818082925041f439537fa38a6767ea53
  .rodata.ble_LR_DSA_500kb_modemConfig
-                0x0005fcb0      0x130 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x0005fcb0                RAILINT_c8161dbb3cd21d34cc0e3f1236faff84
+                0x0005fca4      0x130 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x0005fca4                RAILINT_c8161dbb3cd21d34cc0e3f1236faff84
  .rodata.ble_viterbi1M_0_36_modemConfig
-                0x0005fde0      0x130 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x0005fde0                RAILINT_01fb37dd5f0de1e01ddbb3b6596c7b0f
+                0x0005fdd4      0x130 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x0005fdd4                RAILINT_01fb37dd5f0de1e01ddbb3b6596c7b0f
  .rodata.ble_viterbi1M_channelConfig
-                0x0005ff10       0x14 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x0005ff10                RAILINT_cee9421be9b0da8d57d5b2c7286bb9d0
+                0x0005ff04       0x14 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x0005ff04                RAILINT_cee9421be9b0da8d57d5b2c7286bb9d0
  .rodata.ble_viterbi1M_channels
-                0x0005ff24       0x60 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x0005ff24                RAILINT_b898139161a1e2f71633ae065694927a
+                0x0005ff18       0x60 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x0005ff18                RAILINT_b898139161a1e2f71633ae065694927a
  .rodata.ble_viterbi2M_0_34_modemConfig
-                0x0005ff84      0x130 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x0005ff84                RAILINT_4cbe2ca438f2a60ee31c9b1f5e2ad7bd
+                0x0005ff78      0x130 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x0005ff78                RAILINT_4cbe2ca438f2a60ee31c9b1f5e2ad7bd
  .rodata.ble_viterbi2M_channelConfig
-                0x000600b4       0x14 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x000600b4                RAILINT_79980f40e4f7eaf72d02208e26eb11d3
+                0x000600a8       0x14 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x000600a8                RAILINT_79980f40e4f7eaf72d02208e26eb11d3
  .rodata.ble_viterbi2M_channels
-                0x000600c8       0x90 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x000600c8                RAILINT_df44ad13d22332494b9d9bbe76c1696b
+                0x000600bc       0x90 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x000600bc                RAILINT_df44ad13d22332494b9d9bbe76c1696b
  .rodata.irCalConfig
-                0x00060158       0x1a C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
- *fill*         0x00060172        0x2 
+                0x0006014c       0x1a C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+ *fill*         0x00060166        0x2 
  .rodata.phyInfo_2
-                0x00060174       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x00060168       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
  .rodata.phyInfo_3
-                0x000601a0       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x00060194       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
  .rodata.phyInfo_4
-                0x000601cc       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x000601c0       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
  .rodata.phyInfo_5
-                0x000601f8       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x000601ec       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
  .rodata.CSWTCH.4
-                0x00060224        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(bgapi.c.obj)
- .rodata        0x00060228        0xa C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gap_adv.c.obj)
+                0x00060218        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(bgapi.c.obj)
+ .rodata        0x0006021c        0xa C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gap_adv.c.obj)
  .rodata.discover_mapping.11708
-                0x00060232        0x3 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gap_scan.c.obj)
- .rodata        0x00060235        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gatt_client.c.obj)
- .rodata        0x00060239        0x3 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gatt_db_minimal.c.obj)
- .rodata        0x0006023c        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gatt_server.c.obj)
- *fill*         0x0006023e        0x2 
+                0x00060226        0x3 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gap_scan.c.obj)
+ .rodata        0x00060229        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gatt_client.c.obj)
+ .rodata        0x0006022d        0x3 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gatt_db_minimal.c.obj)
+ .rodata        0x00060230        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gatt_server.c.obj)
+ *fill*         0x00060232        0x2 
  .rodata.state_listeners
-                0x00060240        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(hci.c.obj)
+                0x00060234        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(hci.c.obj)
  .rodata.CSWTCH.1
-                0x00060248        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_hci_phy.c.obj)
+                0x0006023c        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_hci_phy.c.obj)
  .rodata.CSWTCH.4
-                0x0006024c        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_llcp_phy.c.obj)
- .rodata        0x00060250        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_radio.c.obj)
+                0x00060240        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_llcp_phy.c.obj)
+ .rodata        0x00060244        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_radio.c.obj)
  .rodata.ll_radioScaToPpm
-                0x00060254       0x24 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_radio.c.obj)
-                0x00060254                ll_radioScaToPpm
+                0x00060248       0x24 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_radio.c.obj)
+                0x00060248                ll_radioScaToPpm
  .rodata.timingConfig
-                0x00060278        0xc C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_radio.c.obj)
- .rodata        0x00060284        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_scan.c.obj)
+                0x0006026c        0xc C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_radio.c.obj)
+ .rodata        0x00060278        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_scan.c.obj)
  .rodata.ll_scanPacketTypes
-                0x0006028d        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_scan.c.obj)
-                0x0006028d                ll_scanPacketTypes
+                0x00060281        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_scan.c.obj)
+                0x00060281                ll_scanPacketTypes
  .rodata.ll_timing
-                0x00060296       0x18 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_timing.c.obj)
+                0x0006028a       0x18 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_timing.c.obj)
  .rodata.timeoutPeriodTable
-                0x000602ae       0x16 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sleep_efr32xg1x.c.obj)
+                0x000602a2       0x16 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sleep_efr32xg1x.c.obj)
  .rodata.CSWTCH.22
-                0x000602c4        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ubt.c.obj)
+                0x000602b8        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ubt.c.obj)
  .rodata.s374d955d88d1c002f0ed07da3cdf8d8a209908acb220abed315dfee88c80a3d0.str1.1
-                0x000602cf        0xd C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s6d8f57dd50f3a69910855bd46e7666431ee27f2df3f2f92a45f73c96521f0f42.obj)
- *fill*         0x000602dc        0x4 
+                0x000602c3        0xd C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s6d8f57dd50f3a69910855bd46e7666431ee27f2df3f2f92a45f73c96521f0f42.obj)
  .rodata.step_ms.23307
-                0x000602e0       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s6d8f57dd50f3a69910855bd46e7666431ee27f2df3f2f92a45f73c96521f0f42.obj)
+                0x000602d0       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s6d8f57dd50f3a69910855bd46e7666431ee27f2df3f2f92a45f73c96521f0f42.obj)
  .rodata.client_sm
-                0x00060300       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(se58928bea320951717466b1250a9e5a423db7e813e423073efde31efe07394c9.obj)
+                0x000602f0       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(se58928bea320951717466b1250a9e5a423db7e813e423073efde31efe07394c9.obj)
  .rodata.s821d09ff085685da71aca9461c8258ab57388785415597c8ca3bc66dee6e7679.str1.1
-                0x0006031c        0x6 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(se58928bea320951717466b1250a9e5a423db7e813e423073efde31efe07394c9.obj)
+                0x0006030c        0x6 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(se58928bea320951717466b1250a9e5a423db7e813e423073efde31efe07394c9.obj)
  .rodata.se3b1f27cc822e375abcb49675a312022fd254e934427c3a027859c077d1ad656.str1.1
-                0x00060322        0xc C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(se58928bea320951717466b1250a9e5a423db7e813e423073efde31efe07394c9.obj)
- .rodata        0x0006032e        0x3 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sf90c85c2bb1f50337fe173bb84b82f80f14d52841ef7a668cb5c5c33f714f17d.obj)
- .rodata.bit    0x00060331        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sf90c85c2bb1f50337fe173bb84b82f80f14d52841ef7a668cb5c5c33f714f17d.obj)
+                0x00060312        0xc C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(se58928bea320951717466b1250a9e5a423db7e813e423073efde31efe07394c9.obj)
+ .rodata        0x0006031e        0x3 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sf90c85c2bb1f50337fe173bb84b82f80f14d52841ef7a668cb5c5c33f714f17d.obj)
+ .rodata.bit    0x00060321        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sf90c85c2bb1f50337fe173bb84b82f80f14d52841ef7a668cb5c5c33f714f17d.obj)
  .rodata.s5cfff92806f83be114e23e066d2886f7b0bd4cbc92fdc009eb7e1966b1f73857.str1.1
-                0x00060339        0xc C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sf90c85c2bb1f50337fe173bb84b82f80f14d52841ef7a668cb5c5c33f714f17d.obj)
+                0x00060329        0xc C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sf90c85c2bb1f50337fe173bb84b82f80f14d52841ef7a668cb5c5c33f714f17d.obj)
  .rodata.sd468dd6ffb138083ec78476afa3e28f729bca4df4cf007448c0bef144701c319.str1.1
-                0x00060339        0x6 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sf90c85c2bb1f50337fe173bb84b82f80f14d52841ef7a668cb5c5c33f714f17d.obj)
- *fill*         0x00060339        0x3 
+                0x00060329        0x6 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sf90c85c2bb1f50337fe173bb84b82f80f14d52841ef7a668cb5c5c33f714f17d.obj)
+ *fill*         0x00060329        0x3 
  .rodata.server_sm
-                0x0006033c       0x14 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sf90c85c2bb1f50337fe173bb84b82f80f14d52841ef7a668cb5c5c33f714f17d.obj)
+                0x0006032c       0x14 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sf90c85c2bb1f50337fe173bb84b82f80f14d52841ef7a668cb5c5c33f714f17d.obj)
  .rodata.cache_sizes
-                0x00060350        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s0013e4dc2ef3e178e871c30aa91a019a81ef0bdbbcd01ac3a5641f491cfa9e3c.obj)
+                0x00060340        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s0013e4dc2ef3e178e871c30aa91a019a81ef0bdbbcd01ac3a5641f491cfa9e3c.obj)
  .rodata.friend_funcs_data
-                0x00060358       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s0013e4dc2ef3e178e871c30aa91a019a81ef0bdbbcd01ac3a5641f491cfa9e3c.obj)
-                0x00060358                friend_funcs_data
+                0x00060348       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s0013e4dc2ef3e178e871c30aa91a019a81ef0bdbbcd01ac3a5641f491cfa9e3c.obj)
+                0x00060348                friend_funcs_data
  .rodata.pbgatt_impl
-                0x00060378       0x28 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s1ac1b703fd53973d96c916de601a9cb5c870869130b92dd082f57ebb306b7a24.obj)
+                0x00060368       0x28 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s1ac1b703fd53973d96c916de601a9cb5c870869130b92dd082f57ebb306b7a24.obj)
  .rodata.prov_dev_cbs
-                0x000603a0       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s1f2db447aee3bf4ee1245142501f819402554138a00757aee6cb01689a84511d.obj)
+                0x00060390       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s1f2db447aee3bf4ee1245142501f819402554138a00757aee6cb01689a84511d.obj)
  .rodata.s4ca1803037e9b294d87a582f4ab57f01b0e0c728657e7591060753ed1d2c0220.str1.1
-                0x000603bc        0x3 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s1f2db447aee3bf4ee1245142501f819402554138a00757aee6cb01689a84511d.obj)
+                0x000603ac        0x3 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s1f2db447aee3bf4ee1245142501f819402554138a00757aee6cb01689a84511d.obj)
  .rodata.sf8bee08af42d1a1e092891e5acc83faaa263d48d53bdcb6b1eb1a4b941a62bc9.str1.1
-                0x000603bc        0x3 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s1f2db447aee3bf4ee1245142501f819402554138a00757aee6cb01689a84511d.obj)
- .rodata        0x000603bc        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s326800a8d35108345c5d028314c2728665f827aea9c33fdbe8e560fb09639921.obj)
+                0x000603ac        0x3 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s1f2db447aee3bf4ee1245142501f819402554138a00757aee6cb01689a84511d.obj)
+ .rodata        0x000603ac        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s326800a8d35108345c5d028314c2728665f827aea9c33fdbe8e560fb09639921.obj)
  .rodata.nil_key
-                0x000603be       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s326800a8d35108345c5d028314c2728665f827aea9c33fdbe8e560fb09639921.obj)
+                0x000603ae       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s326800a8d35108345c5d028314c2728665f827aea9c33fdbe8e560fb09639921.obj)
  .rodata.s06dbc3ca90e14b6324225b9e142c24f19c1132196415167476ee340599fb4c8b.str1.1
-                0x000603ce       0x11 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s326800a8d35108345c5d028314c2728665f827aea9c33fdbe8e560fb09639921.obj)
+                0x000603be       0x11 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s326800a8d35108345c5d028314c2728665f827aea9c33fdbe8e560fb09639921.obj)
  .rodata.s566a6b742c2a213be04aea42bbc5bb5ab6e963a530e9e97e53f4bac8e337eff3.str1.1
-                0x000603df        0xe C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s326800a8d35108345c5d028314c2728665f827aea9c33fdbe8e560fb09639921.obj)
- *fill*         0x000603ed        0x3 
+                0x000603cf        0xe C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s326800a8d35108345c5d028314c2728665f827aea9c33fdbe8e560fb09639921.obj)
+ *fill*         0x000603dd        0x3 
  .rodata.default_configuration_server_state
-                0x000603f0       0x60 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s41970f3f3ab4054c185b9f08c4421e3f58d8a3a8d0198e1b7478897f5fa3a49b.obj)
+                0x000603e0       0x60 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s41970f3f3ab4054c185b9f08c4421e3f58d8a3a8d0198e1b7478897f5fa3a49b.obj)
  .rodata.opcodes.12725
-                0x00060450       0x5e C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s41970f3f3ab4054c185b9f08c4421e3f58d8a3a8d0198e1b7478897f5fa3a49b.obj)
- *fill*         0x000604ae        0x2 
+                0x00060440       0x5e C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s41970f3f3ab4054c185b9f08c4421e3f58d8a3a8d0198e1b7478897f5fa3a49b.obj)
+ *fill*         0x0006049e        0x2 
  .rodata.mul.11305
-                0x000604b0       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s421569b719a68ea6dbba683b3ae89c9dea32d497dfa69c9ce6ced288d8884b34.obj)
+                0x000604a0       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s421569b719a68ea6dbba683b3ae89c9dea32d497dfa69c9ce6ced288d8884b34.obj)
  .rodata.maxlengths.12048
-                0x000604c0       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s439150a524cfe638ff2c145ba6fdcf45bbc92ae213115e830f8501a30c745366.obj)
+                0x000604b0       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s439150a524cfe638ff2c145ba6fdcf45bbc92ae213115e830f8501a30c745366.obj)
  .rodata.minlengths.12047
-                0x000604ec       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s439150a524cfe638ff2c145ba6fdcf45bbc92ae213115e830f8501a30c745366.obj)
+                0x000604dc       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s439150a524cfe638ff2c145ba6fdcf45bbc92ae213115e830f8501a30c745366.obj)
  .rodata.mesh_default_device_config
-                0x00060518       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s5c2b13ccb0d68eb1ca027bd50b559672758416b83abd01fb796a7da643f7d36f.obj)
-                0x00060518                mesh_default_device_config
+                0x00060508       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s5c2b13ccb0d68eb1ca027bd50b559672758416b83abd01fb796a7da643f7d36f.obj)
+                0x00060508                mesh_default_device_config
  .rodata.mesh_default_memory_config
-                0x00060534       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s5c2b13ccb0d68eb1ca027bd50b559672758416b83abd01fb796a7da643f7d36f.obj)
-                0x00060534                mesh_default_memory_config
+                0x00060524       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s5c2b13ccb0d68eb1ca027bd50b559672758416b83abd01fb796a7da643f7d36f.obj)
+                0x00060524                mesh_default_memory_config
  .rodata.mesh_default_net_config
-                0x00060560        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s5c2b13ccb0d68eb1ca027bd50b559672758416b83abd01fb796a7da643f7d36f.obj)
-                0x00060560                mesh_default_net_config
- *fill*         0x00060562        0x2 
+                0x00060550        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s5c2b13ccb0d68eb1ca027bd50b559672758416b83abd01fb796a7da643f7d36f.obj)
+                0x00060550                mesh_default_net_config
+ *fill*         0x00060552        0x2 
  .rodata.mesh_default_sar_config
-                0x00060564       0x18 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s5c2b13ccb0d68eb1ca027bd50b559672758416b83abd01fb796a7da643f7d36f.obj)
-                0x00060564                mesh_default_sar_config
+                0x00060554       0x18 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s5c2b13ccb0d68eb1ca027bd50b559672758416b83abd01fb796a7da643f7d36f.obj)
+                0x00060554                mesh_default_sar_config
  .rodata.mesh_default_uuid
-                0x0006057c       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s5c2b13ccb0d68eb1ca027bd50b559672758416b83abd01fb796a7da643f7d36f.obj)
-                0x0006057c                mesh_default_uuid
+                0x0006056c       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s5c2b13ccb0d68eb1ca027bd50b559672758416b83abd01fb796a7da643f7d36f.obj)
+                0x0006056c                mesh_default_uuid
  .rodata.s1ef399aaf4f5b6ff0b9bcbe09a5e8ee434181feb748d6438d7dcc2f3bab5765d.str1.1
-                0x0006058c        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s6cc7a40251e7d5b6b777c7050dd98cf8cbfa0afeb657389f5aef460991dec9dc.obj)
- .rodata        0x00060594       0x49 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s70bc3407d1dbbea59beb0c423a5d445df8a0dc91ea415f2705929c53d326027f.obj)
- *fill*         0x000605dd        0x3 
+                0x0006057c        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s6cc7a40251e7d5b6b777c7050dd98cf8cbfa0afeb657389f5aef460991dec9dc.obj)
+ .rodata        0x00060584       0x49 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s70bc3407d1dbbea59beb0c423a5d445df8a0dc91ea415f2705929c53d326027f.obj)
+ *fill*         0x000605cd        0x3 
  .rodata.dev_prov_sm
-                0x000605e0       0x30 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s70bc3407d1dbbea59beb0c423a5d445df8a0dc91ea415f2705929c53d326027f.obj)
+                0x000605d0       0x30 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s70bc3407d1dbbea59beb0c423a5d445df8a0dc91ea415f2705929c53d326027f.obj)
  .rodata.s011bac6e0cbfaccf60fc1557ad3341906c048b9ada1c10e67fd2b0df87ed99e3.str1.1
-                0x00060610       0x41 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s70bc3407d1dbbea59beb0c423a5d445df8a0dc91ea415f2705929c53d326027f.obj)
+                0x00060600       0x41 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s70bc3407d1dbbea59beb0c423a5d445df8a0dc91ea415f2705929c53d326027f.obj)
  .rodata.s9ae1fa378ee74326c1504f7772f7754f548eaff459115de259438603c4350f4a.str1.1
-                0x00060651        0xa C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s71c40c38b33daa6c2f2e4be92207e64f7c08edd6a175ff0ef8a7a6616f1e3aa2.obj)
+                0x00060641        0xa C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s71c40c38b33daa6c2f2e4be92207e64f7c08edd6a175ff0ef8a7a6616f1e3aa2.obj)
  .rodata.s9feb2940e9c5c266e281bca6bc0d29844aabcb9568178a9ffd8f71fa207c3ce7.str1.1
-                0x0006065b        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s71c40c38b33daa6c2f2e4be92207e64f7c08edd6a175ff0ef8a7a6616f1e3aa2.obj)
+                0x0006064b        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s71c40c38b33daa6c2f2e4be92207e64f7c08edd6a175ff0ef8a7a6616f1e3aa2.obj)
  .rodata.sb86db389c43d8534ac73c49bd33434965baeb07504a793febb5192c600891709.str1.1
-                0x00060666        0x5 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s71c40c38b33daa6c2f2e4be92207e64f7c08edd6a175ff0ef8a7a6616f1e3aa2.obj)
+                0x00060656        0x5 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s71c40c38b33daa6c2f2e4be92207e64f7c08edd6a175ff0ef8a7a6616f1e3aa2.obj)
  .rodata.sd55c6bb51e78aaae5466795e4edbf27a8df3cf1cf2470d50d47f6fc9ea1e1cff.str1.1
-                0x0006066b        0x5 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s71c40c38b33daa6c2f2e4be92207e64f7c08edd6a175ff0ef8a7a6616f1e3aa2.obj)
+                0x0006065b        0x5 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s71c40c38b33daa6c2f2e4be92207e64f7c08edd6a175ff0ef8a7a6616f1e3aa2.obj)
  .rodata.s05b846db02352b035553b71d6dc6330ad3e649dc694ed9c57e01076efc5b1244.str1.1
-                0x00060670        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x00060660        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.s4318b7636f45468fbb7c1ce95942ae86ebaa4e4136eafdfe37f597a6fff025cf.str1.1
-                0x00060679       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x00060669       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
                                  0x1a (size before relaxing)
  .rodata.s6e5bfac049fb633bd2ef3a6e9caa8690501b1dd0c96c0af92d49ab00ba644f69.str1.1
-                0x00060689       0x19 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x00060679       0x19 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.s70ffbc0d8b53f3903b8ea3e4d99a057a69af68f52686c9b50ddaf0c124e01182.str1.1
-                0x000606a2        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x00060692        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.s71603649ab7aef5d859a0dc9fd4bbf4ead0af8870facf1bafc319b937ee0d382.str1.1
-                0x000606ad        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x0006069d        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
                                   0x6 (size before relaxing)
  .rodata.s90a25652160976ae75fcb7f1520599ced5f54119b48b7d4a7d3116ead00f68ae.str1.1
-                0x000606ad        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x0006069d        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
                                   0xe (size before relaxing)
  .rodata.s94584b7eb78fad40ab55cfa7332137c73ce5318efeff293079371110a21bad33.str1.1
-                0x000606b6        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606a6        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.sebecc76946ab1e6ef5f2208cf110af9d571fdd421c6166f2fdecb09e8a8f4e6a.str1.1
-                0x000606b6        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606a6        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
                                   0xb (size before relaxing)
  .rodata.server_admin_property_opcode
-                0x000606b6        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606a6        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_battery_opcode
-                0x000606be        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606ae        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_client_property_opcode
-                0x000606c0        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606b0        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_ctl_opcode
-                0x000606c2        0xa C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606b2        0xa C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_ctl_setup_opcode
-                0x000606cc        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606bc        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_ctl_temp_opcode
-                0x000606d4        0x6 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606c4        0x6 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_level_opcode
-                0x000606da        0xe C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606ca        0xe C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_lightness_opcode
-                0x000606e8       0x12 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606d8       0x12 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_lightness_setup_opcode
-                0x000606fa        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606ea        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_location_opcode
-                0x00060702        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606f2        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_location_setup_opcode
-                0x00060706        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606f6        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_manuf_property_opcode
-                0x0006070e        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000606fe        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_model
-                0x00060716       0x26 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x00060706       0x26 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_on_off_opcode
-                0x0006073c        0x6 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
- *fill*         0x00060742        0x2 
+                0x0006072c        0x6 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+ *fill*         0x00060732        0x2 
  .rodata.server_opcode
-                0x00060744       0x4c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x00060734       0x4c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_opcodes
-                0x00060790       0x26 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x00060780       0x26 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_power_level_opcode
-                0x000607b6        0xc C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000607a6        0xc C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_power_level_setup_opcode
-                0x000607c2        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000607b2        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_power_on_off_opcode
-                0x000607ca        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000607ba        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_power_on_off_setup_opcode
-                0x000607cc        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000607bc        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_transition_time_opcode
-                0x000607d0        0x6 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+                0x000607c0        0x6 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
  .rodata.server_user_property_opcode
-                0x000607d6        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
- *fill*         0x000607de        0x2 
+                0x000607c6        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s7267d2dc30a456bfb7bf40b5b734fcbebf572e227279ae46b88696d800e61a85.obj)
+ *fill*         0x000607ce        0x2 
  .rodata.step_ms.12928
-                0x000607e0       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s74750dad0e8078476b21902c51bcd23e367d2898ce3f9ed46cddd2196fb641dd.obj)
+                0x000607d0       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s74750dad0e8078476b21902c51bcd23e367d2898ce3f9ed46cddd2196fb641dd.obj)
  .rodata.sub_sharing
-                0x00060800      0x108 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s74750dad0e8078476b21902c51bcd23e367d2898ce3f9ed46cddd2196fb641dd.obj)
-                0x00060800                sub_sharing
+                0x000607f0      0x108 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s74750dad0e8078476b21902c51bcd23e367d2898ce3f9ed46cddd2196fb641dd.obj)
+                0x000607f0                sub_sharing
  .rodata.sf7e0936497684738d454546030e822a7ebcfc25104d61076ec7ae7f4bc1cc67c.str1.1
-                0x00060908       0x22 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s877d848e8f96ad2884271c1119f60ae687d0d9a12656d3279efa1081b7d44e4c.obj)
+                0x000608f8       0x22 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s877d848e8f96ad2884271c1119f60ae687d0d9a12656d3279efa1081b7d44e4c.obj)
  .rodata.s52df3e7046083fdd2c58ed94eba18c47a95006f94e5912a5117be74069f2fa2f.str1.1
-                0x0006092a        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s8b12774d081445ada0c6c7018c898d468119e10f33c0453c0e56e3db69939642.obj)
- .rodata.impl   0x0006092c       0x28 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s9a865a5b1dbb11b3be894a0a5ff8c60db7cad0e34c96fc958a038ba9440ad429.obj)
+                0x0006091a        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s8b12774d081445ada0c6c7018c898d468119e10f33c0453c0e56e3db69939642.obj)
+ .rodata.impl   0x0006091c       0x28 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s9a865a5b1dbb11b3be894a0a5ff8c60db7cad0e34c96fc958a038ba9440ad429.obj)
  .rodata.crctable
-                0x00060954      0x100 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s9fba04ab2bffe1056e584c18a2faadf44c4f7b9605f08db1547337fe71ea7371.obj)
+                0x00060944      0x100 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s9fba04ab2bffe1056e584c18a2faadf44c4f7b9605f08db1547337fe71ea7371.obj)
  .rodata.genprov_sm
-                0x00060a54       0x18 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s9fba04ab2bffe1056e584c18a2faadf44c4f7b9605f08db1547337fe71ea7371.obj)
+                0x00060a44       0x18 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s9fba04ab2bffe1056e584c18a2faadf44c4f7b9605f08db1547337fe71ea7371.obj)
  .rodata.s217f706ef10ae187f9626ffb5681b7383f68a118f61706c6fd885b61e83d149b.str1.1
-                0x00060a6c        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
+                0x00060a5c        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
  .rodata.saa2dcd77a76a94afc9d87d1a549fab7b857854ee5c20cb5ec9b4177b8766b990.str1.1
-                0x00060a6c        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
+                0x00060a5c        0x2 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
                                   0xd (size before relaxing)
  .rodata.sb198942a7144fec1cda82950f2a53cc9fcc97e4b336288ac079d1b79663ea5da.str1.1
-                0x00060a6c        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
+                0x00060a5c        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
  .rodata.sb30cd2a0b0064af3c3271bb7d99c71db8f2b41f37982a7e4d3da5963d1020904.str1.1
-                0x00060a6c       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
+                0x00060a5c       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
                                  0x1c (size before relaxing)
  .rodata.sd06387a833760de94f74263492ddbd7f9fc36769ff97d97abc2f35677f0869b0.constprop.8.str1.1
-                0x00060a7c        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
+                0x00060a6c        0x9 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
  .rodata.se5edfa6f9909dbf1f74a7af0ea0aee259e3bd61e2a44f620be14492c8cd0d5b8.str1.1
-                0x00060a7c        0xf C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
+                0x00060a6c        0xf C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
                                  0x16 (size before relaxing)
  .rodata.se945ca76daef8372aedccd2073fab97fd61b24dca2f5c347b293143f9f92ac86.str1.1
-                0x00060a8b        0xa C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
+                0x00060a7b        0xa C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
  .rodata.sef2538e20543bdf9c74ae22001bcf56e055f935fb1aab9d05a36c31e59d16116.str1.1
-                0x00060a95       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
- *fill*         0x00060a95        0x1 
- .rodata        0x00060a96       0x12 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc7714863949f13028faa47f618aebada08f2193028c6cee6b969a2f6cc3f1be5.obj)
+                0x00060a85       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc2b8091aabf8eea547bc6dbcd19670e544bd1fa03410c80265ae83745ff21168.obj)
+ *fill*         0x00060a85        0x1 
+ .rodata        0x00060a86       0x12 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc7714863949f13028faa47f618aebada08f2193028c6cee6b969a2f6cc3f1be5.obj)
  .rodata.alnum.10538
-                0x00060aa8       0x24 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc7714863949f13028faa47f618aebada08f2193028c6cee6b969a2f6cc3f1be5.obj)
+                0x00060a98       0x24 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc7714863949f13028faa47f618aebada08f2193028c6cee6b969a2f6cc3f1be5.obj)
  .rodata.pow10.10537
-                0x00060acc       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc7714863949f13028faa47f618aebada08f2193028c6cee6b969a2f6cc3f1be5.obj)
+                0x00060abc       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc7714863949f13028faa47f618aebada08f2193028c6cee6b969a2f6cc3f1be5.obj)
  .rodata.s293aea9ccbbad01920cf3e1ccbe2d4967baa48c29135f58f19d85674554cb018.str1.1
-                0x00060aec        0x5 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc7714863949f13028faa47f618aebada08f2193028c6cee6b969a2f6cc3f1be5.obj)
+                0x00060adc        0x5 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc7714863949f13028faa47f618aebada08f2193028c6cee6b969a2f6cc3f1be5.obj)
  .rodata.s2f388c6adb5a98e555cf85dab694cb0c1c421aa733818a309063aa8c18f9180a.str1.1
-                0x00060af1        0x5 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc7714863949f13028faa47f618aebada08f2193028c6cee6b969a2f6cc3f1be5.obj)
+                0x00060ae1        0x5 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc7714863949f13028faa47f618aebada08f2193028c6cee6b969a2f6cc3f1be5.obj)
  .rodata.sc1a3593c4a6cda96f5eaf9a4149a92183a05619e2ab85951332732af156cba9d.str1.1
-                0x00060af6        0xa C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc7714863949f13028faa47f618aebada08f2193028c6cee6b969a2f6cc3f1be5.obj)
+                0x00060ae6        0xa C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(sc7714863949f13028faa47f618aebada08f2193028c6cee6b969a2f6cc3f1be5.obj)
  .rodata.CSWTCH.22
-                0x00060b00        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(acl.c.obj)
- *fill*         0x00060b0b        0x1 
+                0x00060af0        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(acl.c.obj)
+ *fill*         0x00060afb        0x1 
  .rodata.aes_128_ccm_info
-                0x00060b0c       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060afc       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
  .rodata.aes_128_ctr_info
-                0x00060b28       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060b18       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
  .rodata.aes_128_ecb_info
-                0x00060b44       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060b34       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
  .rodata.aes_192_ccm_info
-                0x00060b60       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060b50       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
  .rodata.aes_192_ctr_info
-                0x00060b7c       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060b6c       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
  .rodata.aes_192_ecb_info
-                0x00060b98       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060b88       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
  .rodata.aes_256_ccm_info
-                0x00060bb4       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060ba4       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
  .rodata.aes_256_ctr_info
-                0x00060bd0       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060bc0       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
  .rodata.aes_256_ecb_info
-                0x00060bec       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060bdc       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
  .rodata.aes_info
-                0x00060c08       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060bf8       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
  .rodata.ccm_aes_info
-                0x00060c24       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060c14       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
  .rodata.mbedtls_cipher_definitions
-                0x00060c40       0x50 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
-                0x00060c40                mbedtls_cipher_definitions
+                0x00060c30       0x50 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060c30                mbedtls_cipher_definitions
  .rodata.str1.1
-                0x00060c90       0x6c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
+                0x00060c80       0x6c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(cipher_wrap.c.obj)
  .rodata.crypto_devices
-                0x00060cfc       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(crypto_management.c.obj)
+                0x00060cec       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(crypto_management.c.obj)
  .rodata.secp256r1_b
-                0x00060d0c       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ecp_curves.c.obj)
+                0x00060cfc       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ecp_curves.c.obj)
  .rodata.secp256r1_gx
-                0x00060d2c       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ecp_curves.c.obj)
+                0x00060d1c       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ecp_curves.c.obj)
  .rodata.secp256r1_gy
-                0x00060d4c       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ecp_curves.c.obj)
+                0x00060d3c       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ecp_curves.c.obj)
  .rodata.secp256r1_n
-                0x00060d6c       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ecp_curves.c.obj)
+                0x00060d5c       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ecp_curves.c.obj)
  .rodata.secp256r1_p
-                0x00060d8c       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ecp_curves.c.obj)
- .rodata        0x00060dac        0x7 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_adv_header.c.obj)
- .rodata        0x00060db3       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_llcp.c.obj)
+                0x00060d7c       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ecp_curves.c.obj)
+ .rodata        0x00060d9c        0x7 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_adv_header.c.obj)
+ .rodata        0x00060da3       0x1c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_llcp.c.obj)
  .rodata.sb02210d4b5107bc9848f3201c28fd6983744a6476aff00fafbfdda254c859926.str1.1
-                0x00060dcf        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s1e7c16cb8e662feae92021614531c4505dd32223d83aa86637b16a367eb65767.obj)
- .rodata.HEX    0x00060dda       0x11 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s4e79c0ad38703b18cd1a506925925ef78d4a32ba876e28e8aaf2886cd9df3ea8.obj)
- .rodata.dec    0x00060deb        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s4e79c0ad38703b18cd1a506925925ef78d4a32ba876e28e8aaf2886cd9df3ea8.obj)
- .rodata.hex    0x00060df6       0x11 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s4e79c0ad38703b18cd1a506925925ef78d4a32ba876e28e8aaf2886cd9df3ea8.obj)
+                0x00060dbf        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s1e7c16cb8e662feae92021614531c4505dd32223d83aa86637b16a367eb65767.obj)
+ .rodata.HEX    0x00060dca       0x11 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s4e79c0ad38703b18cd1a506925925ef78d4a32ba876e28e8aaf2886cd9df3ea8.obj)
+ .rodata.dec    0x00060ddb        0xb C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s4e79c0ad38703b18cd1a506925925ef78d4a32ba876e28e8aaf2886cd9df3ea8.obj)
+ .rodata.hex    0x00060de6       0x11 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s4e79c0ad38703b18cd1a506925925ef78d4a32ba876e28e8aaf2886cd9df3ea8.obj)
  .rodata.s0680e88f3a4d787d637aa5a1162e6014140df1857f79d817a59e5330d2517b97.constprop.0.str1.1
-                0x00060e07        0x5 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s4e79c0ad38703b18cd1a506925925ef78d4a32ba876e28e8aaf2886cd9df3ea8.obj)
+                0x00060df7        0x5 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s4e79c0ad38703b18cd1a506925925ef78d4a32ba876e28e8aaf2886cd9df3ea8.obj)
                                   0x7 (size before relaxing)
  .rodata.s8c81dc0773b29855b85fa244a840ec095b2178942fb968af0d23f1b25d2d757b.str1.1
-                0x00060e0c        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s4e79c0ad38703b18cd1a506925925ef78d4a32ba876e28e8aaf2886cd9df3ea8.obj)
+                0x00060dfc        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s4e79c0ad38703b18cd1a506925925ef78d4a32ba876e28e8aaf2886cd9df3ea8.obj)
  .rodata.RAIL_TxPowerCurvesDcdc
-                0x00060e10       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
-                0x00060e10                RAIL_TxPowerCurvesDcdc
+                0x00060e00       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
+                0x00060e00                RAIL_TxPowerCurvesDcdc
  .rodata.RAIL_TxPowerCurvesVbat
-                0x00060e30       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
-                0x00060e30                RAIL_TxPowerCurvesVbat
+                0x00060e20       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
+                0x00060e20                RAIL_TxPowerCurvesVbat
  .rodata.RAIL_curves24LpDcdc
-                0x00060e50        0xe C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
+                0x00060e40        0xe C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
  .rodata.RAIL_curves24LpVbat
-                0x00060e5e        0xe C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
+                0x00060e4e        0xe C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
  .rodata.RAIL_piecewiseDataHpDcdc
-                0x00060e6c       0x44 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
+                0x00060e5c       0x44 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
  .rodata.RAIL_piecewiseDataHpVbat
-                0x00060eb0       0x44 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
+                0x00060ea0       0x44 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
  .rodata.RAIL_piecewiseDataSgDcdc
-                0x00060ef4       0x44 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
+                0x00060ee4       0x44 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
  .rodata.RAIL_piecewiseDataSgVbat
-                0x00060f38       0x44 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
+                0x00060f28       0x44 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(pa_curves_efr32.o)
  .rodata.CSWTCH.31
-                0x00060f7c        0x7 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emdrv\nvm3\lib\libnvm3_CM4_gcc.a(nvm3_object.o)
- *fill*         0x00060f83        0x1 
+                0x00060f6c        0x7 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emdrv\nvm3\lib\libnvm3_CM4_gcc.a(nvm3_object.o)
+ *fill*         0x00060f73        0x1 
  .rodata._global_impure_ptr
-                0x00060f84        0x4 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-impure.o)
-                0x00060f84                _global_impure_ptr
+                0x00060f74        0x4 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-impure.o)
+                0x00060f74                _global_impure_ptr
  .rodata._printf_float.str1.1
-                0x00060f88       0x10 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-nano-vfprintf_float.o)
+                0x00060f78       0x10 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-nano-vfprintf_float.o)
                                  0x12 (size before relaxing)
  .rodata._printf_i.str1.1
-                0x00060f98       0x22 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x00060f88       0x22 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-nano-vfprintf_i.o)
  .rodata._dtoa_r.str1.1
-                0x00060fba        0xd c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-dtoa.o)
+                0x00060faa        0xd c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-dtoa.o)
                                   0xf (size before relaxing)
- *fill*         0x00060fc7        0x1 
+ *fill*         0x00060fb7        0x1 
  .rodata.__sf_fake_stderr
-                0x00060fc8       0x20 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-findfp.o)
-                0x00060fc8                __sf_fake_stderr
+                0x00060fb8       0x20 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-findfp.o)
+                0x00060fb8                __sf_fake_stderr
  .rodata.__sf_fake_stdin
-                0x00060fe8       0x20 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-findfp.o)
-                0x00060fe8                __sf_fake_stdin
+                0x00060fd8       0x20 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-findfp.o)
+                0x00060fd8                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x00061008       0x20 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-findfp.o)
-                0x00061008                __sf_fake_stdout
+                0x00060ff8       0x20 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-findfp.o)
+                0x00060ff8                __sf_fake_stdout
  .rodata.__mprec_bigtens
-                0x00061028       0x28 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-mprec.o)
-                0x00061028                __mprec_bigtens
+                0x00061018       0x28 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-mprec.o)
+                0x00061018                __mprec_bigtens
  .rodata.__mprec_tens
-                0x00061050       0xc8 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-mprec.o)
-                0x00061050                __mprec_tens
+                0x00061040       0xc8 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-mprec.o)
+                0x00061040                __mprec_tens
  .rodata.p05.7359
-                0x00061118        0xc c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-mprec.o)
+                0x00061108        0xc c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-mprec.o)
  .rodata._svfprintf_r.str1.1
-                0x00061124       0x11 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-nano-svfprintf.o)
+                0x00061114       0x11 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-nano-svfprintf.o)
  .rodata._vfprintf_r.str1.1
-                0x00061135       0x11 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-nano-vfprintf.o)
+                0x00061125       0x11 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-nano-vfprintf.o)
  .rodata._setlocale_r.str1.1
-                0x00061135        0x8 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-locale.o)
+                0x00061125        0x8 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-locale.o)
                                   0x9 (size before relaxing)
  .rodata.str1.1
-                0x0006113d        0x2 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-locale.o)
+                0x0006112d        0x2 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-locale.o)
  .rodata._ctype_
-                0x0006113f      0x101 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-ctype_.o)
-                0x0006113f                _ctype_
+                0x0006112f      0x101 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-ctype_.o)
+                0x0006112f                _ctype_
  *(.eh_frame*)
- .eh_frame      0x00061240        0x0 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
- .eh_frame      0x00061240        0x4 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtend.o
-                0x00061244                . = ALIGN (0x4)
+ .eh_frame      0x00061230        0x0 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
+ .eh_frame      0x00061230        0x4 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtend.o
+                0x00061234                . = ALIGN (0x4)
 
-.glue_7         0x00061244        0x0
- .glue_7        0x00061244        0x0 linker stubs
+.glue_7         0x00061234        0x0
+ .glue_7        0x00061234        0x0 linker stubs
 
-.glue_7t        0x00061244        0x0
- .glue_7t       0x00061244        0x0 linker stubs
+.glue_7t        0x00061234        0x0
+ .glue_7t       0x00061234        0x0 linker stubs
 
-.vfp11_veneer   0x00061244        0x0
- .vfp11_veneer  0x00061244        0x0 linker stubs
+.vfp11_veneer   0x00061234        0x0
+ .vfp11_veneer  0x00061234        0x0 linker stubs
 
-.v4_bx          0x00061244        0x0
- .v4_bx         0x00061244        0x0 linker stubs
+.v4_bx          0x00061234        0x0
+ .v4_bx         0x00061234        0x0 linker stubs
 
-.iplt           0x00061244        0x0
- .iplt          0x00061244        0x0 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
+.iplt           0x00061234        0x0
+ .iplt          0x00061234        0x0 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
 
-.igot.plt       0x00061244        0x0
- .igot.plt      0x00061244        0x0 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
+.igot.plt       0x00061234        0x0
+ .igot.plt      0x00061234        0x0 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
 
 .text_application_ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
-                0x00061244                __exidx_start = .
+                0x00061234                __exidx_start = .
 
 .text_application_ARM.exidx
-                0x00061244        0x8
+                0x00061234        0x8
  *(.ARM.exidx* .gnu.linkonce.armexidx.*)
- .ARM.exidx     0x00061244        0x8 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp/crt0.o
- .ARM.exidx     0x0006124c        0x0 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_udivmoddi4.o)
+ .ARM.exidx     0x00061234        0x8 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp/crt0.o
+ .ARM.exidx     0x0006123c        0x0 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp\libgcc.a(_udivmoddi4.o)
                                   0x8 (size before relaxing)
-                0x0006124c                __exidx_end = .
-                0x0006124c                __etext = .
+                0x0006123c                __exidx_end = .
+                0x0006123c                __etext = .
 
-.rel.dyn        0x0006124c        0x0
- .rel.iplt      0x0006124c        0x0 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
+.rel.dyn        0x0006123c        0x0
+ .rel.iplt      0x0006123c        0x0 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/thumb/v7e-m/fpv4-sp/softfp/crtbegin.o
 
 .stack_dummy    0x20000000     0x1000
  *(.stack*)
@@ -16973,7 +16973,7 @@ LOAD c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/
                 0x20001000                PROVIDE (__stack, __StackTop)
 
 .text_application_data
-                0x20001000      0x764 load address 0x0006124c
+                0x20001000      0x764 load address 0x0006123c
                 0x20001000                __data_start__ = .
  *(vtable)
  *(.data*)
@@ -17203,7 +17203,7 @@ LOAD c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/
                 0x20001764                . = ALIGN (0x4)
                 0x20001764                __data_end__ = .
 
-.bss            0x20001764     0x66a4 load address 0x000619b0
+.bss            0x20001764     0x64e4 load address 0x000619a0
                 0x20001764                . = ALIGN (0x4)
                 0x20001764                __bss_start__ = .
  *(.bss*)
@@ -17903,111 +17903,111 @@ LOAD c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/
                 0x20003a88        0x4 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-nano-mallocr.o)
                 0x20003a88                __malloc_sbrk_start
  *(COMMON)
- COMMON         0x20003a8c     0x3ada ./main.o
+ COMMON         0x20003a8c     0x3918 ./main.o
                 0x20003a8c                eNextState
                 0x20003a90                bluetooth_stack_heap
- *fill*         0x20007566        0x2 
- COMMON         0x20007568       0x58 ./platform/emdrv/nvm3/src/nvm3_default.o
-                0x20007568                nvm3_defaultHandleData
- COMMON         0x200075c0       0xb4 ./platform/emdrv/nvm3/src/nvm3_lock.o
-                0x200075c0                irqState
-                0x200075c4                nvm3_internalObjectHandleD
-                0x200075f0                nvm3_internalObjectHandleC
-                0x2000761c                nvm3_internalObjectHandleA
-                0x20007648                nvm3_internalObjectHandleB
- COMMON         0x20007674       0x10 ./platform/middleware/glib/dmd/display/dmd_display.o
-                0x20007674                dirtyRows
- COMMON         0x20007684       0x4c ./protocol/bluetooth/ble_stack/src/soc/coexistence-ble.o
-                0x20007684                ll_coex
- COMMON         0x200076d0       0x34 ./src/i2c.o
-                0x200076d0                i2c_interrupt
-                0x200076d4                seq_read
-                0x200076e8                read_data
-                0x200076ec                Received_Data
-                0x200076f0                seq_write
- COMMON         0x20007704        0x2 ./src/letimer.o
-                0x20007704                On_val
- COMMON         0x20007706        0x1 ./src/state_machine.o
-                0x20007706                interrupt_flag
- *fill*         0x20007707        0x1 
- COMMON         0x20007708        0xd C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rfhal_protimer.o)
-                0x20007708                RAILINT_e89d7eb2c00ac15736a92a0731fafade
-                0x2000770c                RAILINT_a9ffd85fdeaa19a8eaa79494d28ea023
-                0x20007710                RAILINT_8a869172492fd52037b11475c864ae39
- COMMON         0x20007715       0x13 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(generic_phy.o)
-                0x20007715                RAILINT_9302044fb432b0ddafbe0c0fcfc016d4
- COMMON         0x20007728      0x194 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
-                0x20007728                RAILINT_41d4df853cb2ea1a0babdcab7913ac4f
-                0x20007768                RAILINT_1554bcb77fca887afbf4b09ccf0a0250
- COMMON         0x200078bc       0x30 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(bgapi.c.obj)
-                0x200078bc                gecko_apihandler_rsp
- COMMON         0x200078ec      0x154 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(bglib.c.obj)
-                0x200078ec                user_signals
-                0x200078f0                bg_pool_pools
- COMMON         0x20007a40       0x54 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gap.c.obj)
-                0x20007a40                bg_gap
- COMMON         0x20007a94        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gap_resolver.c.obj)
-                0x20007a94                address_resolver
- COMMON         0x20007a9c        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gatt_db_minimal.c.obj)
-                0x20007a9c                current_bg_gattdb
- COMMON         0x20007aa0       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(hci.c.obj)
-                0x20007aa0                hci_status
- COMMON         0x20007acc        0x6 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(init.c.obj)
-                0x20007acc                btlePublicDevAddr
- *fill*         0x20007ad2        0x2 
- COMMON         0x20007ad4       0x14 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(l2cap.c.obj)
-                0x20007ad4                l2cap
- COMMON         0x20007ae8       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_hci.c.obj)
-                0x20007ae8                ll_hci
- COMMON         0x20007af8        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_init.c.obj)
-                0x20007af8                ll_priorityTable
- *fill*         0x20007afc        0x4 
- COMMON         0x20007b00       0x40 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_radio.c.obj)
-                0x20007b00                ll_radio
- COMMON         0x20007b40       0xc4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_scan.c.obj)
-                0x20007b40                ll_scan
- COMMON         0x20007c04        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_task.c.obj)
-                0x20007c04                ll_task_callback
-                0x20007c08                ll_events
- COMMON         0x20007c0c        0x1 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_to_hci.c.obj)
-                0x20007c0c                ll_to_hci_data_event_sender
- *fill*         0x20007c0d        0x3 
- COMMON         0x20007c10       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(scheduler.c.obj)
-                0x20007c10                usch
- COMMON         0x20007c20      0x148 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(smp.c.obj)
-                0x20007c20                smp
- COMMON         0x20007d68        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(acl.c.obj)
-                0x20007d68                used_acls
- COMMON         0x20007d6c       0x28 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(bg_event.c.obj)
-                0x20007d6c                bg_event_handlers
- COMMON         0x20007d94        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(bgapi_test_lib.c.obj)
-                0x20007d94                msg_sender
- COMMON         0x20007d98       0x40 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_adv.c.obj)
-                0x20007d98                ll_adv_state
- COMMON         0x20007dd8       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_conn.c.obj)
-                0x20007dd8                ll
- COMMON         0x20007df8        0xc C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s1e7c16cb8e662feae92021614531c4505dd32223d83aa86637b16a367eb65767.obj)
-                0x20007df8                node_handle
-                0x20007dfc                mesh_sender
-                0x20007e00                deferred_event_sender
- COMMON         0x20007e04        0x4 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-reent.o)
-                0x20007e04                errno
-                0x20007e08                . = ALIGN (0x4)
-                0x20007e08                __bss_end__ = .
+ *fill*         0x200073a4        0x4 
+ COMMON         0x200073a8       0x58 ./platform/emdrv/nvm3/src/nvm3_default.o
+                0x200073a8                nvm3_defaultHandleData
+ COMMON         0x20007400       0xb4 ./platform/emdrv/nvm3/src/nvm3_lock.o
+                0x20007400                irqState
+                0x20007404                nvm3_internalObjectHandleD
+                0x20007430                nvm3_internalObjectHandleC
+                0x2000745c                nvm3_internalObjectHandleA
+                0x20007488                nvm3_internalObjectHandleB
+ COMMON         0x200074b4       0x10 ./platform/middleware/glib/dmd/display/dmd_display.o
+                0x200074b4                dirtyRows
+ COMMON         0x200074c4       0x4c ./protocol/bluetooth/ble_stack/src/soc/coexistence-ble.o
+                0x200074c4                ll_coex
+ COMMON         0x20007510       0x34 ./src/i2c.o
+                0x20007510                i2c_interrupt
+                0x20007514                seq_read
+                0x20007528                read_data
+                0x2000752c                Received_Data
+                0x20007530                seq_write
+ COMMON         0x20007544        0x2 ./src/letimer.o
+                0x20007544                On_val
+ COMMON         0x20007546        0x1 ./src/state_machine.o
+                0x20007546                interrupt_flag
+ *fill*         0x20007547        0x1 
+ COMMON         0x20007548        0xd C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(rfhal_protimer.o)
+                0x20007548                RAILINT_e89d7eb2c00ac15736a92a0731fafade
+                0x2000754c                RAILINT_a9ffd85fdeaa19a8eaa79494d28ea023
+                0x20007550                RAILINT_8a869172492fd52037b11475c864ae39
+ COMMON         0x20007555       0x13 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(generic_phy.o)
+                0x20007555                RAILINT_9302044fb432b0ddafbe0c0fcfc016d4
+ COMMON         0x20007568      0x194 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\radio\rail_lib\autogen\librail_release\librail_efr32xg13_gcc_release.a(ble_efr32xg13_configurator_out.o)
+                0x20007568                RAILINT_41d4df853cb2ea1a0babdcab7913ac4f
+                0x200075a8                RAILINT_1554bcb77fca887afbf4b09ccf0a0250
+ COMMON         0x200076fc       0x30 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(bgapi.c.obj)
+                0x200076fc                gecko_apihandler_rsp
+ COMMON         0x2000772c      0x154 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(bglib.c.obj)
+                0x2000772c                user_signals
+                0x20007730                bg_pool_pools
+ COMMON         0x20007880       0x54 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gap.c.obj)
+                0x20007880                bg_gap
+ COMMON         0x200078d4        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gap_resolver.c.obj)
+                0x200078d4                address_resolver
+ COMMON         0x200078dc        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(gatt_db_minimal.c.obj)
+                0x200078dc                current_bg_gattdb
+ COMMON         0x200078e0       0x2c C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(hci.c.obj)
+                0x200078e0                hci_status
+ COMMON         0x2000790c        0x6 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(init.c.obj)
+                0x2000790c                btlePublicDevAddr
+ *fill*         0x20007912        0x2 
+ COMMON         0x20007914       0x14 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(l2cap.c.obj)
+                0x20007914                l2cap
+ COMMON         0x20007928       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_hci.c.obj)
+                0x20007928                ll_hci
+ COMMON         0x20007938        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_init.c.obj)
+                0x20007938                ll_priorityTable
+ *fill*         0x2000793c        0x4 
+ COMMON         0x20007940       0x40 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_radio.c.obj)
+                0x20007940                ll_radio
+ COMMON         0x20007980       0xc4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_scan.c.obj)
+                0x20007980                ll_scan
+ COMMON         0x20007a44        0x8 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_task.c.obj)
+                0x20007a44                ll_task_callback
+                0x20007a48                ll_events
+ COMMON         0x20007a4c        0x1 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_to_hci.c.obj)
+                0x20007a4c                ll_to_hci_data_event_sender
+ *fill*         0x20007a4d        0x3 
+ COMMON         0x20007a50       0x10 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(scheduler.c.obj)
+                0x20007a50                usch
+ COMMON         0x20007a60      0x148 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(smp.c.obj)
+                0x20007a60                smp
+ COMMON         0x20007ba8        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(acl.c.obj)
+                0x20007ba8                used_acls
+ COMMON         0x20007bac       0x28 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(bg_event.c.obj)
+                0x20007bac                bg_event_handlers
+ COMMON         0x20007bd4        0x4 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(bgapi_test_lib.c.obj)
+                0x20007bd4                msg_sender
+ COMMON         0x20007bd8       0x40 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_adv.c.obj)
+                0x20007bd8                ll_adv_state
+ COMMON         0x20007c18       0x20 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(ll_conn.c.obj)
+                0x20007c18                ll
+ COMMON         0x20007c38        0xc C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\lib\EFR32XG13X\GCC\libbluetooth_mesh.a(s1e7c16cb8e662feae92021614531c4505dd32223d83aa86637b16a367eb65767.obj)
+                0x20007c38                node_handle
+                0x20007c3c                mesh_sender
+                0x20007c40                deferred_event_sender
+ COMMON         0x20007c44        0x4 c:/siliconlabs/simplicitystudio/v4/developer/toolchains/gnu_arm/7.2_2017q4/bin/../lib/gcc/arm-none-eabi/7.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m/fpv4-sp/softfp\libc_nano.a(lib_a-reent.o)
+                0x20007c44                errno
+                0x20007c48                . = ALIGN (0x4)
+                0x20007c48                __bss_end__ = .
 
-.heap           0x20007e08     0x1700
-                0x20007e08                __HeapBase = .
-                0x20007e08                __end__ = .
-                0x20007e08                end = __end__
-                0x20007e08                _end = __end__
+.heap           0x20007c48     0x1700
+                0x20007c48                __HeapBase = .
+                0x20007c48                __end__ = .
+                0x20007c48                end = __end__
+                0x20007c48                _end = __end__
  *(.heap*)
- .heap          0x20007e08     0x1700 ./platform/Device/SiliconLabs/EFR32BG13P/Source/GCC/startup_efr32bg13p.o
-                0x20009508                __HeapLimit = .
+ .heap          0x20007c48     0x1700 ./platform/Device/SiliconLabs/EFR32BG13P/Source/GCC/startup_efr32bg13p.o
+                0x20009348                __HeapLimit = .
 
-.nvm_dummy      0x0006124c     0x6000
+.nvm_dummy      0x0006123c     0x6000
  *(.simee)
- .simee         0x0006124c     0x6000 ./platform/emdrv/nvm3/src/nvm3_default.o
-                0x0006124c                nvm3Storage
+ .simee         0x0006123c     0x6000 ./platform/emdrv/nvm3/src/nvm3_default.o
+                0x0006123c                nvm3Storage
                 0x0007a000                __nvm3Base = (0x80000 - SIZEOF (.nvm_dummy))
                 0x00000001                ASSERT (((__etext + SIZEOF (.text_application_data)) <= __nvm3Base), FLASH memory overlapped with NVM section.)
 OUTPUT(course-project-pshiralagi.axf elf32-littlearm)

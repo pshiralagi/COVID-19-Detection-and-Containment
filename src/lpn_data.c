@@ -77,7 +77,10 @@ void level_request(uint16_t model_id,
 		LOG_INFO("Ultrasonic Data - %d", request->level);
 		break;
 	case 2:
-//		update_level_state(2, request->level);
+		if (rec_temp)
+		{
+
+		}
 		break;
 	}
 }
