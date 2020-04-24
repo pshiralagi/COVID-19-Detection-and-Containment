@@ -27,16 +27,16 @@ void gpioInit()
 //	GPIO_DriveStrengthSet(LED1_port, gpioDriveStrengthWeakAlternateWeak);
 	GPIO_PinModeSet(LED1_port, LED1_pin, gpioModePushPull, false);
 	/*	I2C enables	*/
-	GPIO_DriveStrengthSet(SCL_port, gpioDriveStrengthWeakAlternateWeak);
-	GPIO_PinModeSet(SCL_port, SCL_pin, gpioModePushPull, false);
-	GPIO_DriveStrengthSet(SDA_port, gpioDriveStrengthWeakAlternateWeak);
-	GPIO_PinModeSet(SDA_port, SDA_pin, gpioModePushPull, false);
-	GPIO_DriveStrengthSet(enable_port, gpioDriveStrengthWeakAlternateWeak);
-	GPIO_PinModeSet(enable_port, enable_pin, gpioModePushPull, false);
-	GPIO_PinOutSet(enable_port,enable_pin);
+	GPIO_DriveStrengthSet(I2C0_SCL_PORT, gpioDriveStrengthWeakAlternateWeak);
+	GPIO_PinModeSet(I2C0_SCL_PORT, I2C0_SCL_PIN, gpioModePushPull, false);
+	GPIO_DriveStrengthSet(I2C0_SDA_PORT, gpioDriveStrengthWeakAlternateWeak);
+	GPIO_PinModeSet(I2C0_SDA_PORT, I2C0_SDA_PIN, gpioModePushPull, false);
+	GPIO_DriveStrengthSet(I2C0_ENABLE_PORT, gpioDriveStrengthWeakAlternateWeak);
+	GPIO_PinModeSet(I2C0_ENABLE_PORT, I2C0_ENABLE_PIN, gpioModePushPull, false);
+	GPIO_PinOutSet(I2C0_ENABLE_PORT,I2C0_ENABLE_PIN);
 	/*	PB0 Button initialization */
 	GPIO_PinModeSet(PB0_Port, PB0_Pin, gpioModeInputPull, true);
-	/*	PB0 Button initialization */
+	/*	PB1 Button initialization */
 	GPIO_PinModeSet(PB1_Port, PB1_Pin, gpioModeInputPull, true);
 }
 
@@ -142,18 +142,39 @@ void pirInit(void)
 	GPIOINT_Init();
 	GPIO_ExtIntConfig(MOTION_PORT, MOTION_PIN, MOTION_PIN, true, true, true);
 	GPIOINT_CallbackRegister(MOTION_PIN, motionDetected);
-	LOG_ERROR("PIR Initialized");
+//	LOG_ERROR("PIR Initialized");
 }
 
 
 void motionDetected(uint8_t pin)
 {
+	CORE_DECLARE_IRQ_STATE;
 	if(pin == MOTION_PIN)
 	{
 		if(GPIO_PinInGet(MOTION_PORT, MOTION_PIN) == 1)
 		{
+			CORE_ENTER_CRITICAL();
 			gecko_external_signal(0x50);
+			CORE_EXIT_CRITICAL();
 		}
 	}
 
+}
+
+void LPM_On(void)
+{
+	//Enables all the pins to turn ON Load Power
+//	GPIO_PinOutSet(I2C0_ENABLE_PORT,I2C0_ENABLE_PIN);
+	GPIO_PinOutSet(I2C0_SCL_PORT, I2C0_SCL_PIN);
+	GPIO_PinOutSet(I2C0_SDA_PORT, I2C0_SDA_PIN);
+
+	timerWaitMs(80); //Time needed for power to stabilize = 80ms
+}
+
+void LPM_Off(void)
+{
+	//Disables all the pins to turn OFF Load Power
+//	GPIO_PinOutClear(I2C0_ENABLE_PORT, I2C0_ENABLE_PIN);
+	GPIO_PinOutClear(I2C0_SCL_PORT, I2C0_SCL_PIN);
+	GPIO_PinOutClear(I2C0_SDA_PORT, I2C0_SDA_PIN);
 }

@@ -27,10 +27,8 @@
 #include "display.h"
 #include "ble_mesh_device_type.h"
 #include "app.h"
-#include "lpm.h"
 #include "state_machine.h"
 #include "i2c.h"
-#include "non_blocking_wait.h"
 #include "lpn_data.h"
 
 

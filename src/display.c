@@ -74,7 +74,7 @@ extern size_t strnlen(const char *, size_t);
  */
 static void displayUpdateWriteBuffer(struct display_data *display)
 {
-	enum display_row row = DISPLAY_ROW_NAME;
+	enum display_row row = DISPLAY_ROW_FRIEND;
 	GLIB_Context_t *context = &display->context;
 	EMSTATUS result = GLIB_clear(context);
 	if( result != GLIB_OK ) {
@@ -83,7 +83,7 @@ static void displayUpdateWriteBuffer(struct display_data *display)
 		/**
 		 * See example in graphics.c graphPrintCenter()
 		 */
-		for( row = DISPLAY_ROW_NAME; row < DISPLAY_ROW_MAX; row ++) {
+		for( row = DISPLAY_ROW_FRIEND; row < DISPLAY_ROW_MAX; row ++) {
 			uint8_t row_len = strnlen(display->row_data[row],DISPLAY_ROW_LEN);
 			uint8_t row_width = row_len * context->font.fontWidth;
 			if( row_width > context->pDisplayGeometry->xSize ) {
@@ -118,7 +118,7 @@ static void displayUpdateWriteBuffer(struct display_data *display)
 void displayPrintf(enum display_row row, const char *format, ... )
 {
 	struct display_data *display = displayGetData();
-	if( row >= DISPLAY_ROW_MAX ) {
+	if( row > DISPLAY_ROW_MAX ) {
 		LOG_WARN("Row %d exceeded max row, ignoring write request",row);
 	} else {
 		va_list args;
@@ -193,7 +193,7 @@ void displayInit()
 	memset(display,0,sizeof(struct display_data));
 	display->last_extcomin_state_high = false;
 	displayGlibInit(&display->context);
-	for( row = DISPLAY_ROW_NAME; row < DISPLAY_ROW_MAX; row++ ) {
+	for( row = DISPLAY_ROW_FRIEND; row < DISPLAY_ROW_MAX; row++ ) {
 		displayPrintf(row,"%s"," ");
 	}
 #if SCHEDULER_SUPPORTS_DISPLAY_UPDATE_EVENT

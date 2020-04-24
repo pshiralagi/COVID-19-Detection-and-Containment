@@ -33,6 +33,7 @@ void tempGpioDeInit(void);
  *
  */
 void tempGpioReInit(void);		//Resets required GPIO for LPM to restart peripherals
+
 void toggleLed(void);	//Toggles LEDs
 
 /*	@brief : Re-initialize GPIO pins for LPM OFF	*/
@@ -50,6 +51,10 @@ void gpioSetDisplayExtcomin(bool state);
 void pirInit(void);
 
 void motionDetected(uint8_t pin);
+
+void LPM_Off(void);
+
+void LPM_On(void);
 
 
 
@@ -77,12 +82,14 @@ void enable_button_interrupts(void);
 #define LED0_pin 4
 #define LED1_port gpioPortF
 #define LED1_pin 5
-#define SCL_port gpioPortC
-#define SCL_pin 10
-#define SDA_port gpioPortC
-#define SDA_pin 11
-#define enable_port gpioPortD
-#define enable_pin 15
+
+#define I2C0_SCL_PIN 10 //I2C0 SCL Pin
+#define I2C0_SDA_PIN 11 //I2C0 SDA Pin
+#define I2C0_ENABLE_PIN 15 //Enable Pin for I2C0
+#define I2C0_SCL_PORT gpioPortC //I2C0 SCL Port
+#define I2C0_SDA_PORT gpioPortC //I2C0 SDA Port
+#define I2C0_ENABLE_PORT gpioPortD //Enable Port for I2C0
+
 #define LCD_Port gpioPortD
 #define LCD_EXTCOMIN 13
 #define LCD_ENABLE 15

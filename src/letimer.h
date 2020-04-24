@@ -16,7 +16,7 @@
 #include <native_gecko.h>
 
 
-#define On_Time 3000
+#define On_Time 6000
 #define TIMER_SUPPORTS_1HZ_TIMER_EVENT	1
 
 extern bool flag;
@@ -25,6 +25,6 @@ void letimer_Init(void);							/* Function to initialize LETIMER0 */
 void compute_CompVal(void);							/* Function to compute the COMP0 register values for ON and OFF times */
 void timerWaitUs(uint32_t wait_us);					/* Function to wait for a given microseconds */
 uint32_t timerGetRunTimeMilliseconds(void);			/* Function to get the run time in milliseconds */
-//void timerSetEventInMs(uint32_t ms_until_wakeup);	/* Function to wait for a given millisecond */
+void timerWaitMs(uint32_t ms_wait);					/* Function to wait for a given millisecond */
 
 #endif /* SRC_LETIMER_H_ */

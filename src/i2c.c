@@ -85,22 +85,9 @@ void Get_Humidity()
 
 void Hum_Buffer()
 {
-//	LOG_INFO("In Temp_Buffer");
-//	int32_t temp = Received_Data*1000;
-//	uint8_t TempBuffer[5];
-//	uint8_t *p = TempBuffer;
 	char HumBufferChar[32]={0};
-//	uint32_t temperature;
-//
-//	UINT8_TO_BITSTREAM(p, 0x00);
-//	/* Convert sensor data to correct temperature format */
-//	temperature = FLT_TO_UINT32(temp, -3); //Converting temperature to buffer-valid values
-//	/* Convert temperature to bitstream and place it in the HTM temperature data buffer (htmTempBuffer) */
-//	UINT32_TO_BITSTREAM(p, temperature);
-//	gecko_cmd_gatt_server_send_characteristic_notification(
-//			0xFF, gattdb_temperature_measurement, 5, TempBuffer);
-	snprintf(HumBufferChar, sizeof (HumBufferChar), "%f", Received_Data);
-	displayPrintf(DISPLAY_ROW_TEMPVALUE,HumBufferChar);
+	snprintf(HumBufferChar, sizeof (HumBufferChar), "%.2f", Received_Data);
+	displayPrintf(DISPLAY_ROW_HUMIDITY,HumBufferChar);
 
 }
 

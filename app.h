@@ -54,9 +54,23 @@ void gecko_bgapi_classes_init_client_lpn(void);
  ******************************************************************************/
 void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt);
 
+/*
+ * @brief	Load data from persistent memory
+ */
 void psDataLoad(uint16_t key, void *value, uint8_t size);
+
+/*
+ * @brief	Store data in persistent memory
+ */
 void psDataSave(uint16_t key, void *value, uint8_t size);
+/*
+ * @brief	Initialize friend node
+ */
 void friendInit(void);
+
+/*
+ * @brief	Initialize server register handles
+ */
 void init_all_models();
 /** @} (end addtogroup app) */
 /** @} (end addtogroup Application) */
