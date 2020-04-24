@@ -27,6 +27,7 @@
 #include "native_gecko.h"
 #include "gatt_db.h"
 #include "mesh_generic_model_capi_types.h"
+#include "mesh_lighting_model_capi_types.h"
 #include "mesh_lib.h"
 
 
@@ -66,12 +67,13 @@ static uint8_t conn_handle = 0xFF;
 static uint8_t lpnCount = 0;
 //Persistent storage keys
 #define MAX_TEMP (0xa000)
-#define AUTHORIZED_PERSONNEL (0xb000)
+
 #define BUTTON_COUNT (0xc000)
 
 //Storage types for peristent data
 static uint16_t high_temp = 0;
-static uint8_t authorized_personnel = 0;
+//static uint8_t authorized_personnel = 0;
+uint8_t authorized_personnel = 0;
 static uint8_t buttonPressed = 0;
 
 
@@ -181,16 +183,16 @@ void gecko_bgapi_classes_init(void)
   //gecko_bgapi_class_mesh_proxy_client_init();
   //gecko_bgapi_class_mesh_generic_client_init();
   gecko_bgapi_class_mesh_generic_server_init();
-  //gecko_bgapi_class_mesh_vendor_model_init();
+//  gecko_bgapi_class_mesh_vendor_model_init();
   //gecko_bgapi_class_mesh_health_client_init();
   //gecko_bgapi_class_mesh_health_server_init();
   //gecko_bgapi_class_mesh_test_init();
   //gecko_bgapi_class_mesh_lpn_init();
   gecko_bgapi_class_mesh_friend_init();
-//  gecko_bgapi_class_mesh_lc_server_init();
-//  gecko_bgapi_class_mesh_lc_setup_server_init();
-//  gecko_bgapi_class_mesh_scene_server_init();
-//  gecko_bgapi_class_mesh_scene_setup_server_init();
+  gecko_bgapi_class_mesh_lc_server_init();
+  gecko_bgapi_class_mesh_lc_setup_server_init();
+  gecko_bgapi_class_mesh_scene_server_init();
+  gecko_bgapi_class_mesh_scene_setup_server_init();
 }
 
 
@@ -332,6 +334,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	        enable_button_interrupts();
 	        friendInit();
 	        displayPrintf(DISPLAY_ROW_ACTION, "Provisioned");
+	        init_all_models();
 	      }
 	      else
 	      {
@@ -340,7 +343,9 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 
 	        LOG_INFO("starting unprovisioned beaconing...");
 	        BTSTACK_CHECK_RESPONSE(gecko_cmd_mesh_node_start_unprov_beaconing(0x3));   // enable ADV and GATT provisioning bearer
+
 	      }
+
 	      break;
 
 	    case gecko_evt_mesh_node_provisioning_started_id:
@@ -357,6 +362,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      // stop LED blinking when provisioning complete
 	      BTSTACK_CHECK_RESPONSE(gecko_cmd_hardware_set_soft_timer(0, TIMER_ID_PROVISIONING, 0));
 	      clearAlert();
+	      init_all_models();
 	      displayPrintf(DISPLAY_ROW_ACTION, "Provisioned");
 	      break;
 
@@ -377,23 +383,23 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 	      break;
 
 	    case gecko_evt_mesh_generic_server_client_request_id:
-	      LOG_INFO("evt gecko_evt_mesh_generic_server_client_request_id");
-	        req = &(evt->data.evt_mesh_generic_server_client_request);
-	        printf("******************* Button Press - %d", req->parameters.data[0]);
-	        if (req->parameters.data[0] == 1)
+//	      LOG_INFO("evt gecko_evt_mesh_generic_server_client_request_id");
+//	        req = &(evt->data.evt_mesh_generic_server_client_request);
+//	        printf("******************* Button Press - %d", req->parameters.data[0]);
+//	        if (req->parameters.data[0] == 1)
 	        {
-	        	displayPrintf(DISPLAY_ROW_TEMPVALUE, "Button Pressed");
-	        	psDataSave(AUTHORIZED_PERSONNEL, &authorized_personnel, sizeof(authorized_personnel));
-	        	if(authorized_personnel)
-	        	{
-	        		GPIO_ExtIntConfig(MOTION_PORT, MOTION_PIN, MOTION_PIN, true, true, true);
-	        		authorized_personnel = 0;
-	        	}
-	        	else
-	        	{
-	        		GPIO_ExtIntConfig(MOTION_PORT, MOTION_PIN, MOTION_PIN, true, true, false);
-	        		authorized_personnel = 1;
-	        	}
+//	        	displayPrintf(DISPLAY_ROW_TEMPVALUE, "Button Pressed");
+//	        	psDataSave(AUTHORIZED_PERSONNEL, &authorized_personnel, sizeof(authorized_personnel));
+//	        	if(authorized_personnel)
+//	        	{
+//	        		GPIO_ExtIntConfig(MOTION_PORT, MOTION_PIN, MOTION_PIN, true, true, true);
+//	        		authorized_personnel = 0;
+//	        	}
+//	        	else
+//	        	{
+//	        		GPIO_ExtIntConfig(MOTION_PORT, MOTION_PIN, MOTION_PIN, true, true, false);
+//	        		authorized_personnel = 1;
+//	        	}
 	        }
 
 
@@ -779,6 +785,21 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
   }
 }
 #endif
+
+void init_all_models()
+{
+	LOG_INFO("***********Initializing all models************");
+	errorcode_t mesh_reg_response = mesh_lib_generic_server_register_handler(MESH_GENERIC_ON_OFF_SERVER_MODEL_ID, 0, onoff_request,NULL, NULL);
+	if(mesh_reg_response != 0)
+	{
+		LOG_ERROR("Handler register failed with %d response",mesh_reg_response);
+	}
+	mesh_reg_response = mesh_lib_generic_server_register_handler(MESH_GENERIC_LEVEL_SERVER_MODEL_ID, 0, level_request, 0, NULL);
+	if(mesh_reg_response != 0)
+	{
+		LOG_ERROR("Handler register failed with %d response",mesh_reg_response);
+	}
+}
 
 /*
  * @brief	Store data in persistent memory

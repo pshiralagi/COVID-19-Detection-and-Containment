@@ -31,6 +31,7 @@
 #include "state_machine.h"
 #include "i2c.h"
 #include "non_blocking_wait.h"
+#include "lpn_data.h"
 
 
 #endif
