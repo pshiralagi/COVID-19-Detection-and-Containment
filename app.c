@@ -344,12 +344,7 @@ void handle_ecen5823_gecko_event(uint32_t evt_id, struct gecko_cmd_packet *evt)
 							  psDataSave(BUTTON_COUNT, &buttonPressed, sizeof(buttonPressed));
 							  LOG_INFO("Alert cleared");
 						  }
-//						  else
-//						  {
-//							  req.on_off.on = MESH_GENERIC_ON_OFF_STATE_OFF;
-//							  displayPrintf(DISPLAY_ROW_TEMPVALUE,"Button Released");
-//						  }
-
+/*Code to Publish data (Not supported by SDK)*/
 /*						  mesh_lib_generic_server_update(MESH_GENERIC_ON_OFF_SERVER_MODEL_ID,
 																   0,
 																   NULL,

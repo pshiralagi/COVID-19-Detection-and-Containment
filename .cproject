@@ -500,7 +500,6 @@
 								<option id="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.def.symbols.678573245" name="Defined symbols (-D)" superClass="com.silabs.ide.si32.gcc.cdt.managedbuild.tool.gnu.c.compiler.def.symbols" valueType="definedSymbols">
 									<listOptionValue builtIn="false" value="__HEAP_SIZE=0x1700"/>
 									<listOptionValue builtIn="false" value="ENABLE_LOGGING=1"/>
-									<listOptionValue builtIn="false" value="INCLUDE_LOGGING=1"/>
 									<listOptionValue builtIn="false" value="NVM3_DEFAULT_MAX_OBJECT_SIZE=512"/>
 									<listOptionValue builtIn="false" value="__STACK_SIZE=0x1000"/>
 									<listOptionValue builtIn="false" value="HAL_CONFIG=1"/>

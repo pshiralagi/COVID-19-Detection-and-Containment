@@ -3,6 +3,8 @@
 
 ## Authors - Pavan Shiralagi, Gitanjali Suresh and Sarayu Managoli
 
+## Professor - Tim Scherr
+
 ## Contents
 
 This repository contains the Friend Node implementation for our final project.
@@ -28,6 +30,24 @@ Friend Node implemented, can work as either Publisher or Subscriber. Interface w
 Integration of Humidity Sensor in I2C state machine in Friend Node as Subscriber works. Friend Node as Subscriber or Publisher tested with LPN sending/receiving
 button press.
 
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+## Final Update
+The Friend Node is fully functional, as described in the [Final Project Report](https://drive.google.com/drive/u/1/folders/1ZPNZiMcrfCPBDFvCzMxLzUf7_b3DdGpf "Final Project Report")
+This node has the following functionality.
+- Friend Node
+	- Implemented PIR sensor to detect unauthorized entry
+	- Implemented humidity sensor to control humidistat
+	- Reduces power usage by load power management while using humidity sensor and sleep modes implemented. Disables interrupts from PIR if the caretaker enters the room
+	- Receives and processes data from both LPNs using Generic OnOff Server and Generic Level Server to raise the following alerts,
+		- Patient fainted (accelerometer reading - LPN 1)
+		- High Temperature (temperature sensor - LPN 1)
+		- Unauthorized person (button value from LPN 2 and PIR value)
+
+	Clears alerts using pushbutton (PB0)
+	-Uses persistent data to store,
+		- Highest temperature received
+		- Whether caretaker is inside or outside the room
+		- Number of alerts received
 
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------

@@ -1,4 +1,4 @@
-src/lpm.o: ../src/lpm.c ../src/lpm.h ../src/main.h \
+src/lpn_data.o: ../src/lpn_data.c ../src/lpn_data.h ../src/main.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc\common/gecko_configuration.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc\common/bg_gattdb_def.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc\common/bg_types.h \
@@ -90,11 +90,11 @@ src/lpm.o: ../src/lpm.c ../src/lpm.h ../src/main.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emlib\inc/em_i2c.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\drivers/i2cspm.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\halconfig/i2cspmhalconfig.h \
- ../src/non_blocking_wait.h \
- C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/src/letimer.h \
- C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emlib\inc/em_timer.h
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_generic_model_capi_types.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_lighting_model_capi_types.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_lib.h
 
-../src/lpm.h:
+../src/lpn_data.h:
 
 ../src/main.h:
 
@@ -290,8 +290,8 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\halconfig/i2cspmhalconfig.h:
 
-../src/non_blocking_wait.h:
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_generic_model_capi_types.h:
 
-C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/src/letimer.h:
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_lighting_model_capi_types.h:
 
-C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emlib\inc/em_timer.h:
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_lib.h:

@@ -87,17 +87,15 @@ app.o: ../app.c ../src/main.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\middleware\glib/em_types.h \
  ../src/ble_mesh_device_type.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/app.h \
- ../src/lpm.h ../src/state_machine.h ../src/i2c.h \
+ ../src/state_machine.h ../src/i2c.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emlib\inc/em_i2c.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\drivers/i2cspm.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\halconfig/i2cspmhalconfig.h \
- ../src/non_blocking_wait.h \
- C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/src/letimer.h \
- C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emlib\inc/em_timer.h \
- ../gatt_db.h \
+ ../src/lpn_data.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_generic_model_capi_types.h \
+ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_lighting_model_capi_types.h \
  C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_lib.h \
- ../app.h
+ ../gatt_db.h ../app.h
 
 ../src/main.h:
 
@@ -285,8 +283,6 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/app.h:
 
-../src/lpm.h:
-
 ../src/state_machine.h:
 
 ../src/i2c.h:
@@ -297,16 +293,14 @@ C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\hardware\kit\common\halconfig/i2cspmhalconfig.h:
 
-../src/non_blocking_wait.h:
-
-C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi/src/letimer.h:
-
-C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\platform\emlib\inc/em_timer.h:
-
-../gatt_db.h:
+../src/lpn_data.h:
 
 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_generic_model_capi_types.h:
 
+C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_lighting_model_capi_types.h:
+
 C:\Users\pkshi\SimplicityStudio\v4_workspace\course-project-pshiralagi\protocol\bluetooth\bt_mesh\inc/mesh_lib.h:
+
+../gatt_db.h:
 
 ../app.h:

@@ -85,7 +85,7 @@ void level_request(uint16_t model_id,
 			{
 				psDataSave(MAX_TEMP, &high_temp, sizeof(high_temp));
 			}
-			if (data>30)
+			if (data>34)
 			{
 				redAlert();
 				displayPrintf(DISPLAY_ROW_ALERT_PATIENT, "High temperature");
