@@ -40,11 +40,10 @@ This node has the following functionality.
 	- Implemented PIR sensor to detect unauthorized entry
 	- Implemented humidity sensor to control humidistat
 	- Reduces power usage by load power management while using humidity sensor and sleep modes implemented. Disables interrupts from PIR if the caretaker enters the room
-	- Receives and processes data from both LPNs using Generic OnOff Server and Generic Level Server to raise the following alerts,
+	- Receives and processes data from both LPNs using Generic OnOff Server and Generic Level Server to raise the following alerts (Clears alerts using pushbutton (PB0)),
 		- Patient fainted (accelerometer reading - LPN 1)
 		- High Temperature (temperature sensor - LPN 1)
 		- Unauthorized person (button value from LPN 2 and PIR value)
-	Clears alerts using pushbutton (PB0)
 	-Uses persistent data to store,
 		- Highest temperature received
 		- Whether caretaker is inside or outside the room
