@@ -44,7 +44,7 @@ This node has the following functionality.
 		- Patient fainted (accelerometer reading - LPN 1)
 		- High Temperature (temperature sensor - LPN 1)
 		- Unauthorized person (button value from LPN 2 and PIR value)
-	-Uses persistent data to store,
+	- Uses persistent data to store,
 		- Highest temperature received
 		- Whether caretaker is inside or outside the room
 		- Number of alerts received
