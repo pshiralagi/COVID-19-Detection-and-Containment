@@ -9,6 +9,8 @@
 
 This repository contains the Friend Node implementation for our final project.
 
+Demo video - [Project Demo](https://drive.google.com/drive/u/1/folders/1ZPNZiMcrfCPBDFvCzMxLzUf7_b3DdGpf "Project Demo")
+
 Repository with Caretaker LPN code - [Caretaker LPN](https://github.com/CU-ECEN-5823/final-project-assignment-Gitanjali-Suresh "Caretaker LPN")
 
 Repository with Patient LPN code - [Patient LPN](https://github.com/CU-ECEN-5823/final-project-assignment-sarayumanagoli "Patient LPN")
@@ -42,7 +44,6 @@ This node has the following functionality.
 		- Patient fainted (accelerometer reading - LPN 1)
 		- High Temperature (temperature sensor - LPN 1)
 		- Unauthorized person (button value from LPN 2 and PIR value)
-
 	Clears alerts using pushbutton (PB0)
 	-Uses persistent data to store,
 		- Highest temperature received
